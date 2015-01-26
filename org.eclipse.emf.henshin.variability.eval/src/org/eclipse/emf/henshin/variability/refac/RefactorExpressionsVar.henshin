@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_AlUR8EltEeSOY658Y7mwhA">
+  <imports href="PredFormula.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_BFuQUEltEeSOY658Y7mwhA" name="RemoveRedundantNotVAR" description="" injectiveMatching="false">
+    <lhs xmi:id="_BFwskEltEeSOY658Y7mwhA" name="Lhs">
+      <nodes xmi:id="_Rprx4EltEeSOY658Y7mwhA" incoming="_AW3FkEl1EeSOY658Y7mwhA _VeIykEl7EeSOY658Y7mwhA _WI3KkEl7EeSOY658Y7mwhA" outgoing="_Wasp0EltEeSOY658Y7mwhA _fhsDgEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula"/>
+        <attributes xmi:id="_hj_5gEltEeSOY658Y7mwhA" value="&quot;NOT&quot;">
+          <type href="PredFormula.ecore#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Ta-JUEltEeSOY658Y7mwhA" incoming="_fhsDgEltEeSOY658Y7mwhA _zru68EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Predicate"/>
+      </nodes>
+      <nodes xmi:id="_T5G20EltEeSOY658Y7mwhA" incoming="_vQZ_IEltEeSOY658Y7mwhA _wTZGIEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Predicate"/>
+      </nodes>
+      <nodes xmi:id="_UgniwEltEeSOY658Y7mwhA" incoming="_Wasp0EltEeSOY658Y7mwhA" outgoing="_mJF1UEltEeSOY658Y7mwhA _zru68EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition"/>
+        <attributes xmi:id="_ea7aUEluEeSOY658Y7mwhA" presenceCondition="def(forall2exists)" value="&quot;FORALL&quot;">
+          <type href="PredFormula.ecore#//QuantifiedCondition/quantifier"/>
+        </attributes>
+        <attributes xmi:id="_rONMoEl7EeSOY658Y7mwhA" presenceCondition="!def(forall2exists)" value="&quot;EXISTS&quot;">
+          <type href="PredFormula.ecore#//QuantifiedCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_lcE-UEltEeSOY658Y7mwhA" incoming="_mJF1UEltEeSOY658Y7mwhA" outgoing="_q4kcMEltEeSOY658Y7mwhA _wTZGIEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula"/>
+        <attributes xmi:id="_biE94EluEeSOY658Y7mwhA" value="&quot;NOT&quot;">
+          <type href="PredFormula.ecore#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nPdngEltEeSOY658Y7mwhA" incoming="_q4kcMEltEeSOY658Y7mwhA" outgoing="_vQZ_IEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition"/>
+      </nodes>
+      <nodes xmi:id="_-8pxYEl0EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; !def(qc) &amp; def(formula) " outgoing="_AW3FkEl1EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_DqTkkEl7EeSOY658Y7mwhA" presenceCondition="def(expression) &amp; !def(qc) &amp; !def(formula) " outgoing="_VeIykEl7EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Expression"/>
+      </nodes>
+      <nodes xmi:id="_PjDUMEl7EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; def(qc) &amp; !def(formula) " outgoing="_WI3KkEl7EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition"/>
+      </nodes>
+      <edges xmi:id="_Wasp0EltEeSOY658Y7mwhA" source="_Rprx4EltEeSOY658Y7mwhA" target="_UgniwEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_fhsDgEltEeSOY658Y7mwhA" source="_Rprx4EltEeSOY658Y7mwhA" target="_Ta-JUEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_mJF1UEltEeSOY658Y7mwhA" source="_UgniwEltEeSOY658Y7mwhA" target="_lcE-UEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition/nested"/>
+      </edges>
+      <edges xmi:id="_q4kcMEltEeSOY658Y7mwhA" source="_lcE-UEltEeSOY658Y7mwhA" target="_nPdngEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_vQZ_IEltEeSOY658Y7mwhA" source="_nPdngEltEeSOY658Y7mwhA" target="_T5G20EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_wTZGIEltEeSOY658Y7mwhA" source="_lcE-UEltEeSOY658Y7mwhA" target="_T5G20EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_zru68EltEeSOY658Y7mwhA" source="_UgniwEltEeSOY658Y7mwhA" target="_Ta-JUEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_AW3FkEl1EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; !def(qc) &amp; def(formula) " source="_-8pxYEl0EeSOY658Y7mwhA" target="_Rprx4EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_VeIykEl7EeSOY658Y7mwhA" presenceCondition="def(expression) &amp; !def(qc) &amp; !def(formula) " source="_DqTkkEl7EeSOY658Y7mwhA" target="_Rprx4EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Expression/condition"/>
+      </edges>
+      <edges xmi:id="_WI3KkEl7EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; def(qc) &amp; !def(formula) " source="_PjDUMEl7EeSOY658Y7mwhA" target="_Rprx4EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition/nested"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_BFwskUltEeSOY658Y7mwhA" name="Rhs">
+      <nodes xmi:id="_Ta-JUUltEeSOY658Y7mwhA" incoming="_zrviAEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Predicate"/>
+      </nodes>
+      <nodes xmi:id="_T5Hd4EltEeSOY658Y7mwhA" incoming="_vQZ_IUltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Predicate"/>
+      </nodes>
+      <nodes xmi:id="_UgoJ0EltEeSOY658Y7mwhA" incoming="_BKgwEEl1EeSOY658Y7mwhA _EUP5cEl7EeSOY658Y7mwhA _Wsp0IEl7EeSOY658Y7mwhA" outgoing="_zrviAEltEeSOY658Y7mwhA _9cAiMEltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition"/>
+        <attributes xmi:id="_ea7aUUluEeSOY658Y7mwhA" presenceCondition="def(forall2exists)" value="&quot;EXISTS&quot;">
+          <type href="PredFormula.ecore#//QuantifiedCondition/quantifier"/>
+        </attributes>
+        <attributes xmi:id="_xSb_8El7EeSOY658Y7mwhA" presenceCondition="!def(forall2exists)" value="&quot;FORALL&quot;">
+          <type href="PredFormula.ecore#//QuantifiedCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nPdngUltEeSOY658Y7mwhA" incoming="_9cAiMEltEeSOY658Y7mwhA" outgoing="_vQZ_IUltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition"/>
+      </nodes>
+      <nodes xmi:id="__98PQEl0EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; !def(qc) &amp; def(formula) " outgoing="_BKgwEEl1EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_DqTkkUl7EeSOY658Y7mwhA" presenceCondition="def(expression) &amp; !def(qc) &amp; !def(formula) " outgoing="_EUP5cEl7EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Expression"/>
+      </nodes>
+      <nodes xmi:id="_PjDUMUl7EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; def(qc) &amp; !def(formula) " outgoing="_Wsp0IEl7EeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition"/>
+      </nodes>
+      <edges xmi:id="_vQZ_IUltEeSOY658Y7mwhA" source="_nPdngUltEeSOY658Y7mwhA" target="_T5Hd4EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_zrviAEltEeSOY658Y7mwhA" source="_UgoJ0EltEeSOY658Y7mwhA" target="_Ta-JUUltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//NestedCondition/predicate"/>
+      </edges>
+      <edges xmi:id="_9cAiMEltEeSOY658Y7mwhA" source="_UgoJ0EltEeSOY658Y7mwhA" target="_nPdngUltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//QuantifiedCondition/nested"/>
+      </edges>
+      <edges xmi:id="_BKgwEEl1EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; !def(qc) &amp; def(formula) " source="__98PQEl0EeSOY658Y7mwhA" target="_UgoJ0EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_EUP5cEl7EeSOY658Y7mwhA" presenceCondition="def(expression) &amp; !def(qc) &amp; !def(formula) " source="_DqTkkUl7EeSOY658Y7mwhA" target="_UgoJ0EltEeSOY658Y7mwhA">
+        <type href="PredFormula.ecore#//Expression/condition"/>
+      </edges>
+      <edges xmi:id="_Wsp0IEl7EeSOY658Y7mwhA" presenceCondition="!def(expression) &amp; def(qc) &amp; !def(formula) " source="_PjDUMUl7EeSOY658Y7mwhA" target="_UgoJ0EltEeSOY658Y7mwhA" index="">
+        <type href="PredFormula.ecore#//QuantifiedCondition/nested"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Ta-JUkltEeSOY658Y7mwhA" origin="_Ta-JUEltEeSOY658Y7mwhA" image="_Ta-JUUltEeSOY658Y7mwhA"/>
+    <mappings xmi:id="_T5Hd4UltEeSOY658Y7mwhA" origin="_T5G20EltEeSOY658Y7mwhA" image="_T5Hd4EltEeSOY658Y7mwhA"/>
+    <mappings xmi:id="_UgoJ0UltEeSOY658Y7mwhA" origin="_UgniwEltEeSOY658Y7mwhA" image="_UgoJ0EltEeSOY658Y7mwhA"/>
+    <mappings xmi:id="_nPdngkltEeSOY658Y7mwhA" origin="_nPdngEltEeSOY658Y7mwhA" image="_nPdngUltEeSOY658Y7mwhA"/>
+    <mappings xmi:id="__98PQUl0EeSOY658Y7mwhA" origin="_-8pxYEl0EeSOY658Y7mwhA" image="__98PQEl0EeSOY658Y7mwhA"/>
+    <mappings xmi:id="_DqTkkkl7EeSOY658Y7mwhA" origin="_DqTkkEl7EeSOY658Y7mwhA" image="_DqTkkUl7EeSOY658Y7mwhA"/>
+    <mappings xmi:id="_PjDUMkl7EeSOY658Y7mwhA" origin="_PjDUMEl7EeSOY658Y7mwhA" image="_PjDUMUl7EeSOY658Y7mwhA"/>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_ZD8YcEl3EeSOY658Y7mwhA" name="main" subUnit="_a26K4El3EeSOY658Y7mwhA"/>
+  <units xsi:type="henshin:IndependentUnit" xmi:id="_a26K4El3EeSOY658Y7mwhA" name="ExecuteOneRefactoring" subUnits="_BFuQUEltEeSOY658Y7mwhA"/>
+</henshin:Module>

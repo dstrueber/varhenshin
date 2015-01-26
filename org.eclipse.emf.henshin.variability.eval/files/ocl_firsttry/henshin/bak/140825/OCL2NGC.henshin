@@ -1,0 +1,2135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_Wztz8CbVEeSwPInVEnwclA">
+  <imports href="http://www.eclipse.org/ocl/3.1.0/Pivot#/"/>
+  <imports href="http://www.example.org/GraphConstraint#/"/>
+  <imports href="http://www.eclipse.org/emf/2011/Henshin/Trace#/"/>
+  <imports href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_ieIucCerEeSDxN9ngoAe7Q" name="tr_I">
+    <parameters xmi:id="_5JlKYChVEeSg2Lgr3wkr0g" name="classname"/>
+    <parameters xmi:id="_5JlKYShVEeSg2Lgr3wkr0g" name="variablename"/>
+    <lhs xmi:id="_ie2gICerEeSDxN9ngoAe7Q" name="Lhs">
+      <nodes xmi:id="_mTtR0CerEeSDxN9ngoAe7Q" incoming="_oZOM0CerEeSDxN9ngoAe7Q" outgoing="_U8QckChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint"/>
+      </nodes>
+      <nodes xmi:id="_nF91MCerEeSDxN9ngoAe7Q" incoming="_oqrwQCerEeSDxN9ngoAe7Q" outgoing="_DFTN4CesEeSDxN9ngoAe7Q _d5p1YChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint"/>
+      </nodes>
+      <nodes xmi:id="_nxfecCerEeSDxN9ngoAe7Q" outgoing="_oZOM0CerEeSDxN9ngoAe7Q _oqrwQCerEeSDxN9ngoAe7Q">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_CCcCsCesEeSDxN9ngoAe7Q" incoming="_DFTN4CesEeSDxN9ngoAe7Q" outgoing="_1dujsChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </nodes>
+      <nodes xmi:id="_M4QJ4ChVEeSg2Lgr3wkr0g" incoming="_d5p1YChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_N-v34ChVEeSg2Lgr3wkr0g" incoming="_U8QckChVEeSg2Lgr3wkr0g" outgoing="_u4QEgChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_iCkykChVEeSg2Lgr3wkr0g" incoming="_vXm6AChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Class"/>
+        <attributes xmi:id="_8y3lQChVEeSg2Lgr3wkr0g" value="classname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_uG_msChVEeSg2Lgr3wkr0g" incoming="_u4QEgChVEeSg2Lgr3wkr0g" outgoing="_vXm6AChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Variable"/>
+        <attributes xmi:id="__sHDQChVEeSg2Lgr3wkr0g" value="variablename">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_0_Op0ChVEeSg2Lgr3wkr0g" incoming="_1dujsChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        <attributes xmi:id="_9W3qMChVEeSg2Lgr3wkr0g" value="classname">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_oZOM0CerEeSDxN9ngoAe7Q" source="_nxfecCerEeSDxN9ngoAe7Q" target="_mTtR0CerEeSDxN9ngoAe7Q">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_oqrwQCerEeSDxN9ngoAe7Q" source="_nxfecCerEeSDxN9ngoAe7Q" target="_nF91MCerEeSDxN9ngoAe7Q">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_DFTN4CesEeSDxN9ngoAe7Q" source="_nF91MCerEeSDxN9ngoAe7Q" target="_CCcCsCesEeSDxN9ngoAe7Q">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/import"/>
+      </edges>
+      <edges xmi:id="_U8QckChVEeSg2Lgr3wkr0g" source="_mTtR0CerEeSDxN9ngoAe7Q" target="_N-v34ChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint/specification"/>
+      </edges>
+      <edges xmi:id="_d5p1YChVEeSg2Lgr3wkr0g" source="_nF91MCerEeSDxN9ngoAe7Q" target="_M4QJ4ChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/emptyDomain"/>
+      </edges>
+      <edges xmi:id="_u4QEgChVEeSg2Lgr3wkr0g" source="_N-v34ChVEeSg2Lgr3wkr0g" target="_uG_msChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/contextVariable"/>
+      </edges>
+      <edges xmi:id="_vXm6AChVEeSg2Lgr3wkr0g" source="_uG_msChVEeSg2Lgr3wkr0g" target="_iCkykChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//TypedElement/type"/>
+      </edges>
+      <edges xmi:id="_1dujsChVEeSg2Lgr3wkr0g" source="_CCcCsCesEeSDxN9ngoAe7Q" target="_0_Op0ChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_6l3swChWEeSg2Lgr3wkr0g">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_6l3swShWEeSg2Lgr3wkr0g">
+          <conclusion xmi:id="_6l3swihWEeSg2Lgr3wkr0g">
+            <nodes xmi:id="_6l3swyhWEeSg2Lgr3wkr0g" incoming="_6l3sxyhWEeSg2Lgr3wkr0g" outgoing="_6l4T0ihWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint"/>
+            </nodes>
+            <nodes xmi:id="_6l3sxShWEeSg2Lgr3wkr0g" outgoing="_6l3sxyhWEeSg2Lgr3wkr0g _6l4T1ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_6l4T0ChWEeSg2Lgr3wkr0g" incoming="_6l4T0ihWEeSg2Lgr3wkr0g _aDbKsChVEeSg2Lgr3wkr0g" outgoing="_6l5h9ChWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+            </nodes>
+            <nodes xmi:id="_6l4T0yhWEeSg2Lgr3wkr0g" incoming="_6l4T1ShWEeSg2Lgr3wkr0g" outgoing="_6l4T2ChWEeSg2Lgr3wkr0g _6l464ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint"/>
+            </nodes>
+            <nodes xmi:id="_6l4T1ihWEeSg2Lgr3wkr0g" incoming="_6l4T2ChWEeSg2Lgr3wkr0g" outgoing="_6l465ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+            </nodes>
+            <nodes xmi:id="_6l4T2ShWEeSg2Lgr3wkr0g" incoming="_6l464ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_6l464ihWEeSg2Lgr3wkr0g" incoming="_6l465ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+              <attributes xmi:id="_6l464yhWEeSg2Lgr3wkr0g" value="classname">
+                <type href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_PJ9GwChVEeSg2Lgr3wkr0g" outgoing="_aDbKsChVEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_6l5h8ShWEeSg2Lgr3wkr0g" incoming="_6l5h9ChWEeSg2Lgr3wkr0g" outgoing="_6l5h-ChWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Variable"/>
+              <attributes xmi:id="_6l5h8ihWEeSg2Lgr3wkr0g" value="variablename">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_6l5h9ShWEeSg2Lgr3wkr0g" incoming="_6l5h-ChWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Class"/>
+              <attributes xmi:id="_6l5h9ihWEeSg2Lgr3wkr0g" value="classname">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <edges xmi:id="_6l3sxyhWEeSg2Lgr3wkr0g" source="_6l3sxShWEeSg2Lgr3wkr0g" target="_6l3swyhWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+            <edges xmi:id="_6l4T0ihWEeSg2Lgr3wkr0g" source="_6l3swyhWEeSg2Lgr3wkr0g" target="_6l4T0ChWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint/specification"/>
+            </edges>
+            <edges xmi:id="_6l4T1ShWEeSg2Lgr3wkr0g" source="_6l3sxShWEeSg2Lgr3wkr0g" target="_6l4T0yhWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+            </edges>
+            <edges xmi:id="_6l4T2ChWEeSg2Lgr3wkr0g" source="_6l4T0yhWEeSg2Lgr3wkr0g" target="_6l4T1ihWEeSg2Lgr3wkr0g">
+              <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/import"/>
+            </edges>
+            <edges xmi:id="_6l464ShWEeSg2Lgr3wkr0g" source="_6l4T0yhWEeSg2Lgr3wkr0g" target="_6l4T2ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/emptyDomain"/>
+            </edges>
+            <edges xmi:id="_6l465ShWEeSg2Lgr3wkr0g" source="_6l4T1ihWEeSg2Lgr3wkr0g" target="_6l464ihWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+            </edges>
+            <edges xmi:id="_6l5h9ChWEeSg2Lgr3wkr0g" source="_6l4T0ChWEeSg2Lgr3wkr0g" target="_6l5h8ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/contextVariable"/>
+            </edges>
+            <edges xmi:id="_6l5h-ChWEeSg2Lgr3wkr0g" source="_6l5h8ShWEeSg2Lgr3wkr0g" target="_6l5h9ShWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//TypedElement/type"/>
+            </edges>
+            <edges xmi:id="_aDbKsChVEeSg2Lgr3wkr0g" source="_PJ9GwChVEeSg2Lgr3wkr0g" target="_6l4T0ChWEeSg2Lgr3wkr0g">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_6l3sxChWEeSg2Lgr3wkr0g" origin="_mTtR0CerEeSDxN9ngoAe7Q" image="_6l3swyhWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l3sxihWEeSg2Lgr3wkr0g" origin="_nxfecCerEeSDxN9ngoAe7Q" image="_6l3sxShWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l4T0ShWEeSg2Lgr3wkr0g" origin="_N-v34ChVEeSg2Lgr3wkr0g" image="_6l4T0ChWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l4T1ChWEeSg2Lgr3wkr0g" origin="_nF91MCerEeSDxN9ngoAe7Q" image="_6l4T0yhWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l4T1yhWEeSg2Lgr3wkr0g" origin="_CCcCsCesEeSDxN9ngoAe7Q" image="_6l4T1ihWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l464ChWEeSg2Lgr3wkr0g" origin="_M4QJ4ChVEeSg2Lgr3wkr0g" image="_6l4T2ShWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l465ChWEeSg2Lgr3wkr0g" origin="_0_Op0ChVEeSg2Lgr3wkr0g" image="_6l464ihWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l5h8yhWEeSg2Lgr3wkr0g" origin="_uG_msChVEeSg2Lgr3wkr0g" image="_6l5h8ShWEeSg2Lgr3wkr0g"/>
+          <mappings xmi:id="_6l5h9yhWEeSg2Lgr3wkr0g" origin="_iCkykChVEeSg2Lgr3wkr0g" image="_6l5h9ShWEeSg2Lgr3wkr0g"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_ie2gISerEeSDxN9ngoAe7Q" name="Rhs">
+      <nodes xmi:id="_mTt44CerEeSDxN9ngoAe7Q" incoming="_oZOz4CerEeSDxN9ngoAe7Q" outgoing="_U8RDoChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint"/>
+      </nodes>
+      <nodes xmi:id="_nF-cQCerEeSDxN9ngoAe7Q" incoming="_oqsXUCerEeSDxN9ngoAe7Q" outgoing="_DFTN4SesEeSDxN9ngoAe7Q _d5p1YShVEeSg2Lgr3wkr0g _cqxAYChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint"/>
+      </nodes>
+      <nodes xmi:id="_nxfecSerEeSDxN9ngoAe7Q" outgoing="_oZOz4CerEeSDxN9ngoAe7Q _oqsXUCerEeSDxN9ngoAe7Q _YxKRkChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_CCdQ0CesEeSDxN9ngoAe7Q" incoming="_DFTN4SesEeSDxN9ngoAe7Q" outgoing="_1dvKwChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </nodes>
+      <nodes xmi:id="_M4R_EChVEeSg2Lgr3wkr0g" incoming="_d5p1YShVEeSg2Lgr3wkr0g _fFPewChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_N-v34ShVEeSg2Lgr3wkr0g" incoming="_U8RDoChVEeSg2Lgr3wkr0g _Zd0jQChVEeSg2Lgr3wkr0g" outgoing="_u4QEgShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_Osa2MChVEeSg2Lgr3wkr0g" incoming="_YxKRkChVEeSg2Lgr3wkr0g" outgoing="_Zd0jQChVEeSg2Lgr3wkr0g _dexQMChVEeSg2Lgr3wkr0g _yB1EkChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_bKuxAChVEeSg2Lgr3wkr0g" incoming="_cqxAYChVEeSg2Lgr3wkr0g _dexQMChVEeSg2Lgr3wkr0g" outgoing="_fFPewChVEeSg2Lgr3wkr0g _zddVEChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_uUB48ChcEeSg2Lgr3wkr0g" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_iCkykShVEeSg2Lgr3wkr0g" incoming="_vXnhEChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Class"/>
+        <attributes xmi:id="_8y3lQShVEeSg2Lgr3wkr0g" value="classname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_itND8ChVEeSg2Lgr3wkr0g" incoming="_zddVEChVEeSg2Lgr3wkr0g" outgoing="_zrS8wChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_jIkKQChVEeSg2Lgr3wkr0g" incoming="_yB1EkChVEeSg2Lgr3wkr0g" outgoing="_ycBGMChVEeSg2Lgr3wkr0g _y2A6kChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_jyClEChVEeSg2Lgr3wkr0g" incoming="_y2A6kChVEeSg2Lgr3wkr0g _zrS8wChVEeSg2Lgr3wkr0g" outgoing="_16-gYChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Node"/>
+        <attributes xmi:id="_AEd44ChWEeSg2Lgr3wkr0g" value="variablename">
+          <type href="http://www.example.org/GraphConstraint#//GraphElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_uG_msShVEeSg2Lgr3wkr0g" incoming="_u4QEgShVEeSg2Lgr3wkr0g _ycBGMChVEeSg2Lgr3wkr0g" outgoing="_vXnhEChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Variable"/>
+        <attributes xmi:id="__sHqUChVEeSg2Lgr3wkr0g" value="variablename">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_0_Op0ShVEeSg2Lgr3wkr0g" incoming="_1dvKwChVEeSg2Lgr3wkr0g _16-gYChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        <attributes xmi:id="_9W4RQChVEeSg2Lgr3wkr0g" value="classname">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_oZOz4CerEeSDxN9ngoAe7Q" source="_nxfecSerEeSDxN9ngoAe7Q" target="_mTt44CerEeSDxN9ngoAe7Q">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_oqsXUCerEeSDxN9ngoAe7Q" source="_nxfecSerEeSDxN9ngoAe7Q" target="_nF-cQCerEeSDxN9ngoAe7Q">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_DFTN4SesEeSDxN9ngoAe7Q" source="_nF-cQCerEeSDxN9ngoAe7Q" target="_CCdQ0CesEeSDxN9ngoAe7Q">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/import"/>
+      </edges>
+      <edges xmi:id="_U8RDoChVEeSg2Lgr3wkr0g" source="_mTt44CerEeSDxN9ngoAe7Q" target="_N-v34ShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint/specification"/>
+      </edges>
+      <edges xmi:id="_d5p1YShVEeSg2Lgr3wkr0g" source="_nF-cQCerEeSDxN9ngoAe7Q" target="_M4R_EChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/emptyDomain"/>
+      </edges>
+      <edges xmi:id="_u4QEgShVEeSg2Lgr3wkr0g" source="_N-v34ShVEeSg2Lgr3wkr0g" target="_uG_msShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/contextVariable"/>
+      </edges>
+      <edges xmi:id="_vXnhEChVEeSg2Lgr3wkr0g" source="_uG_msShVEeSg2Lgr3wkr0g" target="_iCkykShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//TypedElement/type"/>
+      </edges>
+      <edges xmi:id="_1dvKwChVEeSg2Lgr3wkr0g" source="_CCdQ0CesEeSDxN9ngoAe7Q" target="_0_Op0ShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      </edges>
+      <edges xmi:id="_cqxAYChVEeSg2Lgr3wkr0g" source="_nF-cQCerEeSDxN9ngoAe7Q" target="_bKuxAChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/condition"/>
+      </edges>
+      <edges xmi:id="_dexQMChVEeSg2Lgr3wkr0g" source="_Osa2MChVEeSg2Lgr3wkr0g" target="_bKuxAChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_fFPewChVEeSg2Lgr3wkr0g" source="_bKuxAChVEeSg2Lgr3wkr0g" target="_M4R_EChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_zddVEChVEeSg2Lgr3wkr0g" source="_bKuxAChVEeSg2Lgr3wkr0g" target="_itND8ChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_zrS8wChVEeSg2Lgr3wkr0g" source="_itND8ChVEeSg2Lgr3wkr0g" target="_jyClEChVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Graph/nodes"/>
+      </edges>
+      <edges xmi:id="_y2A6kChVEeSg2Lgr3wkr0g" source="_jIkKQChVEeSg2Lgr3wkr0g" target="_jyClEChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_16-gYChVEeSg2Lgr3wkr0g" source="_jyClEChVEeSg2Lgr3wkr0g" target="_0_Op0ShVEeSg2Lgr3wkr0g">
+        <type href="http://www.example.org/GraphConstraint#//Node/type"/>
+      </edges>
+      <edges xmi:id="_YxKRkChVEeSg2Lgr3wkr0g" source="_nxfecSerEeSDxN9ngoAe7Q" target="_Osa2MChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_Zd0jQChVEeSg2Lgr3wkr0g" source="_Osa2MChVEeSg2Lgr3wkr0g" target="_N-v34ShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_yB1EkChVEeSg2Lgr3wkr0g" source="_Osa2MChVEeSg2Lgr3wkr0g" target="_jIkKQChVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_ycBGMChVEeSg2Lgr3wkr0g" source="_jIkKQChVEeSg2Lgr3wkr0g" target="_uG_msShVEeSg2Lgr3wkr0g">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_mTt44SerEeSDxN9ngoAe7Q" origin="_mTtR0CerEeSDxN9ngoAe7Q" image="_mTt44CerEeSDxN9ngoAe7Q"/>
+    <mappings xmi:id="_nF-cQSerEeSDxN9ngoAe7Q" origin="_nF91MCerEeSDxN9ngoAe7Q" image="_nF-cQCerEeSDxN9ngoAe7Q"/>
+    <mappings xmi:id="_nxfecierEeSDxN9ngoAe7Q" origin="_nxfecCerEeSDxN9ngoAe7Q" image="_nxfecSerEeSDxN9ngoAe7Q"/>
+    <mappings xmi:id="_CCdQ0SesEeSDxN9ngoAe7Q" origin="_CCcCsCesEeSDxN9ngoAe7Q" image="_CCdQ0CesEeSDxN9ngoAe7Q"/>
+    <mappings xmi:id="_M4R_EShVEeSg2Lgr3wkr0g" origin="_M4QJ4ChVEeSg2Lgr3wkr0g" image="_M4R_EChVEeSg2Lgr3wkr0g"/>
+    <mappings xmi:id="_N-v34ihVEeSg2Lgr3wkr0g" origin="_N-v34ChVEeSg2Lgr3wkr0g" image="_N-v34ShVEeSg2Lgr3wkr0g"/>
+    <mappings xmi:id="_iCkykihVEeSg2Lgr3wkr0g" origin="_iCkykChVEeSg2Lgr3wkr0g" image="_iCkykShVEeSg2Lgr3wkr0g"/>
+    <mappings xmi:id="_uG_msihVEeSg2Lgr3wkr0g" origin="_uG_msChVEeSg2Lgr3wkr0g" image="_uG_msShVEeSg2Lgr3wkr0g"/>
+    <mappings xmi:id="_0_Op0ihVEeSg2Lgr3wkr0g" origin="_0_Op0ChVEeSg2Lgr3wkr0g" image="_0_Op0ShVEeSg2Lgr3wkr0g"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_hpewYChFEeSo-P2It5ve2w" name="init">
+    <parameters xmi:id="_hpewYShFEeSo-P2It5ve2w" name="invariant"/>
+    <parameters xmi:id="_hpewYyhFEeSo-P2It5ve2w" name="ngc"/>
+    <parameters xmi:id="_hpewZChFEeSo-P2It5ve2w" name="invname"/>
+    <parameters xmi:id="_TYw8cChIEeSm5eqDCC44cA" name="uri"/>
+    <lhs xmi:id="_hpewZShFEeSo-P2It5ve2w" name="Lhs">
+      <nodes xmi:id="_hpewZihFEeSo-P2It5ve2w" name="invariant" incoming="_hpewaihFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint"/>
+        <attributes xmi:id="_hpewZyhFEeSo-P2It5ve2w" value="invname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_hpewaChFEeSo-P2It5ve2w" incoming="_QHwesChIEeSm5eqDCC44cA" outgoing="_hpewaihFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Class"/>
+      </nodes>
+      <nodes xmi:id="_zHAsUChHEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+        <attributes xmi:id="_VcYaAChIEeSm5eqDCC44cA" value="uri">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_MyM4IChIEeSm5eqDCC44cA" outgoing="_QHwesChIEeSm5eqDCC44cA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package"/>
+        <attributes xmi:id="_UGovEChIEeSm5eqDCC44cA" value="uri">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package/nsURI"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_hpewaihFEeSo-P2It5ve2w" source="_hpewaChFEeSo-P2It5ve2w" target="_hpewZihFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Type/ownedInvariant"/>
+      </edges>
+      <edges xmi:id="_QHwesChIEeSm5eqDCC44cA" source="_MyM4IChIEeSm5eqDCC44cA" target="_hpewaChFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package/ownedType"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_hpewayhFEeSo-P2It5ve2w" name="Rhs">
+      <nodes xmi:id="_hpewbChFEeSo-P2It5ve2w" name="invariant" incoming="_hpewdChFEeSo-P2It5ve2w _hpewdihFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Constraint"/>
+        <attributes xmi:id="_hpewbShFEeSo-P2It5ve2w" value="invname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_hpewbihFEeSo-P2It5ve2w" incoming="_QHxFwChIEeSm5eqDCC44cA" outgoing="_hpewdChFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Class"/>
+      </nodes>
+      <nodes xmi:id="_hpewcChFEeSo-P2It5ve2w" name="ngc" incoming="_hpewdyhFEeSo-P2It5ve2w" outgoing="_hpewdShFEeSo-P2It5ve2w _0zFzoChHEeSo-P2It5ve2w">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint"/>
+        <attributes xmi:id="_hpewcShFEeSo-P2It5ve2w" value="invname">
+          <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_hpewcihFEeSo-P2It5ve2w" incoming="_hpewdShFEeSo-P2It5ve2w">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_hpewcyhFEeSo-P2It5ve2w" outgoing="_hpewdihFEeSo-P2It5ve2w _hpewdyhFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_zHBTYChHEeSo-P2It5ve2w" incoming="_0zFzoChHEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+        <attributes xmi:id="_VcZBEChIEeSm5eqDCC44cA" value="uri">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_MyM4IShIEeSm5eqDCC44cA" outgoing="_QHxFwChIEeSm5eqDCC44cA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package"/>
+        <attributes xmi:id="_UGovEShIEeSm5eqDCC44cA" value="uri">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package/nsURI"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_hpewdChFEeSo-P2It5ve2w" source="_hpewbihFEeSo-P2It5ve2w" target="_hpewbChFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Type/ownedInvariant"/>
+      </edges>
+      <edges xmi:id="_hpewdShFEeSo-P2It5ve2w" source="_hpewcChFEeSo-P2It5ve2w" target="_hpewcihFEeSo-P2It5ve2w">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/emptyDomain"/>
+      </edges>
+      <edges xmi:id="_hpewdihFEeSo-P2It5ve2w" source="_hpewcyhFEeSo-P2It5ve2w" target="_hpewbChFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_hpewdyhFEeSo-P2It5ve2w" source="_hpewcyhFEeSo-P2It5ve2w" target="_hpewcChFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_0zFzoChHEeSo-P2It5ve2w" source="_hpewcChFEeSo-P2It5ve2w" target="_zHBTYChHEeSo-P2It5ve2w">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphConstraint/import"/>
+      </edges>
+      <edges xmi:id="_QHxFwChIEeSm5eqDCC44cA" source="_MyM4IShIEeSm5eqDCC44cA" target="_hpewbihFEeSo-P2It5ve2w">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//Package/ownedType"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_hpeweChFEeSo-P2It5ve2w" origin="_hpewZihFEeSo-P2It5ve2w" image="_hpewbChFEeSo-P2It5ve2w"/>
+    <mappings xmi:id="_hpeweShFEeSo-P2It5ve2w" origin="_hpewaChFEeSo-P2It5ve2w" image="_hpewbihFEeSo-P2It5ve2w"/>
+    <mappings xmi:id="_zHBTYShHEeSo-P2It5ve2w" origin="_zHAsUChHEeSo-P2It5ve2w" image="_zHBTYChHEeSo-P2It5ve2w"/>
+    <mappings xmi:id="_MyM4IihIEeSm5eqDCC44cA" origin="_MyM4IChIEeSm5eqDCC44cA" image="_MyM4IShIEeSm5eqDCC44cA"/>
+  </units>
+  <units xsi:type="henshin:IndependentUnit" xmi:id="_Q2qVoChUEeSOLrlVl7YGiA" name="translate" subUnits="_ieIucCerEeSDxN9ngoAe7Q _d7CVkCk-EeS-5ODOZOfSDg _833hQCnaEeSuUdESRp50Fw _s0OagCx3EeSwcp9OQgj4Dw"/>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_fxtYoChUEeSOLrlVl7YGiA" name="main" subUnit="_Q2qVoChUEeSOLrlVl7YGiA"/>
+  <units xsi:type="henshin:Rule" xmi:id="_SVqP4CkoEeSR_qRLVzHuvA" name="tr_E_04_bodyExpression">
+    <lhs xmi:id="_SXL54CkoEeSR_qRLVzHuvA" name="Lhs">
+      <nodes xmi:id="_YD0skCkoEeSR_qRLVzHuvA" incoming="_uZyB8CkoEeSR_qRLVzHuvA" outgoing="_vLmgcCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_YmxBkCkoEeSR_qRLVzHuvA" incoming="_vLmgcCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_fIXGUCkoEeSR_qRLVzHuvA" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ZjGG8CkoEeSR_qRLVzHuvA" outgoing="_uZyB8CkoEeSR_qRLVzHuvA _utOiYCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_ajfM8CkoEeSR_qRLVzHuvA" incoming="_utOiYCkoEeSR_qRLVzHuvA" outgoing="_1qWFgCkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_mPjLcCkoEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_bsFzwCkoEeSR_qRLVzHuvA" incoming="_1qWFgCkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_uZyB8CkoEeSR_qRLVzHuvA" source="_ZjGG8CkoEeSR_qRLVzHuvA" target="_YD0skCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_utOiYCkoEeSR_qRLVzHuvA" source="_ZjGG8CkoEeSR_qRLVzHuvA" target="_ajfM8CkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_vLmgcCkoEeSR_qRLVzHuvA" source="_YD0skCkoEeSR_qRLVzHuvA" target="_YmxBkCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_1qWFgCkoEeSR_qRLVzHuvA" source="_ajfM8CkoEeSR_qRLVzHuvA" target="_bsFzwCkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_4HF0wCkoEeSR_qRLVzHuvA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_4HF0wSkoEeSR_qRLVzHuvA">
+          <conclusion xmi:id="_4HF0wikoEeSR_qRLVzHuvA">
+            <nodes xmi:id="_4HF0wykoEeSR_qRLVzHuvA" incoming="_4HGb0ikoEeSR_qRLVzHuvA" outgoing="_4HGb1ikoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+            </nodes>
+            <nodes xmi:id="_4HGb0CkoEeSR_qRLVzHuvA" outgoing="_4HGb0ikoEeSR_qRLVzHuvA _4HHC5ykoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_4HGb0ykoEeSR_qRLVzHuvA" incoming="_4HGb1ikoEeSR_qRLVzHuvA _0BwXECkoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+              <attributes xmi:id="_4HGb1CkoEeSR_qRLVzHuvA" value="true">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_dJSxkCkoEeSR_qRLVzHuvA" outgoing="_0BwXECkoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_4HHC5CkoEeSR_qRLVzHuvA" incoming="_4HHC5ykoEeSR_qRLVzHuvA" outgoing="_4HHp9SkoEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+              <attributes xmi:id="_4HHC5SkoEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+                <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_4HHp8ykoEeSR_qRLVzHuvA" incoming="_4HHp9SkoEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <edges xmi:id="_4HGb0ikoEeSR_qRLVzHuvA" source="_4HGb0CkoEeSR_qRLVzHuvA" target="_4HF0wykoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+            <edges xmi:id="_4HGb1ikoEeSR_qRLVzHuvA" source="_4HF0wykoEeSR_qRLVzHuvA" target="_4HGb0ykoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+            </edges>
+            <edges xmi:id="_4HHC5ykoEeSR_qRLVzHuvA" source="_4HGb0CkoEeSR_qRLVzHuvA" target="_4HHC5CkoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+            </edges>
+            <edges xmi:id="_4HHp9SkoEeSR_qRLVzHuvA" source="_4HHC5CkoEeSR_qRLVzHuvA" target="_4HHp8ykoEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+            </edges>
+            <edges xmi:id="_0BwXECkoEeSR_qRLVzHuvA" source="_dJSxkCkoEeSR_qRLVzHuvA" target="_4HGb0ykoEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_4HF0xCkoEeSR_qRLVzHuvA" origin="_YD0skCkoEeSR_qRLVzHuvA" image="_4HF0wykoEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_4HGb0SkoEeSR_qRLVzHuvA" origin="_ZjGG8CkoEeSR_qRLVzHuvA" image="_4HGb0CkoEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_4HGb1SkoEeSR_qRLVzHuvA" origin="_YmxBkCkoEeSR_qRLVzHuvA" image="_4HGb0ykoEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_4HHC5ikoEeSR_qRLVzHuvA" origin="_ajfM8CkoEeSR_qRLVzHuvA" image="_4HHC5CkoEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_4HHp9CkoEeSR_qRLVzHuvA" origin="_bsFzwCkoEeSR_qRLVzHuvA" image="_4HHp8ykoEeSR_qRLVzHuvA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_SXL54SkoEeSR_qRLVzHuvA" name="Rhs">
+      <nodes xmi:id="_YD0skSkoEeSR_qRLVzHuvA" incoming="_uZyB8SkoEeSR_qRLVzHuvA" outgoing="_vLnHgCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_YmxBkSkoEeSR_qRLVzHuvA" incoming="_vLnHgCkoEeSR_qRLVzHuvA _zpGmgCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_fIY7gCkoEeSR_qRLVzHuvA" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ZjGG8SkoEeSR_qRLVzHuvA" outgoing="_uZyB8SkoEeSR_qRLVzHuvA _utPJcCkoEeSR_qRLVzHuvA _zK5nkCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_ajfM8SkoEeSR_qRLVzHuvA" incoming="_utPJcCkoEeSR_qRLVzHuvA" outgoing="_1qWskCkoEeSR_qRLVzHuvA _0ZwnYCkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_mPkZkCkoEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_bsFzwSkoEeSR_qRLVzHuvA" incoming="_1qWskCkoEeSR_qRLVzHuvA _2Fa38CkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_ct8SUCkoEeSR_qRLVzHuvA" incoming="_zK5nkCkoEeSR_qRLVzHuvA" outgoing="_zpGmgCkoEeSR_qRLVzHuvA _6IY-ICkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_dmTdsCkoEeSR_qRLVzHuvA" incoming="_0ZwnYCkoEeSR_qRLVzHuvA _6IY-ICkoEeSR_qRLVzHuvA" outgoing="_2Fa38CkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <edges xmi:id="_uZyB8SkoEeSR_qRLVzHuvA" source="_ZjGG8SkoEeSR_qRLVzHuvA" target="_YD0skSkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_utPJcCkoEeSR_qRLVzHuvA" source="_ZjGG8SkoEeSR_qRLVzHuvA" target="_ajfM8SkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_vLnHgCkoEeSR_qRLVzHuvA" source="_YD0skSkoEeSR_qRLVzHuvA" target="_YmxBkSkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_1qWskCkoEeSR_qRLVzHuvA" source="_ajfM8SkoEeSR_qRLVzHuvA" target="_bsFzwSkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_zK5nkCkoEeSR_qRLVzHuvA" source="_ZjGG8SkoEeSR_qRLVzHuvA" target="_ct8SUCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_zpGmgCkoEeSR_qRLVzHuvA" source="_ct8SUCkoEeSR_qRLVzHuvA" target="_YmxBkSkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_6IY-ICkoEeSR_qRLVzHuvA" source="_ct8SUCkoEeSR_qRLVzHuvA" target="_dmTdsCkoEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_0ZwnYCkoEeSR_qRLVzHuvA" source="_ajfM8SkoEeSR_qRLVzHuvA" target="_dmTdsCkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_2Fa38CkoEeSR_qRLVzHuvA" source="_dmTdsCkoEeSR_qRLVzHuvA" target="_bsFzwSkoEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_YD0skikoEeSR_qRLVzHuvA" origin="_YD0skCkoEeSR_qRLVzHuvA" image="_YD0skSkoEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_YmxBkikoEeSR_qRLVzHuvA" origin="_YmxBkCkoEeSR_qRLVzHuvA" image="_YmxBkSkoEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_ZjGG8ikoEeSR_qRLVzHuvA" origin="_ZjGG8CkoEeSR_qRLVzHuvA" image="_ZjGG8SkoEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_ajfM8ikoEeSR_qRLVzHuvA" origin="_ajfM8CkoEeSR_qRLVzHuvA" image="_ajfM8SkoEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_bsFzwikoEeSR_qRLVzHuvA" origin="_bsFzwCkoEeSR_qRLVzHuvA" image="_bsFzwSkoEeSR_qRLVzHuvA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_-Ibn8CkvEeSR_qRLVzHuvA" name="tr_E_0506_bodyExpression">
+    <parameters xmi:id="_meteMCnrEeSuUdESRp50Fw" name="opname"/>
+    <lhs xmi:id="_-IggcCkvEeSR_qRLVzHuvA" name="Lhs">
+      <nodes xmi:id="_BnRGUCkwEeSR_qRLVzHuvA" incoming="_VE91ICkwEeSR_qRLVzHuvA" outgoing="_UB7DwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_Cb_H0CkwEeSR_qRLVzHuvA" incoming="_UB7DwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_1lZg0Ck4EeSVILOgzpIaIA" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_EpfhMCkwEeSR_qRLVzHuvA" outgoing="_VE91ICkwEeSR_qRLVzHuvA _VW55sCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_FYwa8CkwEeSR_qRLVzHuvA" incoming="_VW55sCkwEeSR_qRLVzHuvA" outgoing="_WrJIwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_MZEcACkwEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_F5iMwCkwEeSR_qRLVzHuvA" incoming="_WrJIwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_UB7DwCkwEeSR_qRLVzHuvA" source="_BnRGUCkwEeSR_qRLVzHuvA" target="_Cb_H0CkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_VE91ICkwEeSR_qRLVzHuvA" source="_EpfhMCkwEeSR_qRLVzHuvA" target="_BnRGUCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_VW55sCkwEeSR_qRLVzHuvA" source="_EpfhMCkwEeSR_qRLVzHuvA" target="_FYwa8CkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_WrJIwCkwEeSR_qRLVzHuvA" source="_FYwa8CkwEeSR_qRLVzHuvA" target="_F5iMwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_ayR9QCkwEeSR_qRLVzHuvA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_ayR9QSkwEeSR_qRLVzHuvA">
+          <conclusion xmi:id="_ayR9QikwEeSR_qRLVzHuvA">
+            <nodes xmi:id="_ayR9QykwEeSR_qRLVzHuvA" incoming="_ayR9RykwEeSR_qRLVzHuvA" outgoing="_aySkUikwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+            </nodes>
+            <nodes xmi:id="_ayR9RSkwEeSR_qRLVzHuvA" outgoing="_ayR9RykwEeSR_qRLVzHuvA _ayTLYCkwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_aySkUCkwEeSR_qRLVzHuvA" incoming="_aySkUikwEeSR_qRLVzHuvA _bmnkQCkwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_1lZg0ik4EeSVILOgzpIaIA" value="opname">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_aySkVykwEeSR_qRLVzHuvA" incoming="_ayTLYCkwEeSR_qRLVzHuvA" outgoing="_ayTLYykwEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+              <attributes xmi:id="_aySkWCkwEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+                <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_ayTLYSkwEeSR_qRLVzHuvA" incoming="_ayTLYykwEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_HozyACkwEeSR_qRLVzHuvA" outgoing="_bmnkQCkwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_ayR9RykwEeSR_qRLVzHuvA" source="_ayR9RSkwEeSR_qRLVzHuvA" target="_ayR9QykwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+            <edges xmi:id="_aySkUikwEeSR_qRLVzHuvA" source="_ayR9QykwEeSR_qRLVzHuvA" target="_aySkUCkwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+            </edges>
+            <edges xmi:id="_ayTLYCkwEeSR_qRLVzHuvA" source="_ayR9RSkwEeSR_qRLVzHuvA" target="_aySkVykwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+            </edges>
+            <edges xmi:id="_ayTLYykwEeSR_qRLVzHuvA" source="_aySkVykwEeSR_qRLVzHuvA" target="_ayTLYSkwEeSR_qRLVzHuvA">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+            </edges>
+            <edges xmi:id="_bmnkQCkwEeSR_qRLVzHuvA" source="_HozyACkwEeSR_qRLVzHuvA" target="_aySkUCkwEeSR_qRLVzHuvA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_ayR9RCkwEeSR_qRLVzHuvA" origin="_BnRGUCkwEeSR_qRLVzHuvA" image="_ayR9QykwEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_ayR9RikwEeSR_qRLVzHuvA" origin="_EpfhMCkwEeSR_qRLVzHuvA" image="_ayR9RSkwEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_aySkUSkwEeSR_qRLVzHuvA" origin="_Cb_H0CkwEeSR_qRLVzHuvA" image="_aySkUCkwEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_aySkWSkwEeSR_qRLVzHuvA" origin="_FYwa8CkwEeSR_qRLVzHuvA" image="_aySkVykwEeSR_qRLVzHuvA"/>
+          <mappings xmi:id="_ayTLYikwEeSR_qRLVzHuvA" origin="_F5iMwCkwEeSR_qRLVzHuvA" image="_ayTLYSkwEeSR_qRLVzHuvA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_-IggcSkvEeSR_qRLVzHuvA" name="Rhs">
+      <nodes xmi:id="_BnSUcCkwEeSR_qRLVzHuvA" incoming="_VE-cMCkwEeSR_qRLVzHuvA" outgoing="_UB7DwSkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_Cb_H0SkwEeSR_qRLVzHuvA" incoming="_UB7DwSkwEeSR_qRLVzHuvA _ZQUbQCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_1lZg0Sk4EeSVILOgzpIaIA" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_EpfhMSkwEeSR_qRLVzHuvA" outgoing="_VE-cMCkwEeSR_qRLVzHuvA _VW55sSkwEeSR_qRLVzHuvA _2CSKwCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_FYwa8SkwEeSR_qRLVzHuvA" incoming="_VW55sSkwEeSR_qRLVzHuvA" outgoing="_WrJv0CkwEeSR_qRLVzHuvA _YBa_MCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_MZEcASkwEeSR_qRLVzHuvA" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_F5iMwSkwEeSR_qRLVzHuvA" incoming="_WrJv0CkwEeSR_qRLVzHuvA _YiIfkCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_HDJgMCkwEeSR_qRLVzHuvA" incoming="_2CSKwCkwEeSR_qRLVzHuvA" outgoing="_ZQUbQCkwEeSR_qRLVzHuvA _ZolKQCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_IUbh4CkwEeSR_qRLVzHuvA" incoming="_YBa_MCkwEeSR_qRLVzHuvA _ZolKQCkwEeSR_qRLVzHuvA" outgoing="_YiIfkCkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_O0yQgCkwEeSR_qRLVzHuvA" value="opname.toUpperCase()">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_UB7DwSkwEeSR_qRLVzHuvA" source="_BnSUcCkwEeSR_qRLVzHuvA" target="_Cb_H0SkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_VE-cMCkwEeSR_qRLVzHuvA" source="_EpfhMSkwEeSR_qRLVzHuvA" target="_BnSUcCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_VW55sSkwEeSR_qRLVzHuvA" source="_EpfhMSkwEeSR_qRLVzHuvA" target="_FYwa8SkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_WrJv0CkwEeSR_qRLVzHuvA" source="_FYwa8SkwEeSR_qRLVzHuvA" target="_F5iMwSkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_YBa_MCkwEeSR_qRLVzHuvA" source="_FYwa8SkwEeSR_qRLVzHuvA" target="_IUbh4CkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_YiIfkCkwEeSR_qRLVzHuvA" source="_IUbh4CkwEeSR_qRLVzHuvA" target="_F5iMwSkwEeSR_qRLVzHuvA">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_ZQUbQCkwEeSR_qRLVzHuvA" source="_HDJgMCkwEeSR_qRLVzHuvA" target="_Cb_H0SkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_ZolKQCkwEeSR_qRLVzHuvA" source="_HDJgMCkwEeSR_qRLVzHuvA" target="_IUbh4CkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_2CSKwCkwEeSR_qRLVzHuvA" source="_EpfhMSkwEeSR_qRLVzHuvA" target="_HDJgMCkwEeSR_qRLVzHuvA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_YbC5sCnsEeSuUdESRp50Fw" conditionText="(opname==&quot;not&quot;)||(opname==&quot;and&quot;)||(opname==&quot;or&quot;)"/>
+    <mappings xmi:id="_BnSUcSkwEeSR_qRLVzHuvA" origin="_BnRGUCkwEeSR_qRLVzHuvA" image="_BnSUcCkwEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_Cb_H0ikwEeSR_qRLVzHuvA" origin="_Cb_H0CkwEeSR_qRLVzHuvA" image="_Cb_H0SkwEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_EpfhMikwEeSR_qRLVzHuvA" origin="_EpfhMCkwEeSR_qRLVzHuvA" image="_EpfhMSkwEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_FYwa8ikwEeSR_qRLVzHuvA" origin="_FYwa8CkwEeSR_qRLVzHuvA" image="_FYwa8SkwEeSR_qRLVzHuvA"/>
+    <mappings xmi:id="_F5iMwikwEeSR_qRLVzHuvA" origin="_F5iMwCkwEeSR_qRLVzHuvA" image="_F5iMwSkwEeSR_qRLVzHuvA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_QVEroCk9EeSmE76Ip4KesA" name="tr_E_04_source">
+    <lhs xmi:id="_QVQ44Ck9EeSmE76Ip4KesA" name="Lhs">
+      <nodes xmi:id="_Xi3vECk9EeSmE76Ip4KesA" incoming="_7V3RUCk9EeS-5ODOZOfSDg" outgoing="_9PpdcCk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_YO02ICk9EeSmE76Ip4KesA" incoming="_9PpdcCk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_ouu-ICk9EeSmE76Ip4KesA" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_YwLPsCk9EeSmE76Ip4KesA" outgoing="_7V3RUCk9EeS-5ODOZOfSDg _7p1WMCk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_ZMpJQCk9EeSmE76Ip4KesA" incoming="_7p1WMCk9EeS-5ODOZOfSDg" outgoing="_79nN0Ck9EeS-5ODOZOfSDg">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_ZpuG0Ck9EeSmE76Ip4KesA" incoming="_79nN0Ck9EeS-5ODOZOfSDg">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_7V3RUCk9EeS-5ODOZOfSDg" source="_YwLPsCk9EeSmE76Ip4KesA" target="_Xi3vECk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_7p1WMCk9EeS-5ODOZOfSDg" source="_YwLPsCk9EeSmE76Ip4KesA" target="_ZMpJQCk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_79nN0Ck9EeS-5ODOZOfSDg" source="_ZMpJQCk9EeSmE76Ip4KesA" target="_ZpuG0Ck9EeSmE76Ip4KesA">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_9PpdcCk9EeS-5ODOZOfSDg" source="_Xi3vECk9EeSmE76Ip4KesA" target="_YO02ICk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_cYrAYik9EeSmE76Ip4KesA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_cYrAYyk9EeSmE76Ip4KesA">
+          <conclusion xmi:id="_cYrAZCk9EeSmE76Ip4KesA">
+            <nodes xmi:id="_cYrAZSk9EeSmE76Ip4KesA">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+            </nodes>
+            <nodes xmi:id="_cYrAZyk9EeSmE76Ip4KesA" incoming="_-Nj3MCk9EeS-5ODOZOfSDg">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+              <attributes xmi:id="_ouu-Iik9EeSmE76Ip4KesA" value="true">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_cYrAaSk9EeSmE76Ip4KesA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_cYrAayk9EeSmE76Ip4KesA">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_cYrAbSk9EeSmE76Ip4KesA">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_cYk5wCk9EeSmE76Ip4KesA" outgoing="_-Nj3MCk9EeS-5ODOZOfSDg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_-Nj3MCk9EeS-5ODOZOfSDg" source="_cYk5wCk9EeSmE76Ip4KesA" target="_cYrAZyk9EeSmE76Ip4KesA">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_cYrAZik9EeSmE76Ip4KesA" origin="_Xi3vECk9EeSmE76Ip4KesA" image="_cYrAZSk9EeSmE76Ip4KesA"/>
+          <mappings xmi:id="_cYrAaCk9EeSmE76Ip4KesA" origin="_YO02ICk9EeSmE76Ip4KesA" image="_cYrAZyk9EeSmE76Ip4KesA"/>
+          <mappings xmi:id="_cYrAaik9EeSmE76Ip4KesA" origin="_YwLPsCk9EeSmE76Ip4KesA" image="_cYrAaSk9EeSmE76Ip4KesA"/>
+          <mappings xmi:id="_cYrAbCk9EeSmE76Ip4KesA" origin="_ZMpJQCk9EeSmE76Ip4KesA" image="_cYrAayk9EeSmE76Ip4KesA"/>
+          <mappings xmi:id="_cYrAbik9EeSmE76Ip4KesA" origin="_ZpuG0Ck9EeSmE76Ip4KesA" image="_cYrAbSk9EeSmE76Ip4KesA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_QVQ44Sk9EeSmE76Ip4KesA" name="Rhs">
+      <nodes xmi:id="_Xi3vESk9EeSmE76Ip4KesA" incoming="_7V3RUSk9EeS-5ODOZOfSDg" outgoing="_9PpdcSk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_YO02ISk9EeSmE76Ip4KesA" incoming="_9PpdcSk9EeS-5ODOZOfSDg _-_iGsCk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_ouu-ISk9EeSmE76Ip4KesA" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_YwLPsSk9EeSmE76Ip4KesA" outgoing="_7V3RUSk9EeS-5ODOZOfSDg _7p1WMSk9EeS-5ODOZOfSDg _-tZN0Ck9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_ZMpwUCk9EeSmE76Ip4KesA" incoming="_7p1WMSk9EeS-5ODOZOfSDg" outgoing="_79nN0Sk9EeS-5ODOZOfSDg __mUZ4Ck9EeS-5ODOZOfSDg">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_ZpuG0Sk9EeSmE76Ip4KesA" incoming="_79nN0Sk9EeS-5ODOZOfSDg _ACQvACk-EeS-5ODOZOfSDg">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_bH1qoCk9EeSmE76Ip4KesA" incoming="_-tZN0Ck9EeS-5ODOZOfSDg" outgoing="_-_iGsCk9EeS-5ODOZOfSDg __aqjgCk9EeS-5ODOZOfSDg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_bl7U0Ck9EeSmE76Ip4KesA" incoming="__aqjgCk9EeS-5ODOZOfSDg __mUZ4Ck9EeS-5ODOZOfSDg" outgoing="_ACQvACk-EeS-5ODOZOfSDg">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <edges xmi:id="_7V3RUSk9EeS-5ODOZOfSDg" source="_YwLPsSk9EeSmE76Ip4KesA" target="_Xi3vESk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_7p1WMSk9EeS-5ODOZOfSDg" source="_YwLPsSk9EeSmE76Ip4KesA" target="_ZMpwUCk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_79nN0Sk9EeS-5ODOZOfSDg" source="_ZMpwUCk9EeSmE76Ip4KesA" target="_ZpuG0Sk9EeSmE76Ip4KesA">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_9PpdcSk9EeS-5ODOZOfSDg" source="_Xi3vESk9EeSmE76Ip4KesA" target="_YO02ISk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <edges xmi:id="_-tZN0Ck9EeS-5ODOZOfSDg" source="_YwLPsSk9EeSmE76Ip4KesA" target="_bH1qoCk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_-_iGsCk9EeS-5ODOZOfSDg" source="_bH1qoCk9EeSmE76Ip4KesA" target="_YO02ISk9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="__aqjgCk9EeS-5ODOZOfSDg" source="_bH1qoCk9EeSmE76Ip4KesA" target="_bl7U0Ck9EeSmE76Ip4KesA">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="__mUZ4Ck9EeS-5ODOZOfSDg" source="_ZMpwUCk9EeSmE76Ip4KesA" target="_bl7U0Ck9EeSmE76Ip4KesA">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_ACQvACk-EeS-5ODOZOfSDg" source="_bl7U0Ck9EeSmE76Ip4KesA" target="_ZpuG0Sk9EeSmE76Ip4KesA">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Xi3vEik9EeSmE76Ip4KesA" origin="_Xi3vECk9EeSmE76Ip4KesA" image="_Xi3vESk9EeSmE76Ip4KesA"/>
+    <mappings xmi:id="_YO02Iik9EeSmE76Ip4KesA" origin="_YO02ICk9EeSmE76Ip4KesA" image="_YO02ISk9EeSmE76Ip4KesA"/>
+    <mappings xmi:id="_YwLPsik9EeSmE76Ip4KesA" origin="_YwLPsCk9EeSmE76Ip4KesA" image="_YwLPsSk9EeSmE76Ip4KesA"/>
+    <mappings xmi:id="_ZMpwUSk9EeSmE76Ip4KesA" origin="_ZMpJQCk9EeSmE76Ip4KesA" image="_ZMpwUCk9EeSmE76Ip4KesA"/>
+    <mappings xmi:id="_ZpuG0ik9EeSmE76Ip4KesA" origin="_ZpuG0Ck9EeSmE76Ip4KesA" image="_ZpuG0Sk9EeSmE76Ip4KesA"/>
+  </units>
+  <units xsi:type="henshin:IndependentUnit" xmi:id="_d7CVkCk-EeS-5ODOZOfSDg" name="tr_E_04" subUnits="_SVqP4CkoEeSR_qRLVzHuvA _QVEroCk9EeSmE76Ip4KesA _HahZ8CnWEeSqJvnu2EoOyg _hNmEgCnYEeSqJvnu2EoOyg"/>
+  <units xsi:type="henshin:Rule" xmi:id="_HahZ8CnWEeSqJvnu2EoOyg" name="tr_E_04_argument">
+    <lhs xmi:id="_Hap80CnWEeSqJvnu2EoOyg" name="Lhs">
+      <nodes xmi:id="_MVxzACnWEeSqJvnu2EoOyg" incoming="_Ve23YCnWEeSqJvnu2EoOyg" outgoing="_VArGkCnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_M2yOUCnWEeSqJvnu2EoOyg" outgoing="_Ve23YCnWEeSqJvnu2EoOyg _WcQ60CnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_NY5c4CnWEeSqJvnu2EoOyg" incoming="_WcQ60CnWEeSqJvnu2EoOyg" outgoing="_YnsQkCnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_N8VhICnWEeSqJvnu2EoOyg" incoming="_YnsQkCnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_OnhMICnWEeSqJvnu2EoOyg" incoming="_VArGkCnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_SG75UCnWEeSqJvnu2EoOyg" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_VArGkCnWEeSqJvnu2EoOyg" source="_MVxzACnWEeSqJvnu2EoOyg" target="_OnhMICnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_Ve23YCnWEeSqJvnu2EoOyg" source="_M2yOUCnWEeSqJvnu2EoOyg" target="_MVxzACnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_WcQ60CnWEeSqJvnu2EoOyg" source="_M2yOUCnWEeSqJvnu2EoOyg" target="_NY5c4CnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_YnsQkCnWEeSqJvnu2EoOyg" source="_NY5c4CnWEeSqJvnu2EoOyg" target="_N8VhICnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_RT9kQSnWEeSqJvnu2EoOyg">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_RT9kQinWEeSqJvnu2EoOyg">
+          <conclusion xmi:id="_RT9kQynWEeSqJvnu2EoOyg">
+            <nodes xmi:id="_RT9kRCnWEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+            </nodes>
+            <nodes xmi:id="_RT-LUSnWEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_RT-LUynWEeSqJvnu2EoOyg">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_RT-LVSnWEeSqJvnu2EoOyg">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_RT-LVynWEeSqJvnu2EoOyg" incoming="_WF1X0CnWEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+              <attributes xmi:id="_SG75UinWEeSqJvnu2EoOyg" value="true">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_RT89MCnWEeSqJvnu2EoOyg" outgoing="_WF1X0CnWEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_WF1X0CnWEeSqJvnu2EoOyg" source="_RT89MCnWEeSqJvnu2EoOyg" target="_RT-LVynWEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_RT-LUCnWEeSqJvnu2EoOyg" origin="_MVxzACnWEeSqJvnu2EoOyg" image="_RT9kRCnWEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_RT-LUinWEeSqJvnu2EoOyg" origin="_M2yOUCnWEeSqJvnu2EoOyg" image="_RT-LUSnWEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_RT-LVCnWEeSqJvnu2EoOyg" origin="_NY5c4CnWEeSqJvnu2EoOyg" image="_RT-LUynWEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_RT-LVinWEeSqJvnu2EoOyg" origin="_N8VhICnWEeSqJvnu2EoOyg" image="_RT-LVSnWEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_RT-LWCnWEeSqJvnu2EoOyg" origin="_OnhMICnWEeSqJvnu2EoOyg" image="_RT-LVynWEeSqJvnu2EoOyg"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_Hap80SnWEeSqJvnu2EoOyg" name="Rhs">
+      <nodes xmi:id="_MV0PQCnWEeSqJvnu2EoOyg" incoming="_Ve23YSnWEeSqJvnu2EoOyg" outgoing="_VArGkSnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_M2yOUSnWEeSqJvnu2EoOyg" outgoing="_Ve23YSnWEeSqJvnu2EoOyg _WcRh4CnWEeSqJvnu2EoOyg _XREb4CnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_NY5c4SnWEeSqJvnu2EoOyg" incoming="_WcRh4CnWEeSqJvnu2EoOyg" outgoing="_XwF6MCnWEeSqJvnu2EoOyg _Yns3oCnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_N8VhISnWEeSqJvnu2EoOyg" incoming="_Yns3oCnWEeSqJvnu2EoOyg _Y8ifMCnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_OnhMISnWEeSqJvnu2EoOyg" incoming="_VArGkSnWEeSqJvnu2EoOyg _VzBJgCnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_SG75USnWEeSqJvnu2EoOyg" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_P6DLACnWEeSqJvnu2EoOyg" incoming="_XREb4CnWEeSqJvnu2EoOyg" outgoing="_VzBJgCnWEeSqJvnu2EoOyg _WvupYCnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_QhPG0CnWEeSqJvnu2EoOyg" incoming="_WvupYCnWEeSqJvnu2EoOyg _XwF6MCnWEeSqJvnu2EoOyg" outgoing="_Y8ifMCnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <edges xmi:id="_VArGkSnWEeSqJvnu2EoOyg" source="_MV0PQCnWEeSqJvnu2EoOyg" target="_OnhMISnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_Ve23YSnWEeSqJvnu2EoOyg" source="_M2yOUSnWEeSqJvnu2EoOyg" target="_MV0PQCnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_VzBJgCnWEeSqJvnu2EoOyg" source="_P6DLACnWEeSqJvnu2EoOyg" target="_OnhMISnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_WcRh4CnWEeSqJvnu2EoOyg" source="_M2yOUSnWEeSqJvnu2EoOyg" target="_NY5c4SnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_WvupYCnWEeSqJvnu2EoOyg" source="_P6DLACnWEeSqJvnu2EoOyg" target="_QhPG0CnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_XREb4CnWEeSqJvnu2EoOyg" source="_M2yOUSnWEeSqJvnu2EoOyg" target="_P6DLACnWEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_XwF6MCnWEeSqJvnu2EoOyg" source="_NY5c4SnWEeSqJvnu2EoOyg" target="_QhPG0CnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_Yns3oCnWEeSqJvnu2EoOyg" source="_NY5c4SnWEeSqJvnu2EoOyg" target="_N8VhISnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_Y8ifMCnWEeSqJvnu2EoOyg" source="_QhPG0CnWEeSqJvnu2EoOyg" target="_N8VhISnWEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_MV0PQSnWEeSqJvnu2EoOyg" origin="_MVxzACnWEeSqJvnu2EoOyg" image="_MV0PQCnWEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_M2yOUinWEeSqJvnu2EoOyg" origin="_M2yOUCnWEeSqJvnu2EoOyg" image="_M2yOUSnWEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_NY5c4inWEeSqJvnu2EoOyg" origin="_NY5c4CnWEeSqJvnu2EoOyg" image="_NY5c4SnWEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_N8VhIinWEeSqJvnu2EoOyg" origin="_N8VhICnWEeSqJvnu2EoOyg" image="_N8VhISnWEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_OnhMIinWEeSqJvnu2EoOyg" origin="_OnhMICnWEeSqJvnu2EoOyg" image="_OnhMISnWEeSqJvnu2EoOyg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_hNmEgCnYEeSqJvnu2EoOyg" name="tr_E_04_body">
+    <lhs xmi:id="_hNqV8CnYEeSqJvnu2EoOyg" name="Lhs">
+      <nodes xmi:id="_l6USUCnYEeSqJvnu2EoOyg" incoming="_4Pzb4CnYEeSuUdESRp50Fw" outgoing="_2_it4CnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_msG7oCnYEeSqJvnu2EoOyg" outgoing="_4Pzb4CnYEeSuUdESRp50Fw _5L_XUCnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_nWYnsCnYEeSqJvnu2EoOyg" incoming="_5L_XUCnYEeSuUdESRp50Fw" outgoing="_6zJiYCnYEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_n7EpICnYEeSqJvnu2EoOyg" incoming="_2_it4CnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_t3K0ICnYEeSqJvnu2EoOyg" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_omasMCnYEeSqJvnu2EoOyg" incoming="_6zJiYCnYEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_2_it4CnYEeSuUdESRp50Fw" source="_l6USUCnYEeSqJvnu2EoOyg" target="_n7EpICnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_4Pzb4CnYEeSuUdESRp50Fw" source="_msG7oCnYEeSqJvnu2EoOyg" target="_l6USUCnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_5L_XUCnYEeSuUdESRp50Fw" source="_msG7oCnYEeSqJvnu2EoOyg" target="_nWYnsCnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_6zJiYCnYEeSuUdESRp50Fw" source="_nWYnsCnYEeSqJvnu2EoOyg" target="_omasMCnYEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/restriction"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_rhevIynYEeSqJvnu2EoOyg">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_rhevJCnYEeSqJvnu2EoOyg">
+          <conclusion xmi:id="_rhevJSnYEeSqJvnu2EoOyg">
+            <nodes xmi:id="_rhevJinYEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+            </nodes>
+            <nodes xmi:id="_rhfWMSnYEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_rhfWMynYEeSqJvnu2EoOyg">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+            </nodes>
+            <nodes xmi:id="_rhfWNSnYEeSqJvnu2EoOyg" incoming="_57-p0CnYEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+              <attributes xmi:id="_t3LbMSnYEeSqJvnu2EoOyg" value="true">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_rhfWNynYEeSqJvnu2EoOyg">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_rhevICnYEeSqJvnu2EoOyg" outgoing="_57-p0CnYEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_57-p0CnYEeSuUdESRp50Fw" source="_rhevICnYEeSqJvnu2EoOyg" target="_rhfWNSnYEeSqJvnu2EoOyg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_rhfWMCnYEeSqJvnu2EoOyg" origin="_l6USUCnYEeSqJvnu2EoOyg" image="_rhevJinYEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_rhfWMinYEeSqJvnu2EoOyg" origin="_msG7oCnYEeSqJvnu2EoOyg" image="_rhfWMSnYEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_rhfWNCnYEeSqJvnu2EoOyg" origin="_nWYnsCnYEeSqJvnu2EoOyg" image="_rhfWMynYEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_rhfWNinYEeSqJvnu2EoOyg" origin="_n7EpICnYEeSqJvnu2EoOyg" image="_rhfWNSnYEeSqJvnu2EoOyg"/>
+          <mappings xmi:id="_rhfWOCnYEeSqJvnu2EoOyg" origin="_omasMCnYEeSqJvnu2EoOyg" image="_rhfWNynYEeSqJvnu2EoOyg"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_hNqV8SnYEeSqJvnu2EoOyg" name="Rhs">
+      <nodes xmi:id="_l6VgcCnYEeSqJvnu2EoOyg" incoming="_4Pzb4SnYEeSuUdESRp50Fw" outgoing="_2_it4SnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_msHisCnYEeSqJvnu2EoOyg" outgoing="_4Pzb4SnYEeSuUdESRp50Fw _42lIACnYEeSuUdESRp50Fw _5L_-YCnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_nWYnsSnYEeSqJvnu2EoOyg" incoming="_5L_-YCnYEeSuUdESRp50Fw" outgoing="_6JruoCnYEeSuUdESRp50Fw _6zJiYSnYEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_n7EpISnYEeSqJvnu2EoOyg" incoming="_2_it4SnYEeSuUdESRp50Fw _4iGs0CnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp"/>
+        <attributes xmi:id="_t3LbMCnYEeSqJvnu2EoOyg" value="true">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//BooleanLiteralExp/booleanSymbol"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_omasMSnYEeSqJvnu2EoOyg" incoming="_6zJiYSnYEeSuUdESRp50Fw _7B_2sCnYEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_ptGncCnYEeSqJvnu2EoOyg" incoming="_42lIACnYEeSuUdESRp50Fw" outgoing="_4iGs0CnYEeSuUdESRp50Fw _5mDdICnYEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_qejSgCnYEeSqJvnu2EoOyg" incoming="_5mDdICnYEeSuUdESRp50Fw _6JruoCnYEeSuUdESRp50Fw" outgoing="_7B_2sCnYEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <edges xmi:id="_2_it4SnYEeSuUdESRp50Fw" source="_l6VgcCnYEeSqJvnu2EoOyg" target="_n7EpISnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_4Pzb4SnYEeSuUdESRp50Fw" source="_msHisCnYEeSqJvnu2EoOyg" target="_l6VgcCnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_4iGs0CnYEeSuUdESRp50Fw" source="_ptGncCnYEeSqJvnu2EoOyg" target="_n7EpISnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_42lIACnYEeSuUdESRp50Fw" source="_msHisCnYEeSqJvnu2EoOyg" target="_ptGncCnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_5L_-YCnYEeSuUdESRp50Fw" source="_msHisCnYEeSqJvnu2EoOyg" target="_nWYnsSnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_5mDdICnYEeSuUdESRp50Fw" source="_ptGncCnYEeSqJvnu2EoOyg" target="_qejSgCnYEeSqJvnu2EoOyg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_6JruoCnYEeSuUdESRp50Fw" source="_nWYnsSnYEeSqJvnu2EoOyg" target="_qejSgCnYEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_6zJiYSnYEeSuUdESRp50Fw" source="_nWYnsSnYEeSqJvnu2EoOyg" target="_omasMSnYEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/restriction"/>
+      </edges>
+      <edges xmi:id="_7B_2sCnYEeSuUdESRp50Fw" source="_qejSgCnYEeSqJvnu2EoOyg" target="_omasMSnYEeSqJvnu2EoOyg">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_l6WHgCnYEeSqJvnu2EoOyg" origin="_l6USUCnYEeSqJvnu2EoOyg" image="_l6VgcCnYEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_msHisSnYEeSqJvnu2EoOyg" origin="_msG7oCnYEeSqJvnu2EoOyg" image="_msHisCnYEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_nWYnsinYEeSqJvnu2EoOyg" origin="_nWYnsCnYEeSqJvnu2EoOyg" image="_nWYnsSnYEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_n7EpIinYEeSqJvnu2EoOyg" origin="_n7EpICnYEeSqJvnu2EoOyg" image="_n7EpISnYEeSqJvnu2EoOyg"/>
+    <mappings xmi:id="_omasMinYEeSqJvnu2EoOyg" origin="_omasMCnYEeSqJvnu2EoOyg" image="_omasMSnYEeSqJvnu2EoOyg"/>
+  </units>
+  <units xsi:type="henshin:IndependentUnit" xmi:id="_833hQCnaEeSuUdESRp50Fw" name="tr_E_0506" subUnits="_-Ibn8CkvEeSR_qRLVzHuvA _uvuTICngEeSuUdESRp50Fw _LKA3kCnjEeSuUdESRp50Fw _YlJOsCndEeSuUdESRp50Fw"/>
+  <units xsi:type="henshin:Rule" xmi:id="_YlJOsCndEeSuUdESRp50Fw" name="tr_E_0506_body">
+    <parameters xmi:id="_su5C0CnrEeSuUdESRp50Fw" name="opname"/>
+    <lhs xmi:id="_YlOuQCndEeSuUdESRp50Fw" name="Lhs">
+      <nodes xmi:id="_GcGJMCneEeSuUdESRp50Fw" incoming="_ZkZPwCneEeSuUdESRp50Fw" outgoing="_cCUDsCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_HAq14CneEeSuUdESRp50Fw" outgoing="_ZkZPwCneEeSuUdESRp50Fw _apf2oCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_HaSPwCneEeSuUdESRp50Fw" incoming="_apf2oCneEeSuUdESRp50Fw" outgoing="_dYd-UCneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_H_AtcCneEeSuUdESRp50Fw" incoming="_dYd-UCneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_IecbcCneEeSuUdESRp50Fw" incoming="_cCUDsCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_NMrFICneEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ZkZPwCneEeSuUdESRp50Fw" source="_HAq14CneEeSuUdESRp50Fw" target="_GcGJMCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_apf2oCneEeSuUdESRp50Fw" source="_HAq14CneEeSuUdESRp50Fw" target="_HaSPwCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_cCUDsCneEeSuUdESRp50Fw" source="_GcGJMCneEeSuUdESRp50Fw" target="_IecbcCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_dYd-UCneEeSuUdESRp50Fw" source="_HaSPwCneEeSuUdESRp50Fw" target="_H_AtcCneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_KbhzMineEeSuUdESRp50Fw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_KbhzMyneEeSuUdESRp50Fw">
+          <conclusion xmi:id="_KbhzNCneEeSuUdESRp50Fw">
+            <nodes xmi:id="_KbiaQCneEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+            </nodes>
+            <nodes xmi:id="_KbiaQineEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_KbiaRCneEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+            </nodes>
+            <nodes xmi:id="_KbiaRineEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_KbiaSCneEeSuUdESRp50Fw" incoming="_eK12cCneEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_NMrsMCneEeSuUdESRp50Fw" value="opname">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_KbhMICneEeSuUdESRp50Fw" outgoing="_eK12cCneEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_eK12cCneEeSuUdESRp50Fw" source="_KbhMICneEeSuUdESRp50Fw" target="_KbiaSCneEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_KbiaQSneEeSuUdESRp50Fw" origin="_GcGJMCneEeSuUdESRp50Fw" image="_KbiaQCneEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_KbiaQyneEeSuUdESRp50Fw" origin="_HAq14CneEeSuUdESRp50Fw" image="_KbiaQineEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_KbiaRSneEeSuUdESRp50Fw" origin="_HaSPwCneEeSuUdESRp50Fw" image="_KbiaRCneEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_KbiaRyneEeSuUdESRp50Fw" origin="_H_AtcCneEeSuUdESRp50Fw" image="_KbiaRineEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_KbiaSSneEeSuUdESRp50Fw" origin="_IecbcCneEeSuUdESRp50Fw" image="_KbiaSCneEeSuUdESRp50Fw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_YlOuQSndEeSuUdESRp50Fw" name="Rhs">
+      <nodes xmi:id="_GcGJMSneEeSuUdESRp50Fw" incoming="_ZkZ20CneEeSuUdESRp50Fw" outgoing="_cCUDsSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_HAq14SneEeSuUdESRp50Fw" outgoing="_ZkZ20CneEeSuUdESRp50Fw _apgdsCneEeSuUdESRp50Fw _bDlxoCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_HaSPwSneEeSuUdESRp50Fw" incoming="_apgdsCneEeSuUdESRp50Fw" outgoing="_cxs5QCneEeSuUdESRp50Fw _dYd-USneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_H_AtcSneEeSuUdESRp50Fw" incoming="_dYd-USneEeSuUdESRp50Fw _dpD_ECneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_IecbcSneEeSuUdESRp50Fw" incoming="_Z737oCneEeSuUdESRp50Fw _cCUDsSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_NMrFISneEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_JPNxECneEeSuUdESRp50Fw" incoming="_bDlxoCneEeSuUdESRp50Fw" outgoing="_Z737oCneEeSuUdESRp50Fw _aTntQCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_J126UCneEeSuUdESRp50Fw" incoming="_aTntQCneEeSuUdESRp50Fw _cxs5QCneEeSuUdESRp50Fw" outgoing="_dpD_ECneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_Nrnq8CneEeSuUdESRp50Fw" value="opname.toUpperCase()">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ZkZ20CneEeSuUdESRp50Fw" source="_HAq14SneEeSuUdESRp50Fw" target="_GcGJMSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_Z737oCneEeSuUdESRp50Fw" source="_JPNxECneEeSuUdESRp50Fw" target="_IecbcSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_aTntQCneEeSuUdESRp50Fw" source="_JPNxECneEeSuUdESRp50Fw" target="_J126UCneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_apgdsCneEeSuUdESRp50Fw" source="_HAq14SneEeSuUdESRp50Fw" target="_HaSPwSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_bDlxoCneEeSuUdESRp50Fw" source="_HAq14SneEeSuUdESRp50Fw" target="_JPNxECneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_cCUDsSneEeSuUdESRp50Fw" source="_GcGJMSneEeSuUdESRp50Fw" target="_IecbcSneEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_cxs5QCneEeSuUdESRp50Fw" source="_HaSPwSneEeSuUdESRp50Fw" target="_J126UCneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_dYd-USneEeSuUdESRp50Fw" source="_HaSPwSneEeSuUdESRp50Fw" target="_H_AtcSneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_dpD_ECneEeSuUdESRp50Fw" source="_J126UCneEeSuUdESRp50Fw" target="_H_AtcSneEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_ozJJgCnsEeSuUdESRp50Fw" conditionText="(opname==&quot;not&quot;)||(opname==&quot;and&quot;)||(opname==&quot;or&quot;)"/>
+    <mappings xmi:id="_GcGJMineEeSuUdESRp50Fw" origin="_GcGJMCneEeSuUdESRp50Fw" image="_GcGJMSneEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_HArc8CneEeSuUdESRp50Fw" origin="_HAq14CneEeSuUdESRp50Fw" image="_HAq14SneEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_HaSPwineEeSuUdESRp50Fw" origin="_HaSPwCneEeSuUdESRp50Fw" image="_HaSPwSneEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_H_AtcineEeSuUdESRp50Fw" origin="_H_AtcCneEeSuUdESRp50Fw" image="_H_AtcSneEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_IecbcineEeSuUdESRp50Fw" origin="_IecbcCneEeSuUdESRp50Fw" image="_IecbcSneEeSuUdESRp50Fw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_uvuTICngEeSuUdESRp50Fw" name="tr_E_0506_source">
+    <parameters xmi:id="_qzSRwCnrEeSuUdESRp50Fw" name="opname"/>
+    <lhs xmi:id="_uv22ACngEeSuUdESRp50Fw" name="Lhs">
+      <nodes xmi:id="_1oHHQCngEeSuUdESRp50Fw" incoming="_NAos4CnhEeSuUdESRp50Fw" outgoing="_Mp1WcCnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_2VLooCngEeSuUdESRp50Fw" incoming="_Mp1WcCnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_7v0sYCngEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_20CH0CngEeSuUdESRp50Fw" outgoing="_NAos4CnhEeSuUdESRp50Fw _NYcI4CnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_3fZZACngEeSuUdESRp50Fw" incoming="_NYcI4CnhEeSuUdESRp50Fw" outgoing="_NjWYYCnhEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_36Fw8CngEeSuUdESRp50Fw" incoming="_NjWYYCnhEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_Mp1WcCnhEeSuUdESRp50Fw" source="_1oHHQCngEeSuUdESRp50Fw" target="_2VLooCngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <edges xmi:id="_NAos4CnhEeSuUdESRp50Fw" source="_20CH0CngEeSuUdESRp50Fw" target="_1oHHQCngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_NYcI4CnhEeSuUdESRp50Fw" source="_20CH0CngEeSuUdESRp50Fw" target="_3fZZACngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_NjWYYCnhEeSuUdESRp50Fw" source="_3fZZACngEeSuUdESRp50Fw" target="_36Fw8CngEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_6MxlQCngEeSuUdESRp50Fw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_6MxlQSngEeSuUdESRp50Fw">
+          <conclusion xmi:id="_6MxlQingEeSuUdESRp50Fw">
+            <nodes xmi:id="_6MxlQyngEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+            </nodes>
+            <nodes xmi:id="_6MxlRSngEeSuUdESRp50Fw" incoming="_Ro5RcCnhEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_7v0sYingEeSuUdESRp50Fw" value="opname">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_6MxlRyngEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_6MyMUSngEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_6MyMUyngEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_6Mw-MCngEeSuUdESRp50Fw" outgoing="_Ro5RcCnhEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_Ro5RcCnhEeSuUdESRp50Fw" source="_6Mw-MCngEeSuUdESRp50Fw" target="_6MxlRSngEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_6MxlRCngEeSuUdESRp50Fw" origin="_1oHHQCngEeSuUdESRp50Fw" image="_6MxlQyngEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_6MxlRingEeSuUdESRp50Fw" origin="_2VLooCngEeSuUdESRp50Fw" image="_6MxlRSngEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_6MyMUCngEeSuUdESRp50Fw" origin="_20CH0CngEeSuUdESRp50Fw" image="_6MxlRyngEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_6MyMUingEeSuUdESRp50Fw" origin="_3fZZACngEeSuUdESRp50Fw" image="_6MyMUSngEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_6MyMVCngEeSuUdESRp50Fw" origin="_36Fw8CngEeSuUdESRp50Fw" image="_6MyMUyngEeSuUdESRp50Fw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_uv22ASngEeSuUdESRp50Fw" name="Rhs">
+      <nodes xmi:id="_1oJjgCngEeSuUdESRp50Fw" incoming="_NAos4SnhEeSuUdESRp50Fw" outgoing="_Mp19gCnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_2VLooSngEeSuUdESRp50Fw" incoming="_Mp19gCnhEeSuUdESRp50Fw _QkOvcCnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_7v0sYSngEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_20CH0SngEeSuUdESRp50Fw" outgoing="_NAos4SnhEeSuUdESRp50Fw _NYcI4SnhEeSuUdESRp50Fw _QP-9wCnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_3faAECngEeSuUdESRp50Fw" incoming="_NYcI4SnhEeSuUdESRp50Fw" outgoing="_NjWYYSnhEeSuUdESRp50Fw _OthsgCnhEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_36Fw8SngEeSuUdESRp50Fw" incoming="_NjWYYSnhEeSuUdESRp50Fw _Pd8c0CnhEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_5Ckb8CngEeSuUdESRp50Fw" incoming="_QP-9wCnhEeSuUdESRp50Fw" outgoing="_QkOvcCnhEeSuUdESRp50Fw _Q8348CnhEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_5dCKYCngEeSuUdESRp50Fw" incoming="_OthsgCnhEeSuUdESRp50Fw _Q8348CnhEeSuUdESRp50Fw" outgoing="_Pd8c0CnhEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_8FhPkCngEeSuUdESRp50Fw" value="opname.toUpperCase()">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Mp19gCnhEeSuUdESRp50Fw" source="_1oJjgCngEeSuUdESRp50Fw" target="_2VLooSngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <edges xmi:id="_NAos4SnhEeSuUdESRp50Fw" source="_20CH0SngEeSuUdESRp50Fw" target="_1oJjgCngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_NYcI4SnhEeSuUdESRp50Fw" source="_20CH0SngEeSuUdESRp50Fw" target="_3faAECngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_NjWYYSnhEeSuUdESRp50Fw" source="_3faAECngEeSuUdESRp50Fw" target="_36Fw8SngEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_OthsgCnhEeSuUdESRp50Fw" source="_3faAECngEeSuUdESRp50Fw" target="_5dCKYCngEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_Pd8c0CnhEeSuUdESRp50Fw" source="_5dCKYCngEeSuUdESRp50Fw" target="_36Fw8SngEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_QP-9wCnhEeSuUdESRp50Fw" source="_20CH0SngEeSuUdESRp50Fw" target="_5Ckb8CngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_QkOvcCnhEeSuUdESRp50Fw" source="_5Ckb8CngEeSuUdESRp50Fw" target="_2VLooSngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_Q8348CnhEeSuUdESRp50Fw" source="_5Ckb8CngEeSuUdESRp50Fw" target="_5dCKYCngEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_mEIlkCnsEeSuUdESRp50Fw" conditionText="(opname==&quot;not&quot;)||(opname==&quot;and&quot;)||(opname==&quot;or&quot;)"/>
+    <mappings xmi:id="_1oJjgSngEeSuUdESRp50Fw" origin="_1oHHQCngEeSuUdESRp50Fw" image="_1oJjgCngEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_2VLooingEeSuUdESRp50Fw" origin="_2VLooCngEeSuUdESRp50Fw" image="_2VLooSngEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_20CH0ingEeSuUdESRp50Fw" origin="_20CH0CngEeSuUdESRp50Fw" image="_20CH0SngEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_3faAESngEeSuUdESRp50Fw" origin="_3fZZACngEeSuUdESRp50Fw" image="_3faAECngEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_36GYACngEeSuUdESRp50Fw" origin="_36Fw8CngEeSuUdESRp50Fw" image="_36Fw8SngEeSuUdESRp50Fw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_LKA3kCnjEeSuUdESRp50Fw" name="tr_E_0506_argument">
+    <parameters xmi:id="_ozlD0CnrEeSuUdESRp50Fw" name="opname"/>
+    <lhs xmi:id="_LKFJACnjEeSuUdESRp50Fw" name="Lhs">
+      <nodes xmi:id="_PbodwCnjEeSuUdESRp50Fw" incoming="_npFgQCnjEeSuUdESRp50Fw" outgoing="_pnuXMCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_QClwECnjEeSuUdESRp50Fw" incoming="_pnuXMCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_Udmi0CnjEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Qe2OQCnjEeSuUdESRp50Fw" outgoing="_npFgQCnjEeSuUdESRp50Fw _oxf50CnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_RAzr0CnjEeSuUdESRp50Fw" incoming="_oxf50CnjEeSuUdESRp50Fw" outgoing="_q8z60CnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_RkAfgCnjEeSuUdESRp50Fw" incoming="_q8z60CnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_npFgQCnjEeSuUdESRp50Fw" source="_Qe2OQCnjEeSuUdESRp50Fw" target="_PbodwCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_oxf50CnjEeSuUdESRp50Fw" source="_Qe2OQCnjEeSuUdESRp50Fw" target="_RAzr0CnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_pnuXMCnjEeSuUdESRp50Fw" source="_PbodwCnjEeSuUdESRp50Fw" target="_QClwECnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_q8z60CnjEeSuUdESRp50Fw" source="_RAzr0CnjEeSuUdESRp50Fw" target="_RkAfgCnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_TeWFQCnjEeSuUdESRp50Fw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_TeWFQSnjEeSuUdESRp50Fw">
+          <conclusion xmi:id="_TeWFQinjEeSuUdESRp50Fw">
+            <nodes xmi:id="_TeWFQynjEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+            </nodes>
+            <nodes xmi:id="_TeWFRSnjEeSuUdESRp50Fw" incoming="_pHcUoCnjEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_Udmi0injEeSuUdESRp50Fw" value="opname">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_TeWFRynjEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_TeWFSSnjEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_TeWsUCnjEeSuUdESRp50Fw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_TeVeMCnjEeSuUdESRp50Fw" outgoing="_pHcUoCnjEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_pHcUoCnjEeSuUdESRp50Fw" source="_TeVeMCnjEeSuUdESRp50Fw" target="_TeWFRSnjEeSuUdESRp50Fw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_TeWFRCnjEeSuUdESRp50Fw" origin="_PbodwCnjEeSuUdESRp50Fw" image="_TeWFQynjEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_TeWFRinjEeSuUdESRp50Fw" origin="_QClwECnjEeSuUdESRp50Fw" image="_TeWFRSnjEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_TeWFSCnjEeSuUdESRp50Fw" origin="_Qe2OQCnjEeSuUdESRp50Fw" image="_TeWFRynjEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_TeWFSinjEeSuUdESRp50Fw" origin="_RAzr0CnjEeSuUdESRp50Fw" image="_TeWFSSnjEeSuUdESRp50Fw"/>
+          <mappings xmi:id="_TeWsUSnjEeSuUdESRp50Fw" origin="_RkAfgCnjEeSuUdESRp50Fw" image="_TeWsUCnjEeSuUdESRp50Fw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_LKFJASnjEeSuUdESRp50Fw" name="Rhs">
+      <nodes xmi:id="_Pbpr4CnjEeSuUdESRp50Fw" incoming="_npGHUCnjEeSuUdESRp50Fw" outgoing="_pnuXMSnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_QCmXICnjEeSuUdESRp50Fw" incoming="_n6_voCnjEeSuUdESRp50Fw _pnuXMSnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_Udmi0SnjEeSuUdESRp50Fw" value="opname">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Qe2OQSnjEeSuUdESRp50Fw" outgoing="_npGHUCnjEeSuUdESRp50Fw _oxgg4CnjEeSuUdESRp50Fw _qJwGMCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_RAzr0SnjEeSuUdESRp50Fw" incoming="_oxgg4CnjEeSuUdESRp50Fw" outgoing="_quwQsCnjEeSuUdESRp50Fw _q8z60SnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_RkAfgSnjEeSuUdESRp50Fw" incoming="_q8z60SnjEeSuUdESRp50Fw _rLEZQCnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_SVUAoCnjEeSuUdESRp50Fw" incoming="_qJwGMCnjEeSuUdESRp50Fw" outgoing="_n6_voCnjEeSuUdESRp50Fw _oOZMwCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_S2SmwCnjEeSuUdESRp50Fw" incoming="_oOZMwCnjEeSuUdESRp50Fw _quwQsCnjEeSuUdESRp50Fw" outgoing="_rLEZQCnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_UusS0CnjEeSuUdESRp50Fw" value="opname.toUpperCase()">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_npGHUCnjEeSuUdESRp50Fw" source="_Qe2OQSnjEeSuUdESRp50Fw" target="_Pbpr4CnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_n6_voCnjEeSuUdESRp50Fw" source="_SVUAoCnjEeSuUdESRp50Fw" target="_QCmXICnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_oOZMwCnjEeSuUdESRp50Fw" source="_SVUAoCnjEeSuUdESRp50Fw" target="_S2SmwCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_oxgg4CnjEeSuUdESRp50Fw" source="_Qe2OQSnjEeSuUdESRp50Fw" target="_RAzr0SnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_pnuXMSnjEeSuUdESRp50Fw" source="_Pbpr4CnjEeSuUdESRp50Fw" target="_QCmXICnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_qJwGMCnjEeSuUdESRp50Fw" source="_Qe2OQSnjEeSuUdESRp50Fw" target="_SVUAoCnjEeSuUdESRp50Fw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_quwQsCnjEeSuUdESRp50Fw" source="_RAzr0SnjEeSuUdESRp50Fw" target="_S2SmwCnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_q8z60SnjEeSuUdESRp50Fw" source="_RAzr0SnjEeSuUdESRp50Fw" target="_RkAfgSnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_rLEZQCnjEeSuUdESRp50Fw" source="_S2SmwCnjEeSuUdESRp50Fw" target="_RkAfgSnjEeSuUdESRp50Fw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_jzTycCnsEeSuUdESRp50Fw" conditionText="(opname==&quot;not&quot;)||(opname==&quot;and&quot;)||(opname==&quot;or&quot;)"/>
+    <mappings xmi:id="_Pbpr4SnjEeSuUdESRp50Fw" origin="_PbodwCnjEeSuUdESRp50Fw" image="_Pbpr4CnjEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_QCmXISnjEeSuUdESRp50Fw" origin="_QClwECnjEeSuUdESRp50Fw" image="_QCmXICnjEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_Qe2OQinjEeSuUdESRp50Fw" origin="_Qe2OQCnjEeSuUdESRp50Fw" image="_Qe2OQSnjEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_RAzr0injEeSuUdESRp50Fw" origin="_RAzr0CnjEeSuUdESRp50Fw" image="_RAzr0SnjEeSuUdESRp50Fw"/>
+    <mappings xmi:id="_RkAfginjEeSuUdESRp50Fw" origin="_RkAfgCnjEeSuUdESRp50Fw" image="_RkAfgSnjEeSuUdESRp50Fw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_EtmAMCx0EeSwcp9OQgj4Dw" name="tr_E_09_bodyExpression">
+    <lhs xmi:id="_EvOX5Cx0EeSwcp9OQgj4Dw" name="Lhs">
+      <nodes xmi:id="_MWP-MCx1EeSwcp9OQgj4Dw" incoming="_dT_4wCx1EeSwcp9OQgj4Dw" outgoing="_gDZeQCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_MzjlQCx1EeSwcp9OQgj4Dw" outgoing="_dT_4wCx1EeSwcp9OQgj4Dw _dsGPsCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_NYTRECx1EeSwcp9OQgj4Dw" incoming="_dsGPsCx1EeSwcp9OQgj4Dw" outgoing="_kYHbwCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_W3l2ACx1EeSwcp9OQgj4Dw" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_OlXhICx1EeSwcp9OQgj4Dw" incoming="_gDZeQCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_X6ZW0Cx1EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_TJjeACx1EeSwcp9OQgj4Dw" incoming="_kYHbwCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_dT_4wCx1EeSwcp9OQgj4Dw" source="_MzjlQCx1EeSwcp9OQgj4Dw" target="_MWP-MCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_dsGPsCx1EeSwcp9OQgj4Dw" source="_MzjlQCx1EeSwcp9OQgj4Dw" target="_NYTRECx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_gDZeQCx1EeSwcp9OQgj4Dw" source="_MWP-MCx1EeSwcp9OQgj4Dw" target="_OlXhICx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_kYHbwCx1EeSwcp9OQgj4Dw" source="_NYTRECx1EeSwcp9OQgj4Dw" target="_TJjeACx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_P3yLQyx1EeSwcp9OQgj4Dw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_P3yLRCx1EeSwcp9OQgj4Dw">
+          <conclusion xmi:id="_P3yLRSx1EeSwcp9OQgj4Dw">
+            <nodes xmi:id="_P3yLRix1EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+            </nodes>
+            <nodes xmi:id="_P3yLSCx1EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_P3yLSix1EeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+              <attributes xmi:id="_W3l2Aix1EeSwcp9OQgj4Dw" value="&quot;FORALL&quot;">
+                <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_P3yLTCx1EeSwcp9OQgj4Dw" incoming="_fkc4cCx1EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_X6ZW0ix1EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_P3yLQCx1EeSwcp9OQgj4Dw" outgoing="_fkc4cCx1EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_fkc4cCx1EeSwcp9OQgj4Dw" source="_P3yLQCx1EeSwcp9OQgj4Dw" target="_P3yLTCx1EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_P3yLRyx1EeSwcp9OQgj4Dw" origin="_MWP-MCx1EeSwcp9OQgj4Dw" image="_P3yLRix1EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_P3yLSSx1EeSwcp9OQgj4Dw" origin="_MzjlQCx1EeSwcp9OQgj4Dw" image="_P3yLSCx1EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_P3yLSyx1EeSwcp9OQgj4Dw" origin="_NYTRECx1EeSwcp9OQgj4Dw" image="_P3yLSix1EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_P3yLTSx1EeSwcp9OQgj4Dw" origin="_OlXhICx1EeSwcp9OQgj4Dw" image="_P3yLTCx1EeSwcp9OQgj4Dw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_EvOX5Sx0EeSwcp9OQgj4Dw" name="Rhs">
+      <nodes xmi:id="_MWP-MSx1EeSwcp9OQgj4Dw" incoming="_dT_4wSx1EeSwcp9OQgj4Dw" outgoing="_gDZeQSx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL"/>
+      </nodes>
+      <nodes xmi:id="_MzjlQSx1EeSwcp9OQgj4Dw" outgoing="_dT_4wSx1EeSwcp9OQgj4Dw _dsGPsSx1EeSwcp9OQgj4Dw _gxEckCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_NYTRESx1EeSwcp9OQgj4Dw" incoming="_dsGPsSx1EeSwcp9OQgj4Dw" outgoing="_kYHbwSx1EeSwcp9OQgj4Dw _2h_D0Cx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_W3l2ASx1EeSwcp9OQgj4Dw" value="&quot;FORALL&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_OlXhISx1EeSwcp9OQgj4Dw" incoming="_ea9g0Cx1EeSwcp9OQgj4Dw _gDZeQSx1EeSwcp9OQgj4Dw _NkxqACx5EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_X6ZW0Sx1EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_QmWhcCx1EeSwcp9OQgj4Dw" incoming="_gxEckCx1EeSwcp9OQgj4Dw" outgoing="_ea9g0Cx1EeSwcp9OQgj4Dw _3mRLUCx4EeSwcp9OQgj4Dw _MAyuwCx5EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_TJjeASx1EeSwcp9OQgj4Dw" incoming="_kYHbwSx1EeSwcp9OQgj4Dw _20RtsCx4EeSwcp9OQgj4Dw _8gBvkCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_Upg04Cx1EeSwcp9OQgj4Dw" incoming="_p1cAECx1EeSwcp9OQgj4Dw _G5lPQCx3EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_WWkMkCx1EeSwcp9OQgj4Dw" incoming="_FjSxwCx3EeSwcp9OQgj4Dw" outgoing="_p1cAECx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <nodes xmi:id="_4d1-cCx2EeSwcp9OQgj4Dw" incoming="_7m5vMCx4EeSwcp9OQgj4Dw _OPnWwCx5EeSwcp9OQgj4Dw" outgoing="_FjSxwCx3EeSwcp9OQgj4Dw _G5lPQCx3EeSwcp9OQgj4Dw _8gBvkCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_5Q394Cx2EeSwcp9OQgj4Dw" value="&quot;EXISTS&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_wHz1sCx4EeSwcp9OQgj4Dw" incoming="_2h_D0Cx4EeSwcp9OQgj4Dw _3mRLUCx4EeSwcp9OQgj4Dw" outgoing="_20RtsCx4EeSwcp9OQgj4Dw _7m5vMCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_xMsaICx4EeSwcp9OQgj4Dw" value="&quot;NOT&quot;">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_LCTtQCx5EeSwcp9OQgj4Dw" incoming="_MAyuwCx5EeSwcp9OQgj4Dw" outgoing="_NkxqACx5EeSwcp9OQgj4Dw _OPnWwCx5EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <edges xmi:id="_dT_4wSx1EeSwcp9OQgj4Dw" source="_MzjlQSx1EeSwcp9OQgj4Dw" target="_MWP-MSx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_dsGPsSx1EeSwcp9OQgj4Dw" source="_MzjlQSx1EeSwcp9OQgj4Dw" target="_NYTRESx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_ea9g0Cx1EeSwcp9OQgj4Dw" source="_QmWhcCx1EeSwcp9OQgj4Dw" target="_OlXhISx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_gDZeQSx1EeSwcp9OQgj4Dw" source="_MWP-MSx1EeSwcp9OQgj4Dw" target="_OlXhISx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//ExpressionInOCL/bodyExpression"/>
+      </edges>
+      <edges xmi:id="_gxEckCx1EeSwcp9OQgj4Dw" source="_MzjlQSx1EeSwcp9OQgj4Dw" target="_QmWhcCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_kYHbwSx1EeSwcp9OQgj4Dw" source="_NYTRESx1EeSwcp9OQgj4Dw" target="_TJjeASx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_p1cAECx1EeSwcp9OQgj4Dw" source="_WWkMkCx1EeSwcp9OQgj4Dw" target="_Upg04Cx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_FjSxwCx3EeSwcp9OQgj4Dw" source="_4d1-cCx2EeSwcp9OQgj4Dw" target="_WWkMkCx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_G5lPQCx3EeSwcp9OQgj4Dw" source="_4d1-cCx2EeSwcp9OQgj4Dw" target="_Upg04Cx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_2h_D0Cx4EeSwcp9OQgj4Dw" source="_NYTRESx1EeSwcp9OQgj4Dw" target="_wHz1sCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_20RtsCx4EeSwcp9OQgj4Dw" source="_wHz1sCx4EeSwcp9OQgj4Dw" target="_TJjeASx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_3mRLUCx4EeSwcp9OQgj4Dw" source="_QmWhcCx1EeSwcp9OQgj4Dw" target="_wHz1sCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_7m5vMCx4EeSwcp9OQgj4Dw" source="_wHz1sCx4EeSwcp9OQgj4Dw" target="_4d1-cCx2EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_8gBvkCx4EeSwcp9OQgj4Dw" source="_4d1-cCx2EeSwcp9OQgj4Dw" target="_TJjeASx1EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_MAyuwCx5EeSwcp9OQgj4Dw" source="_QmWhcCx1EeSwcp9OQgj4Dw" target="_LCTtQCx5EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_NkxqACx5EeSwcp9OQgj4Dw" source="_LCTtQCx5EeSwcp9OQgj4Dw" target="_OlXhISx1EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_OPnWwCx5EeSwcp9OQgj4Dw" source="_LCTtQCx5EeSwcp9OQgj4Dw" target="_4d1-cCx2EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_MWP-Mix1EeSwcp9OQgj4Dw" origin="_MWP-MCx1EeSwcp9OQgj4Dw" image="_MWP-MSx1EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_MzjlQix1EeSwcp9OQgj4Dw" origin="_MzjlQCx1EeSwcp9OQgj4Dw" image="_MzjlQSx1EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_NYTREix1EeSwcp9OQgj4Dw" origin="_NYTRECx1EeSwcp9OQgj4Dw" image="_NYTRESx1EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_OlXhIix1EeSwcp9OQgj4Dw" origin="_OlXhICx1EeSwcp9OQgj4Dw" image="_OlXhISx1EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_TJjeAix1EeSwcp9OQgj4Dw" origin="_TJjeACx1EeSwcp9OQgj4Dw" image="_TJjeASx1EeSwcp9OQgj4Dw"/>
+  </units>
+  <units xsi:type="henshin:IndependentUnit" xmi:id="_s0OagCx3EeSwcp9OQgj4Dw" name="tr_E_09" subUnits="_EtmAMCx0EeSwcp9OQgj4Dw _HzonQCx4EeSwcp9OQgj4Dw _k90u4CyLEeSwcp9OQgj4Dw _FSQDECyNEeSwcp9OQgj4Dw"/>
+  <units xsi:type="henshin:Rule" xmi:id="_HzonQCx4EeSwcp9OQgj4Dw" name="tr_E_09_source">
+    <lhs xmi:id="_HzyYQCx4EeSwcp9OQgj4Dw" name="Lhs">
+      <nodes xmi:id="_S2KgkCx4EeSwcp9OQgj4Dw" incoming="_lkLZsCyKEeSwcp9OQgj4Dw" outgoing="_pjd5wCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_Thv0MCx4EeSwcp9OQgj4Dw" outgoing="_lkLZsCyKEeSwcp9OQgj4Dw _mHuysCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_UyPLsCx4EeSwcp9OQgj4Dw" incoming="_mHuysCyKEeSwcp9OQgj4Dw" outgoing="_rKRfgCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_VRescCx4EeSwcp9OQgj4Dw" incoming="_rKRfgCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_XY3PsCx4EeSwcp9OQgj4Dw" incoming="_pjd5wCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_cQY_UCx4EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_lkLZsCyKEeSwcp9OQgj4Dw" source="_Thv0MCx4EeSwcp9OQgj4Dw" target="_S2KgkCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_mHuysCyKEeSwcp9OQgj4Dw" source="_Thv0MCx4EeSwcp9OQgj4Dw" target="_UyPLsCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_pjd5wCyKEeSwcp9OQgj4Dw" source="_S2KgkCx4EeSwcp9OQgj4Dw" target="_XY3PsCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <edges xmi:id="_rKRfgCyKEeSwcp9OQgj4Dw" source="_UyPLsCx4EeSwcp9OQgj4Dw" target="_VRescCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_YWmqUyx4EeSwcp9OQgj4Dw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_YWmqVCx4EeSwcp9OQgj4Dw">
+          <conclusion xmi:id="_YWmqVSx4EeSwcp9OQgj4Dw">
+            <nodes xmi:id="_YWmqVix4EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+            </nodes>
+            <nodes xmi:id="_YWmqWCx4EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_YWmqWix4EeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_YWmqXCx4EeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_YWmqXix4EeSwcp9OQgj4Dw" incoming="_oriMMCyKEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_cQY_Uix4EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_YWmqUCx4EeSwcp9OQgj4Dw" outgoing="_oriMMCyKEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_oriMMCyKEeSwcp9OQgj4Dw" source="_YWmqUCx4EeSwcp9OQgj4Dw" target="_YWmqXix4EeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_YWmqVyx4EeSwcp9OQgj4Dw" origin="_S2KgkCx4EeSwcp9OQgj4Dw" image="_YWmqVix4EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_YWmqWSx4EeSwcp9OQgj4Dw" origin="_Thv0MCx4EeSwcp9OQgj4Dw" image="_YWmqWCx4EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_YWmqWyx4EeSwcp9OQgj4Dw" origin="_UyPLsCx4EeSwcp9OQgj4Dw" image="_YWmqWix4EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_YWmqXSx4EeSwcp9OQgj4Dw" origin="_VRescCx4EeSwcp9OQgj4Dw" image="_YWmqXCx4EeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_YWmqXyx4EeSwcp9OQgj4Dw" origin="_XY3PsCx4EeSwcp9OQgj4Dw" image="_YWmqXix4EeSwcp9OQgj4Dw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_HzyYQSx4EeSwcp9OQgj4Dw" name="Rhs">
+      <nodes xmi:id="_S2TqgCx4EeSwcp9OQgj4Dw" incoming="_lkLZsSyKEeSwcp9OQgj4Dw" outgoing="_pjd5wSyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp"/>
+      </nodes>
+      <nodes xmi:id="_Thv0MSx4EeSwcp9OQgj4Dw" outgoing="_lkLZsSyKEeSwcp9OQgj4Dw _mHuysSyKEeSwcp9OQgj4Dw _qIhHkCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_UyPLsSx4EeSwcp9OQgj4Dw" incoming="_mHuysSyKEeSwcp9OQgj4Dw" outgoing="_rKRfgSyKEeSwcp9OQgj4Dw _sXoqgCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_VRescSx4EeSwcp9OQgj4Dw" incoming="_rKRfgSyKEeSwcp9OQgj4Dw _syHnECyKEeSwcp9OQgj4Dw _zy9zoCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_XY3PsSx4EeSwcp9OQgj4Dw" incoming="_mqsV0CyKEeSwcp9OQgj4Dw _oMuwUCyKEeSwcp9OQgj4Dw _pjd5wSyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_cQY_USx4EeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ZFw2YCx4EeSwcp9OQgj4Dw" incoming="_qoWeMCyKEeSwcp9OQgj4Dw" outgoing="_oMuwUCyKEeSwcp9OQgj4Dw _tzuOACyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_Zo4KgCx4EeSwcp9OQgj4Dw" incoming="_tzuOACyKEeSwcp9OQgj4Dw _wwhWUCyKEeSwcp9OQgj4Dw" outgoing="_yhSwYCyKEeSwcp9OQgj4Dw _zy9zoCyKEeSwcp9OQgj4Dw _1vo7sCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_YosasCyKEeSwcp9OQgj4Dw" value="&quot;EXISTS&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_aqyTcCx4EeSwcp9OQgj4Dw" incoming="_yhSwYCyKEeSwcp9OQgj4Dw" outgoing="_0z1awCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <nodes xmi:id="_bGmswCx4EeSwcp9OQgj4Dw" incoming="_0z1awCyKEeSwcp9OQgj4Dw _1vo7sCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_HzuosCyKEeSwcp9OQgj4Dw" incoming="_naJc0CyKEeSwcp9OQgj4Dw _sXoqgCyKEeSwcp9OQgj4Dw" outgoing="_syHnECyKEeSwcp9OQgj4Dw _wwhWUCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_T6-uYCyKEeSwcp9OQgj4Dw" value="&quot;NOT&quot;">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_JGJS0CyKEeSwcp9OQgj4Dw" incoming="_qIhHkCyKEeSwcp9OQgj4Dw" outgoing="_mqsV0CyKEeSwcp9OQgj4Dw _naJc0CyKEeSwcp9OQgj4Dw _qoWeMCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <edges xmi:id="_lkLZsSyKEeSwcp9OQgj4Dw" source="_Thv0MSx4EeSwcp9OQgj4Dw" target="_S2TqgCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_mHuysSyKEeSwcp9OQgj4Dw" source="_Thv0MSx4EeSwcp9OQgj4Dw" target="_UyPLsSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_mqsV0CyKEeSwcp9OQgj4Dw" source="_JGJS0CyKEeSwcp9OQgj4Dw" target="_XY3PsSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_naJc0CyKEeSwcp9OQgj4Dw" source="_JGJS0CyKEeSwcp9OQgj4Dw" target="_HzuosCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_oMuwUCyKEeSwcp9OQgj4Dw" source="_ZFw2YCx4EeSwcp9OQgj4Dw" target="_XY3PsSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_pjd5wSyKEeSwcp9OQgj4Dw" source="_S2TqgCx4EeSwcp9OQgj4Dw" target="_XY3PsSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//CallExp/source"/>
+      </edges>
+      <edges xmi:id="_qIhHkCyKEeSwcp9OQgj4Dw" source="_Thv0MSx4EeSwcp9OQgj4Dw" target="_JGJS0CyKEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_qoWeMCyKEeSwcp9OQgj4Dw" source="_JGJS0CyKEeSwcp9OQgj4Dw" target="_ZFw2YCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_rKRfgSyKEeSwcp9OQgj4Dw" source="_UyPLsSx4EeSwcp9OQgj4Dw" target="_VRescSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_sXoqgCyKEeSwcp9OQgj4Dw" source="_UyPLsSx4EeSwcp9OQgj4Dw" target="_HzuosCyKEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_syHnECyKEeSwcp9OQgj4Dw" source="_HzuosCyKEeSwcp9OQgj4Dw" target="_VRescSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_tzuOACyKEeSwcp9OQgj4Dw" source="_ZFw2YCx4EeSwcp9OQgj4Dw" target="_Zo4KgCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_wwhWUCyKEeSwcp9OQgj4Dw" source="_HzuosCyKEeSwcp9OQgj4Dw" target="_Zo4KgCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_yhSwYCyKEeSwcp9OQgj4Dw" source="_Zo4KgCx4EeSwcp9OQgj4Dw" target="_aqyTcCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_zy9zoCyKEeSwcp9OQgj4Dw" source="_Zo4KgCx4EeSwcp9OQgj4Dw" target="_VRescSx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_0z1awCyKEeSwcp9OQgj4Dw" source="_aqyTcCx4EeSwcp9OQgj4Dw" target="_bGmswCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_1vo7sCyKEeSwcp9OQgj4Dw" source="_Zo4KgCx4EeSwcp9OQgj4Dw" target="_bGmswCx4EeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_S2TqgSx4EeSwcp9OQgj4Dw" origin="_S2KgkCx4EeSwcp9OQgj4Dw" image="_S2TqgCx4EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_Thv0Mix4EeSwcp9OQgj4Dw" origin="_Thv0MCx4EeSwcp9OQgj4Dw" image="_Thv0MSx4EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_UyPLsix4EeSwcp9OQgj4Dw" origin="_UyPLsCx4EeSwcp9OQgj4Dw" image="_UyPLsSx4EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_VRescix4EeSwcp9OQgj4Dw" origin="_VRescCx4EeSwcp9OQgj4Dw" image="_VRescSx4EeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_XY3Psix4EeSwcp9OQgj4Dw" origin="_XY3PsCx4EeSwcp9OQgj4Dw" image="_XY3PsSx4EeSwcp9OQgj4Dw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_k90u4CyLEeSwcp9OQgj4Dw" name="tr_E_09_argument">
+    <lhs xmi:id="_k9940iyLEeSwcp9OQgj4Dw" name="Lhs">
+      <nodes xmi:id="_4awosCyLEeSwcp9OQgj4Dw" incoming="_VVDNwCyMEeSwcp9OQgj4Dw" outgoing="_b9gIcCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_5LQRgCyLEeSwcp9OQgj4Dw" incoming="_b9gIcCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_CPLJECyMEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_5wJuUCyLEeSwcp9OQgj4Dw" outgoing="_VVDNwCyMEeSwcp9OQgj4Dw _V0JkkCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_6S-HgCyLEeSwcp9OQgj4Dw" incoming="_V0JkkCyMEeSwcp9OQgj4Dw" outgoing="_chp-YCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_6xnLUCyLEeSwcp9OQgj4Dw" incoming="_chp-YCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_VVDNwCyMEeSwcp9OQgj4Dw" source="_5wJuUCyLEeSwcp9OQgj4Dw" target="_4awosCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_V0JkkCyMEeSwcp9OQgj4Dw" source="_5wJuUCyLEeSwcp9OQgj4Dw" target="_6S-HgCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_b9gIcCyMEeSwcp9OQgj4Dw" source="_4awosCyLEeSwcp9OQgj4Dw" target="_5LQRgCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_chp-YCyMEeSwcp9OQgj4Dw" source="_6S-HgCyLEeSwcp9OQgj4Dw" target="_6xnLUCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_731MgyyLEeSwcp9OQgj4Dw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_731MhCyLEeSwcp9OQgj4Dw">
+          <conclusion xmi:id="_731MhSyLEeSwcp9OQgj4Dw">
+            <nodes xmi:id="_731MhiyLEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+            </nodes>
+            <nodes xmi:id="_731MiCyLEeSwcp9OQgj4Dw" incoming="_ZEbpkCyMEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_CPLJEiyMEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_731MiiyLEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_731MjCyLEeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//Formula"/>
+            </nodes>
+            <nodes xmi:id="_731MjiyLEeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_731MgCyLEeSwcp9OQgj4Dw" outgoing="_ZEbpkCyMEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_ZEbpkCyMEeSwcp9OQgj4Dw" source="_731MgCyLEeSwcp9OQgj4Dw" target="_731MiCyLEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_731MhyyLEeSwcp9OQgj4Dw" origin="_4awosCyLEeSwcp9OQgj4Dw" image="_731MhiyLEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_731MiSyLEeSwcp9OQgj4Dw" origin="_5LQRgCyLEeSwcp9OQgj4Dw" image="_731MiCyLEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_731MiyyLEeSwcp9OQgj4Dw" origin="_5wJuUCyLEeSwcp9OQgj4Dw" image="_731MiiyLEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_731MjSyLEeSwcp9OQgj4Dw" origin="_6S-HgCyLEeSwcp9OQgj4Dw" image="_731MjCyLEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_731MjyyLEeSwcp9OQgj4Dw" origin="_6xnLUCyLEeSwcp9OQgj4Dw" image="_731MjiyLEeSwcp9OQgj4Dw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_k9940yyLEeSwcp9OQgj4Dw" name="Rhs">
+      <nodes xmi:id="_4awosSyLEeSwcp9OQgj4Dw" incoming="_VVDNwSyMEeSwcp9OQgj4Dw" outgoing="_b9gIcSyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+      </nodes>
+      <nodes xmi:id="_5LQRgSyLEeSwcp9OQgj4Dw" incoming="_WRTaoCyMEeSwcp9OQgj4Dw _XK4uACyMEeSwcp9OQgj4Dw _b9gIcSyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_CPLJESyMEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_5wJuUSyLEeSwcp9OQgj4Dw" outgoing="_VVDNwSyMEeSwcp9OQgj4Dw _V0JkkSyMEeSwcp9OQgj4Dw _aghNECyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_6S-HgSyLEeSwcp9OQgj4Dw" incoming="_V0JkkSyMEeSwcp9OQgj4Dw" outgoing="_chp-YSyMEeSwcp9OQgj4Dw _dNP5ECyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+      </nodes>
+      <nodes xmi:id="_6xnLUSyLEeSwcp9OQgj4Dw" incoming="_chp-YSyMEeSwcp9OQgj4Dw _di0gcCyMEeSwcp9OQgj4Dw _fFwS0CyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_8kdpACyLEeSwcp9OQgj4Dw" incoming="_aghNECyMEeSwcp9OQgj4Dw" outgoing="_WRTaoCyMEeSwcp9OQgj4Dw _WunowCyMEeSwcp9OQgj4Dw _bEhSACyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_84jCoCyLEeSwcp9OQgj4Dw" incoming="_bEhSACyMEeSwcp9OQgj4Dw" outgoing="_XK4uACyMEeSwcp9OQgj4Dw _ZtfNoCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_9ZlTICyLEeSwcp9OQgj4Dw" incoming="_WunowCyMEeSwcp9OQgj4Dw _dNP5ECyMEeSwcp9OQgj4Dw" outgoing="_di0gcCyMEeSwcp9OQgj4Dw _edIzoCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_CoK34CyMEeSwcp9OQgj4Dw" value="&quot;NOT&quot;">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_99bnECyLEeSwcp9OQgj4Dw" incoming="_ZtfNoCyMEeSwcp9OQgj4Dw _edIzoCyMEeSwcp9OQgj4Dw" outgoing="_fFwS0CyMEeSwcp9OQgj4Dw _gF3sACyMEeSwcp9OQgj4Dw _kvuMACyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_C3yoQCyMEeSwcp9OQgj4Dw" value="&quot;EXISTS&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="__DNjYCyLEeSwcp9OQgj4Dw" incoming="_gF3sACyMEeSwcp9OQgj4Dw" outgoing="_lEGgkCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <nodes xmi:id="__wb1wCyLEeSwcp9OQgj4Dw" incoming="_kvuMACyMEeSwcp9OQgj4Dw _lEGgkCyMEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_VVDNwSyMEeSwcp9OQgj4Dw" source="_5wJuUSyLEeSwcp9OQgj4Dw" target="_4awosSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_V0JkkSyMEeSwcp9OQgj4Dw" source="_5wJuUSyLEeSwcp9OQgj4Dw" target="_6S-HgSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_WRTaoCyMEeSwcp9OQgj4Dw" source="_8kdpACyLEeSwcp9OQgj4Dw" target="_5LQRgSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_WunowCyMEeSwcp9OQgj4Dw" source="_8kdpACyLEeSwcp9OQgj4Dw" target="_9ZlTICyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_XK4uACyMEeSwcp9OQgj4Dw" source="_84jCoCyLEeSwcp9OQgj4Dw" target="_5LQRgSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_ZtfNoCyMEeSwcp9OQgj4Dw" source="_84jCoCyLEeSwcp9OQgj4Dw" target="_99bnECyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_aghNECyMEeSwcp9OQgj4Dw" source="_5wJuUSyLEeSwcp9OQgj4Dw" target="_8kdpACyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_bEhSACyMEeSwcp9OQgj4Dw" source="_8kdpACyLEeSwcp9OQgj4Dw" target="_84jCoCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_b9gIcSyMEeSwcp9OQgj4Dw" source="_4awosSyLEeSwcp9OQgj4Dw" target="_5LQRgSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp/argument"/>
+      </edges>
+      <edges xmi:id="_chp-YSyMEeSwcp9OQgj4Dw" source="_6S-HgSyLEeSwcp9OQgj4Dw" target="_6xnLUSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_dNP5ECyMEeSwcp9OQgj4Dw" source="_6S-HgSyLEeSwcp9OQgj4Dw" target="_9ZlTICyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_di0gcCyMEeSwcp9OQgj4Dw" source="_9ZlTICyLEeSwcp9OQgj4Dw" target="_6xnLUSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_edIzoCyMEeSwcp9OQgj4Dw" source="_9ZlTICyLEeSwcp9OQgj4Dw" target="_99bnECyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_fFwS0CyMEeSwcp9OQgj4Dw" source="_99bnECyLEeSwcp9OQgj4Dw" target="_6xnLUSyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_gF3sACyMEeSwcp9OQgj4Dw" source="_99bnECyLEeSwcp9OQgj4Dw" target="__DNjYCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_kvuMACyMEeSwcp9OQgj4Dw" source="_99bnECyLEeSwcp9OQgj4Dw" target="__wb1wCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_lEGgkCyMEeSwcp9OQgj4Dw" source="__DNjYCyLEeSwcp9OQgj4Dw" target="__wb1wCyLEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_4awosiyLEeSwcp9OQgj4Dw" origin="_4awosCyLEeSwcp9OQgj4Dw" image="_4awosSyLEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_5LQRgiyLEeSwcp9OQgj4Dw" origin="_5LQRgCyLEeSwcp9OQgj4Dw" image="_5LQRgSyLEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_5wJuUiyLEeSwcp9OQgj4Dw" origin="_5wJuUCyLEeSwcp9OQgj4Dw" image="_5wJuUSyLEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_6S-HgiyLEeSwcp9OQgj4Dw" origin="_6S-HgCyLEeSwcp9OQgj4Dw" image="_6S-HgSyLEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_6xnLUiyLEeSwcp9OQgj4Dw" origin="_6xnLUCyLEeSwcp9OQgj4Dw" image="_6xnLUSyLEeSwcp9OQgj4Dw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_FSQDECyNEeSwcp9OQgj4Dw" name="tr_E_09_body">
+    <lhs xmi:id="_FSZ0ECyNEeSwcp9OQgj4Dw" name="Lhs">
+      <nodes xmi:id="_Nlhg0CyNEeSwcp9OQgj4Dw" incoming="_AQ7o0CyOEeSwcp9OQgj4Dw" outgoing="_FbWfQCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_Of-98CyNEeSwcp9OQgj4Dw" incoming="_FbWfQCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_qMeTICyNEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_O7EXcCyNEeSwcp9OQgj4Dw" outgoing="_AQ7o0CyOEeSwcp9OQgj4Dw _EOlxMCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_PgG-MCyNEeSwcp9OQgj4Dw" incoming="_EOlxMCyOEeSwcp9OQgj4Dw" outgoing="_PC1W4CyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_P8h0cCyNEeSwcp9OQgj4Dw" incoming="_PC1W4CyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_AQ7o0CyOEeSwcp9OQgj4Dw" source="_O7EXcCyNEeSwcp9OQgj4Dw" target="_Nlhg0CyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_EOlxMCyOEeSwcp9OQgj4Dw" source="_O7EXcCyNEeSwcp9OQgj4Dw" target="_PgG-MCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_FbWfQCyOEeSwcp9OQgj4Dw" source="_Nlhg0CyNEeSwcp9OQgj4Dw" target="_Of-98CyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_PC1W4CyOEeSwcp9OQgj4Dw" source="_PgG-MCyNEeSwcp9OQgj4Dw" target="_P8h0cCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_RFuRIyyNEeSwcp9OQgj4Dw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_RFuRJCyNEeSwcp9OQgj4Dw">
+          <conclusion xmi:id="_RFuRJSyNEeSwcp9OQgj4Dw">
+            <nodes xmi:id="_RFuRJiyNEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+            </nodes>
+            <nodes xmi:id="_RFuRKCyNEeSwcp9OQgj4Dw" incoming="_GPR2kCyOEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+              <attributes xmi:id="_qMeTIiyNEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+                <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_RFuRKiyNEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <nodes xmi:id="_RFuRLCyNEeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+            </nodes>
+            <nodes xmi:id="_RFuRLiyNEeSwcp9OQgj4Dw">
+              <type href="http://www.example.org/GraphConstraint#//Graph"/>
+            </nodes>
+            <nodes xmi:id="_RFuRICyNEeSwcp9OQgj4Dw" outgoing="_GPR2kCyOEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+            </nodes>
+            <edges xmi:id="_GPR2kCyOEeSwcp9OQgj4Dw" source="_RFuRICyNEeSwcp9OQgj4Dw" target="_RFuRKCyNEeSwcp9OQgj4Dw">
+              <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_RFuRJyyNEeSwcp9OQgj4Dw" origin="_Nlhg0CyNEeSwcp9OQgj4Dw" image="_RFuRJiyNEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_RFuRKSyNEeSwcp9OQgj4Dw" origin="_Of-98CyNEeSwcp9OQgj4Dw" image="_RFuRKCyNEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_RFuRKyyNEeSwcp9OQgj4Dw" origin="_O7EXcCyNEeSwcp9OQgj4Dw" image="_RFuRKiyNEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_RFuRLSyNEeSwcp9OQgj4Dw" origin="_PgG-MCyNEeSwcp9OQgj4Dw" image="_RFuRLCyNEeSwcp9OQgj4Dw"/>
+          <mappings xmi:id="_RFuRLyyNEeSwcp9OQgj4Dw" origin="_P8h0cCyNEeSwcp9OQgj4Dw" image="_RFuRLiyNEeSwcp9OQgj4Dw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_FSZ0ESyNEeSwcp9OQgj4Dw" name="Rhs">
+      <nodes xmi:id="_Nlhg0SyNEeSwcp9OQgj4Dw" incoming="_AQ7o0SyOEeSwcp9OQgj4Dw" outgoing="_FbWfQSyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//IteratorExp"/>
+      </nodes>
+      <nodes xmi:id="_Of-98SyNEeSwcp9OQgj4Dw" incoming="_FbWfQSyOEeSwcp9OQgj4Dw _HGB4YCyOEeSwcp9OQgj4Dw _LHjNECyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//OperationCallExp"/>
+        <attributes xmi:id="_qMeTISyNEeSwcp9OQgj4Dw" value="&quot;isEmpty&quot;">
+          <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_O7EXcSyNEeSwcp9OQgj4Dw" outgoing="_AQ7o0SyOEeSwcp9OQgj4Dw _EOlxMSyOEeSwcp9OQgj4Dw _LvR7cCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_PgG-MSyNEeSwcp9OQgj4Dw" incoming="_EOlxMSyOEeSwcp9OQgj4Dw" outgoing="_PC1W4SyOEeSwcp9OQgj4Dw _P7qcUCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+      </nodes>
+      <nodes xmi:id="_P8h0cSyNEeSwcp9OQgj4Dw" incoming="_PC1W4SyOEeSwcp9OQgj4Dw _QZQ-UCyOEeSwcp9OQgj4Dw _SdrGECyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <nodes xmi:id="_iqAAMCyNEeSwcp9OQgj4Dw" incoming="_LvR7cCyOEeSwcp9OQgj4Dw" outgoing="_HGB4YCyOEeSwcp9OQgj4Dw _Jsp8YCyOEeSwcp9OQgj4Dw _MNVJYCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_jKlkwCyNEeSwcp9OQgj4Dw" incoming="_MNVJYCyOEeSwcp9OQgj4Dw" outgoing="_LHjNECyOEeSwcp9OQgj4Dw _M5qq8CyOEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace"/>
+      </nodes>
+      <nodes xmi:id="_jszhACyNEeSwcp9OQgj4Dw" incoming="_Jsp8YCyOEeSwcp9OQgj4Dw _P7qcUCyOEeSwcp9OQgj4Dw" outgoing="_QZQ-UCyOEeSwcp9OQgj4Dw _RNyLgCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula"/>
+        <attributes xmi:id="_qgHA0CyNEeSwcp9OQgj4Dw" value="&quot;NOT&quot;">
+          <type href="http://www.example.org/GraphConstraint#//Formula/op"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_kPUYMCyNEeSwcp9OQgj4Dw" incoming="_M5qq8CyOEeSwcp9OQgj4Dw _RNyLgCyOEeSwcp9OQgj4Dw" outgoing="_SdrGECyOEeSwcp9OQgj4Dw _TIhZ4CyOEeSwcp9OQgj4Dw _T-0vwCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition"/>
+        <attributes xmi:id="_q5jbkCyNEeSwcp9OQgj4Dw" value="&quot;EXISTS&quot;">
+          <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/quantifier"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_mO0KwCyNEeSwcp9OQgj4Dw" incoming="_TIhZ4CyOEeSwcp9OQgj4Dw" outgoing="_UdnkkCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//True"/>
+      </nodes>
+      <nodes xmi:id="_mt6hkCyNEeSwcp9OQgj4Dw" incoming="_T-0vwCyOEeSwcp9OQgj4Dw _UdnkkCyOEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Graph"/>
+      </nodes>
+      <edges xmi:id="_AQ7o0SyOEeSwcp9OQgj4Dw" source="_O7EXcSyNEeSwcp9OQgj4Dw" target="_Nlhg0SyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_EOlxMSyOEeSwcp9OQgj4Dw" source="_O7EXcSyNEeSwcp9OQgj4Dw" target="_PgG-MSyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_FbWfQSyOEeSwcp9OQgj4Dw" source="_Nlhg0SyNEeSwcp9OQgj4Dw" target="_Of-98SyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/ocl/3.1.0/Pivot#//LoopExp/body"/>
+      </edges>
+      <edges xmi:id="_HGB4YCyOEeSwcp9OQgj4Dw" source="_iqAAMCyNEeSwcp9OQgj4Dw" target="_Of-98SyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_Jsp8YCyOEeSwcp9OQgj4Dw" source="_iqAAMCyNEeSwcp9OQgj4Dw" target="_jszhACyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_LHjNECyOEeSwcp9OQgj4Dw" source="_jKlkwCyNEeSwcp9OQgj4Dw" target="_Of-98SyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/source"/>
+      </edges>
+      <edges xmi:id="_LvR7cCyOEeSwcp9OQgj4Dw" source="_O7EXcSyNEeSwcp9OQgj4Dw" target="_iqAAMCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_MNVJYCyOEeSwcp9OQgj4Dw" source="_iqAAMCyNEeSwcp9OQgj4Dw" target="_jKlkwCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/subTraces"/>
+      </edges>
+      <edges xmi:id="_M5qq8CyOEeSwcp9OQgj4Dw" source="_jKlkwCyNEeSwcp9OQgj4Dw" target="_kPUYMCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.eclipse.org/emf/2011/Henshin/Trace#//Trace/target"/>
+      </edges>
+      <edges xmi:id="_PC1W4SyOEeSwcp9OQgj4Dw" source="_PgG-MSyNEeSwcp9OQgj4Dw" target="_P8h0cSyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_P7qcUCyOEeSwcp9OQgj4Dw" source="_PgG-MSyNEeSwcp9OQgj4Dw" target="_jszhACyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_QZQ-UCyOEeSwcp9OQgj4Dw" source="_jszhACyNEeSwcp9OQgj4Dw" target="_P8h0cSyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_RNyLgCyOEeSwcp9OQgj4Dw" source="_jszhACyNEeSwcp9OQgj4Dw" target="_kPUYMCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//Formula/args"/>
+      </edges>
+      <edges xmi:id="_SdrGECyOEeSwcp9OQgj4Dw" source="_kPUYMCyNEeSwcp9OQgj4Dw" target="_P8h0cSyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+      <edges xmi:id="_TIhZ4CyOEeSwcp9OQgj4Dw" source="_kPUYMCyNEeSwcp9OQgj4Dw" target="_mO0KwCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/nested"/>
+      </edges>
+      <edges xmi:id="_T-0vwCyOEeSwcp9OQgj4Dw" source="_kPUYMCyNEeSwcp9OQgj4Dw" target="_mt6hkCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//QuantifiedGraphCondition/codomain"/>
+      </edges>
+      <edges xmi:id="_UdnkkCyOEeSwcp9OQgj4Dw" source="_mO0KwCyNEeSwcp9OQgj4Dw" target="_mt6hkCyNEeSwcp9OQgj4Dw">
+        <type href="http://www.example.org/GraphConstraint#//NestedGraphCondition/domain"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Nlhg0iyNEeSwcp9OQgj4Dw" origin="_Nlhg0CyNEeSwcp9OQgj4Dw" image="_Nlhg0SyNEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_Of-98iyNEeSwcp9OQgj4Dw" origin="_Of-98CyNEeSwcp9OQgj4Dw" image="_Of-98SyNEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_O7EXciyNEeSwcp9OQgj4Dw" origin="_O7EXcCyNEeSwcp9OQgj4Dw" image="_O7EXcSyNEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_PgG-MiyNEeSwcp9OQgj4Dw" origin="_PgG-MCyNEeSwcp9OQgj4Dw" image="_PgG-MSyNEeSwcp9OQgj4Dw"/>
+    <mappings xmi:id="_P8h0ciyNEeSwcp9OQgj4Dw" origin="_P8h0cCyNEeSwcp9OQgj4Dw" image="_P8h0cSyNEeSwcp9OQgj4Dw"/>
+  </units>
+</henshin:Module>

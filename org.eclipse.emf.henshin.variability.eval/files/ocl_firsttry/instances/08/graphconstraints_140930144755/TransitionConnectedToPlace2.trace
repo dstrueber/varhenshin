@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/emf/2011/Henshin/Trace">
+  <subTraces name="trI">
+    <subTraces name="trE1112BodyExpression">
+      <subTraces name="trE0506Body">
+        <subTraces name="trE1112Argument">
+          <subTraces name="trE10Body">
+            <subTraces name="trN"/>
+          </subTraces>
+          <subTraces name="trN"/>
+        </subTraces>
+        <subTraces name="trE1112Source">
+          <subTraces name="trE10Body">
+            <subTraces name="trN"/>
+          </subTraces>
+          <subTraces name="trN"/>
+        </subTraces>
+      </subTraces>
+      <subTraces name="trN"/>
+    </subTraces>
+  </subTraces>
+</trace:Trace>

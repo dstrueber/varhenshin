@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pivot="http://www.eclipse.org/ocl/3.1.0/Pivot" xsi:schemaLocation="http://www.eclipse.org/ocl/3.1.0/Pivot java://org.eclipse.ocl.examples.pivot.PivotPackage"
+    name="PetriNetWithOCLPaper.ecore" externalURI="platform:/resource/PNOCLTest/testhenshin140903/08/PetriNetWithOCLPaper.ecore">
+  <nestedPackage xmi:id="P.PetriNetModel" name="PetriNetModel" nsPrefix="pnocl" nsURI="http://www.example.org/PetriNetModelWithOCL">
+    <ownedType xsi:type="pivot:Class" xmi:id="T.PetriNetModel.PetriNet" name="PetriNet"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.PetriNetModel.PetriNet.transition" name="transition"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.0"
+          isComposite="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.PetriNet"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.PetriNet.arcPT" name="arcPT" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.1"
+          isComposite="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.PetriNet"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.PetriNet.arcTP" name="arcTP" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.2"
+          isComposite="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.PetriNet"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.PetriNet.place" name="place" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.3"
+          isComposite="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Place.PetriNet"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.PetriNet.name" name="name" isRequired="false"
+          type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+      <ownedInvariant xmi:id="ciPetriNetModel.PetriNet.TransitionConnectedToPlace"
+          name="TransitionConnectedToPlace">
+        <specification xsi:type="pivot:ExpressionInOCL" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+          <body>self.transition -> forAll(t:Transition | t.preArc -> exists(apt:ArcPT | apt.place -> notEmpty()) or t.postArc -> exists(atp:ArcTP | atp.place -> notEmpty()))</body>
+          <language>OCL</language>
+          <bodyExpression xsi:type="pivot:IteratorExp" name="forAll" isRequired="false"
+              type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+            <source xsi:type="pivot:PropertyCallExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.0"
+                referredProperty="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.PetriNet.transition">
+              <source xsi:type="pivot:VariableExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet"
+                  referredVariable="pivot:Variable PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@contextVariable"/>
+            </source>
+            <body xsi:type="pivot:OperationCallExp" name="or" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+              <source xsi:type="pivot:IteratorExp" name="exists" isRequired="false"
+                  type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+                <source xsi:type="pivot:PropertyCallExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.1"
+                    referredProperty="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.preArc">
+                  <source xsi:type="pivot:VariableExp" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+                      referredVariable="pivot:Variable PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@iterator.0"/>
+                </source>
+                <body xsi:type="pivot:OperationCallExp" name="notEmpty" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+                  <source xsi:type="pivot:PropertyCallExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.4"
+                      referredProperty="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.place">
+                    <source xsi:type="pivot:VariableExp" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+                        referredVariable="pivot:Variable PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@body/@source/@iterator.0"/>
+                  </source>
+                </body>
+                <iterator name="apt" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+                    representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.Collection.exists..T"/>
+              </source>
+              <argument xsi:type="pivot:IteratorExp" name="exists" isRequired="false"
+                  type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+                <source xsi:type="pivot:PropertyCallExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.2"
+                    referredProperty="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.postArc">
+                  <source xsi:type="pivot:VariableExp" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+                      referredVariable="pivot:Variable PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@iterator.0"/>
+                </source>
+                <body xsi:type="pivot:OperationCallExp" name="notEmpty" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+                  <source xsi:type="pivot:PropertyCallExp" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.4"
+                      referredProperty="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.place">
+                    <source xsi:type="pivot:VariableExp" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+                        referredVariable="pivot:Variable PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@body/@argument.0/@iterator.0"/>
+                  </source>
+                </body>
+                <iterator name="atp" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+                    representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.Collection.exists..T"/>
+              </argument>
+            </body>
+            <iterator name="t" isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+                representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.Collection.forAll..T"/>
+          </bodyExpression>
+          <contextVariable name="self" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet"/>
+        </specification>
+      </ownedInvariant>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.PetriNetModel.Transition" name="Transition"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.name" name="name" isRequired="false"
+          type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.preArc" name="preArc" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.1"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.Transition"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.postArc" name="postArc" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.2"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.Transition"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.PetriNet" name="PetriNet"
+          isRequired="false" type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.PetriNet.transition"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.ArcPT" name="ArcPT" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.5"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.transition"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Transition.ArcTP" name="ArcTP" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.6"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.transition"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.PetriNetModel.ArcPT" name="ArcPT"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.inscription" name="inscription"
+          isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.transition" name="transition"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.7"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.ArcPT"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.place" name="place" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.4"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Place.ArcPT"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.PetriNet" name="PetriNet" isRequired="false"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet" implicit="true"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.PetriNet.arcPT"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.Transition" name="Transition"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.8"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.preArc"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcPT.Place" name="Place" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.9"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Place.postArc"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.PetriNetModel.ArcTP" name="ArcTP"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.inscription" name="inscription"
+          isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.place" name="place" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.4"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Place.ArcTP"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.transition" name="transition"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.7"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.ArcTP"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.PetriNet" name="PetriNet" isRequired="false"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet" implicit="true"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.PetriNet.arcTP"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.Transition" name="Transition"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.8"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Transition.postArc"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.ArcTP.Place" name="Place" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.9"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.Place.preArc"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.PetriNetModel.Place" name="Place"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.name" name="name" isRequired="false"
+          type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.preArc" name="preArc" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.2"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.Place"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.token" name="token" isRequired="false"
+          type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Integer"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.postArc" name="postArc" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.1"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.Place"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.PetriNet" name="PetriNet" isRequired="false"
+          type="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.PetriNet" implicit="true"
+          opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.PetriNet.place"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.ArcPT" name="ArcPT" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.5"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcPT.place"/>
+      <ownedAttribute xmi:id="p.PetriNetModel.Place.ArcTP" name="ArcTP" type="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.6"
+          implicit="true" opposite="PetriNetWithOCLPaper.ecoreecore.oclas#p.PetriNetModel.ArcTP.place"/>
+    </ownedType>
+  </nestedPackage>
+  <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.10 PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.11"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.12 PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.13"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.14 PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.15"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.16 PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.17"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:SetType" name="Set" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.17"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Set">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..SetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.18"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.19"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:SetType" name="Set" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.11"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Set">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..SetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.20"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.21"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.20"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.20"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.18"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.18"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.19"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.19"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.21"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="PetriNetWithOCLPaper.ecoreecore.oclas#//@nestedPackage.1/@ownedType.21"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcPT"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.ArcTP"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Transition"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class PetriNetWithOCLPaper.ecoreecore.oclas#T.PetriNetModel.Place"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+  </nestedPackage>
+</pivot:Root>

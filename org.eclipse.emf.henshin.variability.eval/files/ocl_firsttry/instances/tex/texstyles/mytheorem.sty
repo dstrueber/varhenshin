@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% mytheorem.sty
+% Version 1.4.1,  29.11.2006
+%
+%  Changelog: Internationalization
+%   - Version 1.4.2 07.12.2006, \mynewcounter{assumption} eingeführt
+%   - Version 1.4.1 29.11.2006, \mynewcounter{lemma} eingeführt
+%   - Version 1.4,  09.03.2006, Zaehler werden nur gegebenenfalls definiert,
+%Umgebungen werden definiert oder redefiniert (falls schon definiert)
+%   - Version 1.3,  29.06.2005, \intgerman und \inenglish können nun innerhalb eines Dokumentes aufgerufen werden
+%   - Version 1.2,  21.10.2004
+%
+%
+% Fuer die Definition von neuen Umgebungen, siehe "Definition von Umgebungen"
+% und ggf. "Definition von neuen Zaehlern".
+%
+% Soll der Stil einer Umgebung veraendert werden, siehe ebenfalls "Definition 
+% von Umgebungen".
+%
+% Abaenderung oder Neudefinition von Umgebungsstilen, siehe "Definition von 
+% Umgebungsstilen" und "Definition von Umgebungsenden".
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter % @ wie einen Buchstaben behandeln
+\def\cloneenvironment#1#2{%1=targetidentifier, 2=sourceidentifier
+	\newenvironment{#1}{\begin{#2}}{\end{#2}}}
+\def\mynewenvironment#1#2#3#4#5{%
+%Parameter: 1=TeX-Umgebungsidentifier, 2=Print-Out-Umgebungsbezeichnung, 3=Schriftstil, 4=\style{parameter}, 5=Umgebungsende
+%Übergabe:  1=TeX-Umgebungsidentifier, 2=\style{parameter}, 3=Print-Out-Umgebungsbezeichnung, 4=Schriftstil, 5=Optionaler Name, 6=Umgebungsende
+	\@ifundefined{#1}{\newenvironment}{\renewenvironment}{#1}{\@ifnextchar[{\@argtest{#2}{#3}{#4}}{\argtest{#2}{#3}{#4}}}{#5}
+}
+\def\argtest#1#2#3{#3{#1}{#2}{}}
+\def\@argtest#1#2#3[#4]{#3{#1}{#2}{#4}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition von neuen Zaehlern
+% Syntax: \mynewcounter{Name1}[Name2]
+%  Definiert einen neuen Zaehler mit Namen "Name1" der automatisch
+%  zurueckgesetzt wird, wenn der Zaehler "Name2" zurueckgesetzt wird.
+%  [Name2] ist optional, kann z.B. "section" sein.
+
+\def\mynewcounter#1{\@ifundefined{c@#1}{\newcounter{#1}}{\@ifnextchar[{\readargopt{#1}}{\readarg{#1}}}}%
+\def\readargopt#1[#2]{}
+\def\readarg#1{}
+
+ \mynewcounter{answer}
+ \mynewcounter{assumption}
+ \mynewcounter{gassumption}
+ \mynewcounter{claim}
+ \mynewcounter{conjecture}
+ \mynewcounter{discussion}
+ \mynewcounter{corollary}
+ \mynewcounter{definition}
+ \mynewcounter{example}
+ \mynewcounter{exercise}
+ \mynewcounter{fact}
+ \mynewcounter{lemma}
+ \mynewcounter{notation}
+\mynewcounter{proposition}
+\mynewcounter{question}
+ \mynewcounter{remark}
+ \mynewcounter{solution}
+ \mynewcounter{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% i18n:
+\newcommand{\intgerman}{% German
+\def\nameassumption{Voraussetzung}
+\def\namealgorithm{Algorithmus}
+\def\nameclaim{Behauptung}
+\def\nameconjecture{Vermutung}
+\def\nameconstruction{Konstruktion}
+\def\nameconvention{Konvention}
+\def\namecorollary{Folgerung}
+\def\namedefinition{Definition}
+\def\nameexample{Beispiel}
+\def\nameexercise{Aufgabe}
+\def\namefact{Fakt}
+\def\namegassumption {Generelle Annahme}
+\def\namegremark{Generelle Bemerkung}
+\def\namelemma{Lemma}
+\def\namenotation{Schreibweise}
+\def\nameobservation {Beobachtung}
+\def\nameproof{Beweis}
+\def\nameproofidea{Beweisidee}
+\def\nameproofsketch {Beweisskizze}
+\def\nameproofof{Beweis von}
+\def\nameproposition{Proposition}
+\def\nameremark {Bemerkung}
+\def\namesolution{L\"osung}
+\def\nametheorem{Theorem}
+}
+\newcommand{\intenglish}{% English
+\def\nameanswer{Answer}
+\def\nameassumption{Assumption}
+\def\namealgorithm{Algorithm}
+\def\nameclaim{Claim}
+\def\nameconjecture{Conjecture}
+\def\nameconstruction{Construction}
+\def\nameconvention{Convention}
+\def\namecorollary{Corollary}
+\def\namedefinition{Definition}
+\def\namediscussion{Discussion}
+\def\nameexample{Example}
+\def\nameexercise{Exercise}
+\def\namefact{Fact}
+\def\namegassumption {General Assumption}
+\def\namegremark{General Remark}
+\def\namelemma{Lemma}
+\def\namenotation{Notation}
+\def\nameobservation {Observation}
+\def\namequestion {Question}
+\def\nameproof{Proof}
+\def\nameproofbreak{Proof}
+\def\namecproof{Proof}
+\def\nameproofidea{Proof idea}
+\def\nameproofsketch {Sketch of proof}
+\def\nameproofof{Proof of}
+\def\nameproposition{Proposition}
+\def\nameremark {Remark}
+\def\namesolution{Solution}
+\def\nametheorem{Theorem}
+}
+% default english
+\intenglish
+%\intgerman
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition von Umgebungen
+%
+% Syntax: \mynewenvironment{Bezeichner}{Name}{\style{opt.  Zaehler}}{\Umgebungsende}
+%Parameter: {Bezeichner}{Name}{Schriftstil}{\style{ggf. Zaehler}}{\Umgebungsende}
+\mynewenvironment{answer}{\nameanswer} {\bf}{\plainstyle}{\plainend}
+%\mynewenvironment{assumption}{\nameassumption} {\bf}{\plainstyle}{\plainend}
+\mynewenvironment{assumption}{\nameassumption} {\bf}{\numberstyle{assumption}}{\plainend}
+\mynewenvironment{gassumption}{\namegassumption} {\bf}{\plainstyle}{\plainend}
+\mynewenvironment{myalgorithm}{\namealgorithm}{\bf}{\plainstyle}{\plainend}
+%\mynewenvironment{claim}{\nameclaim} {\bf}{\plainstyle}{\plainend}
+\mynewenvironment{claim}{\nameclaim} {\bf}{\numberstyle{claim}}{\plainend}
+\mynewenvironment{conjecture}{\nameconjecture} {\bf}{\plainstyle }{\plainend}
+\mynewenvironment{construction}{\nameconstruction}{\bf}{\plainstyle}{\plainend}
+\mynewenvironment{convention} {\nameconvention}{\bf}{\plainstyle}{\plainend}
+\mynewenvironment{corollary}{\namecorollary}{\bf}{\numberstyle{corollary} }{\plainend}
+\mynewenvironment{definition}{\namedefinition}{\bf}{\numberstyle{definition}}{\plainend}
+\mynewenvironment{discussion}{\namediscussion}{\bf}{\plainstyle}{\plainend}
+%\mynewenvironment{example}{\nameexample}{\em}{\numberstyle{example}}{\plainend}
+\mynewenvironment{example}{\nameexample}{\bf}{\numberstyle{example}}{\plainend}
+\mynewenvironment{exercise}{\nameexercise}{\bf}{\plainstyle}{\plainend}
+\mynewenvironment{fact}{\namefact}{\bf}{\numberstyle{fact}}{\plainend}
+%\mynewenvironment{lemma} {\namelemma} {\bf}{\emphnumberstyle{lemma}}{\plainend}
+\mynewenvironment{lemma} {\namelemma} {\bf}{\numberstyle{lemma}}{\plainend}
+\mynewenvironment{notation}{\namenotation}{\bf}{\plainstyle }{\plainend}
+\mynewenvironment{observation} {\nameobservation} {\bf}{\plainstyle}{\plainend}
+\mynewenvironment{cproof} {\namecproof} {\bf}{\plainstyle}{\plainend}
+\mynewenvironment{proof} {\nameproof} {\bf}{\plainstyle}{\proofend}
+%\mynewenvironment{proof} {\nameproof} {\em}{\plainstyle}{\plainend}
+\mynewenvironment{proofidea}{\nameproofidea}{\bf}{\plainstyle}{\plainend}
+%\mynewenvironment{proofidea}{\nameproofidea}{\em}{\plainstyle}{\plainend}
+\mynewenvironment{proofsketch}{\nameproofsketch} {\bf}{\plainstyle }{\proofend}
+%\mynewenvironment{proofsketch}{\nameproofsketch} {\em}{\plainstyle}{\plainend}
+\mynewenvironment{proofof}{\nameproofof}{\bf}{\proofofstyle}{\proofend}
+%\mynewenvironment{proofof}{\nameproofof}{\em}{\proofofstyle}{\plainend}
+%\mynewenvironment{proposition}{\nameproposition}{\bf}{\plainstyle}{\plainend}
+\mynewenvironment{proposition}{\nameproposition}{\bf}{\numberstyle{proposition}}{\plainend}
+\mynewenvironment{question}{\namequestion}{\bf}{\plainstyle }{\plainend}
+%\mynewenvironment{remark}{\nameremark}{\em}{\numberstyle{remark}}{\plainend}
+\mynewenvironment{remark}{\nameremark}{\bf}{\numberstyle{remark}}{\plainend}
+\mynewenvironment{solution}{\namesolution}{\bf}{\plainstyle }{\plainend}
+%\mynewenvironment{theorem}{\nametheorem}{\bf}{\emphnumberstyle{theorem}}{\plainend}
+\mynewenvironment{theorem}{\nametheorem}{\bf}{\numberstyle{theorem}}{\plainend}
+\mynewenvironment{whatever}{}{\bf}{\whateverstyle}{\plainend}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Folgende Definition werden zur Abwaertskompatibilitaet benoetigt:
+\cloneenvironment{aufgabe}{exercise}
+\cloneenvironment{behauptung}{claim}
+\cloneenvironment{beispiel}{example}
+\cloneenvironment{bemerkung}{remark}
+\cloneenvironment{beobachtung}{observation}
+\cloneenvironment{counterexample}{example}
+\cloneenvironment{folgerung}{corollary}
+\cloneenvironment{gegenbeispiel}{example}
+\cloneenvironment{korollar}{corollary}
+\cloneenvironment{satz}{theorem}
+% die Break-Varianten unterscheiden sich zu den anderen Versionen
+% darin, dass sie direkt nach dem Header umbrechen. Einfacher wäre 
+% es die anderen Varianten zu nehmen und explizit umzubrechen.
+%\cloneenvironment{corollarybreak}{corollary}
+%\cloneenvironment{definitionbreak}{definition}
+%\cloneenvironment{examplebreak}{example}
+%\cloneenvironment{exercisebreak}{exercise}
+%\cloneenvironment{lemmabreak}{lemma}
+%\cloneenvironment{remarkbreak}{remark}
+%\cloneenvironment{theorembreak}{theorem}
+\mynewenvironment{definitionbreak}{\namedefinition}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{examplebreak}{\nameexample}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{theorembreak}{\nametheorem}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{lemmabreak}{\namelemma}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{corollarybreak} {\namecorollary} {\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{factbreak}{\namefact}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{remarkbreak}{\nameremark}{\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{algorithmbreak} {\namealgorithm} {\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{proofbreak} {\nameproofbreak} {\bf}{\plainstyle}{\proofend}
+\mynewenvironment{proofsketchbreak} {\nameproofsketchbreak} {\bf}{\plainstyle}{\proofend}
+\mynewenvironment{proofideabreak} {\nameproofidea} {\bf}{\@plainstyle{\\}}{\plainend}
+\mynewenvironment{exercisebreak}{\nameexercise}{\bf}{\@plainstyle{\\}}{\plainend}
+\cloneenvironment{aufgabebreak}{exercisebreak}
+\cloneenvironment{beispielbreak}{examplebreak}
+\cloneenvironment{bemerkungbreak}{remarkbreak}
+\cloneenvironment{folgerungbreak}{corollarybreak}
+\cloneenvironment{satzbreak}{theorembreak}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition der Umgebungsstile
+% Beispiele:
+%  sectionnumberstyle% Umgebung 1.1 (Name). Text
+%  numberstyle% Umgebung 1 (Name). Text
+%  plainstyle% Umgebung (Name). Text
+%  proofstyle% Umgebung Name. Text
+\def\sectionnumberstyle{\@sectionnumberstyle{}}
+\def\numberstyle{\@numberstyle{}}
+\def\emphnumberstyle{\@numberstyle{\it}}
+\def\plainstyle{\@plainstyle{}}
+\def\whateverstyle{\@whateverstyle{}}
+\def\proofofstyle{\@proofofstyle{}}
+
+\def\@sectionnumberstyle#1#2#3#4#5{%1=opt Arg, 2=Zaehlername, 3=Umgebung, 4=Schriftstil, 5=Name,
+\begin{trivlist}\refstepcounter{#2}\item[]%
+{#4#3 \arabic{section}.\arabic{#2}\ifx\@undefined#5\then{. }\else{ (#5). }\fi}#1}%
+\def\@numberstyle#1#2#3#4#5{%1=opt Arg, 2=Zaehlername, 3=Umgebung, 4=Schriftstil, 5=Name,
+\begin{trivlist}\refstepcounter{#2}\item[]%
+{#4#3 \arabic{#2}\ifx\@undefined#5\then{. }\else{ (#5). }\fi}#1}%
+\def\@plainstyle#1#2#3#4{%1=opt Arg, 2=Umgebung, 3=Schriftstil, 4=Name 
+\begin{trivlist}\item[]%
+{#3#2\ifx\@undefined#4\then{. }\else{ (#4). }\fi}#1}%
+\def\@whateverstyle#1#2#3#4{%1=opt Arg, 2=Umgebung, 3=Schriftstil, 4=Name
+\begin{trivlist}\item[]%
+{#3#2\ifx\@undefined#4\then{}\else{#4\normalfont. }\fi}#1}%
+\def\@proofofstyle#1#2#3#4{%1=opt Arg, 2=Umgebung, 3=Schriftstil, 4=Name 
+\begin{trivlist}\item[]%
+{#3#2\ifx\@undefined#4\then{\ }\else{ #4\ }\fi}#1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition von Umgebungsenden
+% Beispiele:
+%  plainend % ...
+%  proofend % setzt eine Box ans Ende
+\def\plainend{\end{trivlist}}
+\newcommand{\myqed}{\hspace*{\fill}$\Box$}
+\def\proofend{\myqed\end{trivlist}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatother % @ ist nun wieder ein reserviertes Zeichen

@@ -1,0 +1,738 @@
+% ABBREVIATIONS  -------------
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\C}{\mathrm{C}}
+\newcommand{\D}{\mathrm{D}}
+\newcommand{\E}{\mathrm{E}}%edges
+\newcommand{\Epi}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\Init}{I}
+\newcommand{\Iso}{\mathcal{I}\mathrm{so}}
+\renewcommand{\L}{\mathrm{L}}
+\newcommand{\M}{\mathcal{M}}
+%\newcommand{\NEpi}{\N\cup\Epi}
+\newcommand{\MN}{\mathcal{M}\cap\mathcal{N}}
+\newcommand{\Mbot}{\mathcal{M_\bot}}
+\newcommand{\Merge}{\mathrm{Merge}}
+\newcommand{\vmerge}{\mathrm{merge}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Ninj}{\mathcal{N}_\inj}
+\newcommand{\Nsurj}{\mathcal{N}_\surj}
+\newcommand{\NT}{\mathrm{N}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\Q}{\mathrm{Q}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\prule}{\varrho} 
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\Rel}{\mathrm{Rel}}
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\Sem}{\mathcal{S}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathrm{V}}%nodes
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\X}{\mathcal{X}}
+%\newcommand{\X}{\mathrm{X}}
+%\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\Y}{\mathrm{Y}}%hyperedges
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\pif}{\;\mathrm{if}\;}
+\newcommand{\pthen}{\;\mathrm{then}\;}
+\newcommand{\pelse}{\;\mathrm{else}\;}
+
+
+% REWRITE RELATIONS -------------------
+
+\newcommand{\injto}{\hookrightarrow}
+\newcommand{\injlto}{\hookleftarrow}
+\newcommand{\vinjto}{\rightarrowtail}
+\newcommand{\DSinjto}{\mathop{\injto}\limits}
+\newcommand{\DSinjlto}{\mathop{\injlto}\limits}
+\newcommand{\bmorph}[2]{\vcapsule{#1}\injto\vcapsule{#2}}
+
+\newcommand{\isoto}{\DSto^\sim}
+\newcommand{\isolto}{\DSlto^\sim}
+
+\newcommand{\lto}{\leftarrow}
+\newcommand{\DSto}{\mathop{\to}\limits}
+\newcommand{\DSlto}{\mathop{\leftarrow}\limits}
+\newcommand{\DSLongto}{\mathop{\longrightarrow}\limits}
+\newcommand{\DSLonglto}{\mathop{\longrightarrow}\limits}
+\newcommand{\LongLongto}{-\!\!\!-\!\!\!-\!\!\!-\!\!\!-\!\!\!-\!\!\!\longrightarrow}
+\newcommand{\DSLongLongto}{\mathop{\LongLongto}\limits}
+
+\newcommand{\dder}{\Rightarrow}
+\newcommand{\ldder}{\Leftarrow}
+\newcommand{\DSdder}{\mathop{\Rightarrow}\limits}
+\newcommand{\DSldder}{\mathop{\Longleftarrow}\limits} 
+\newcommand{\Longdder}{\Longrightarrow}
+\newcommand{\Longldder}{\Longleftarrow}
+\newcommand{\DSLongdder}{\mathop{\Longrightarrow}\limits}
+
+\newcommand{\der}{\overset{*}\dder }
+\newcommand{\lder}{\overset{*}\ldder }
+
+\newcommand{\DSder}{\mathop{\Rightarrow^*}\limits}
+\newcommand{\DSlder}{\mathop{\Leftarrow^*}\limits}
+\newcommand{\DSLongder}{\mathop{\Longrightarrow^*}\limits}
+\newcommand{\DSLonglder}{\mathop{\Longleftarrow^*}\limits}
+\newcommand{\LongLongleftarrow}{\Longleftarrow\!=\!=\!\!=\!=\!=\!=\!=\!=}
+\newcommand{\DSLongLongdder}{\mathop{\LongLongrightarrow}\limits}
+\newcommand{\DSLongLongldder}{\mathop{\LongLongleftarrow}\limits}
+\newcommand{\DSExtraLongdder}{\mathop{\ExtraLongrightarrow}\limits}
+\newcommand{\DSExtraLongldder}{\mathop{\ExtraLongleftarrow}\limits}
+
+\newcommand{\bdder}[2]{\vcapsule{#1}\DSLongdder\vcapsule{#2}}
+
+\newcommand{\impl}{\Rightarrow}
+\newcommand{\limpl}{\Leftarrow}
+\newcommand{\shortiff}{\Leftrightarrow}
+\newcommand{\Longimpl}{\Longrightarrow}
+
+% MISCELLANEOUS  ------------------------
+
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Codom}{\mathrm{Ran}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\Pres}{\mathrm{Pres}}
+
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\handle}[1]{#1^{\bullet}}
+\newcommand{\pointed}[1]{#1^{\bullet}}
+\newcommand{\pair}[2]{\mathrm{{#1/#2}}}
+\newcommand{\tuple}[1]{\langle#1\rangle}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\uif}{\;{\mathrm{if}}\;}
+\newcommand{\uthen}{\;{\mathrm{then}}\;}
+\newcommand{\uelse}{\;{\mathrm{else}}\;}
+
+\newcommand{\nat}{\mathbb{N}}%natural numbers
+\newcommand{\init}{\mathrm{init}}%initial morphism
+%\newcommand{\tr}{\mathrm{tr}}%track function
+
+
+% High-lecel structures ---------------------------------------
+
+\newcommand{\HLR}{\mathrm{HLR}}
+\newcommand{\Cat}{\mathcal{C}}
+\newcommand{\Obj}{\mathrm{Obj}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sets}{\mathrm{Sets}}
+\newcommand{\Graphs}{\mathrm{Graphs}}
+\newcommand{\HGraphs}{\mathrm{HGraphs}}
+\newcommand{\PLGraphs}{\mathrm{PLG}}%partially labelled graphs
+\newcommand{\TGraphs}{\mathrm{TG}}%term graphs
+\newcommand{\ULGraphs}{\mathrm{ULG}}%unlabelled graphs
+\newcommand{\ulg}{\mathrm{0}}%unlabelled 
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\PTNets}{\mathrm{PTNets}}
+\newcommand{\AHLNets}{\mathrm{AHLNets}}
+
+\newcommand{\dpo}{\mathrm{dpo}}
+\newcommand{\CF}{\mathrm{CF}}
+
+\newcommand{\inM}{\mathrm{inM}}
+
+% Graphs ---------------------------------------
+
+%\newcommand{\V}{\mathrm{V}}
+%\newcommand{\E}{\mathrm{E}}
+%\newcommand{\Y}{\mathrm{Y}}
+\newcommand{\sou}{\mathrm{s}}
+\newcommand{\tar}{\mathrm{t}}
+\newcommand{\att}{\mathrm{att}}
+\newcommand{\lab}{\mathrm{l}}
+\newcommand{\mar}{\mathrm{m}}
+\newcommand{\flab}{\mathrm{lab}}
+\newcommand{\vlab}{\mathrm{lv}}
+\newcommand{\elab}{\mathrm{le}}
+\newcommand{\ylab}{\mathrm{ly}}
+%\newcommand{\s}{\mathrm{s}}
+%\renewcommand{\t}{\mathrm{t}}% these definitions may clash with mscs.cls
+%\renewcommand{\l}{\mathrm{l}}% these definitions may clash with mscs.cls
+%\newcommand{\m}{\mathrm{m}}
+\newcommand{\induced}[1]{#1^\bullet}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\points}{\mathrm{pin}}
+\newcommand{\Points}{\mathrm{Pin}}
+\newcommand{\Repl}{\mathrm{Repl}}
+\newcommand{\repl}{\mathrm{repl}}
+\newcommand{\Sub}{\mathrm{Sub}}
+\newcommand{\assign}{\mathrm{assign}}
+\newcommand{\Subst}{\mathrm{Subst}}
+\newcommand{\subst}{\mathrm{subst}}
+\newcommand{\card}{\mathrm{card}}
+\newcommand{\size}{\mathrm{size}}
+%\newcommand{\glue}{\mathrm{glue}}
+%\newcommand{\embed}{\mathrm{embed}}
+
+\newcommand{\cin}{\sqsubseteq}
+
+\newcommand{\In}{\mathrm{In}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\Star}{\mathrm{Star}}
+\newcommand{\known}{{$\surd$}}
+\newcommand{\new}{\fbox{\tiny $\surd$}}
+
+% Graph Functions ------------------------------
+
+\newcommand{\contract}{\mathtt{contract}}
+\newcommand{\converse}{\mathtt{converse}}
+\newcommand{\redirect}{\mathtt{redirect}}
+\newcommand{\relabel}{\mathtt{relabel}}
+%\def\inverse#1{\mathrm{inverse}(#1)}%
+\def\inverse#1{#1^{-1}}%
+
+
+% Graph Properties ---------------------------------------
+
+\newcommand{\PA}{\mathrm{\forall}}
+\newcommand{\PE}{\mathrm{\exists}}
+\newcommand{\NE}{\mathrm{\nexists}}
+%\newcommand{\NE}{\mathrm{\neg\exists}}
+\newcommand{\ac}{\mathrm{ac}}%application condition
+\newcommand{\ec}{\mathrm{ec}}%extended graph constraint
+
+\newcommand{\bipartite}{\texttt{bipartite}}
+\newcommand{\colorable}{\texttt{color}}
+\newcommand{\compbipartite}{\textt{cbipartite}}
+\newcommand{\complete}{\texttt{complete}}
+\newcommand{\connected}{\texttt{connected}}
+\newcommand{\circuit}{\texttt{circuit}}
+\newcommand{\cycle}{\texttt{cycle}}
+\newcommand{\degree}{\texttt{degree}}
+\newcommand{\equal}{\texttt{equal}}
+\newcommand{\even}{\texttt{even}}
+\newcommand{\hamiltonian}{\texttt{hamiltonian}}
+\newcommand{\indegree}{\texttt{indegree}}
+\newcommand{\kpaths}{\texttt{kpaths}}
+\newcommand{\nocircuit}{\texttt{cyclefree}}
+\newcommand{\nopath}{\texttt{nopath}}
+\newcommand{\planar}{\texttt{planar}}
+\newcommand{\outdegree}{\texttt{outdegree}}
+\newcommand{\reg}{\texttt{regular}}
+\newcommand{\simple}{\texttt{simple}}
+\newcommand{\spath}{\texttt{simple\_path}}
+\newcommand{\squaregrid}{\texttt{sgrid}}
+\newcommand{\ttree}{\texttt{tree}}
+\newcommand{\troot}{\texttt{root}}
+\newcommand{\two}{\texttt{two}}
+\newcommand{\twocolorable}{2\colorable}
+\newcommand{\twopaths}{\texttt{2paths}}
+\newcommand{\twopathseq}{\texttt{2paths$^=$}}
+%\newcommand{\twopathseq}{\texttt{2paths$_=$}}
+%\newcommand{\twopathseq}{\texttt{2paths=}}
+%\newcommand{\uconnected}{\texttt{uconnected}}
+%\newcommand{\unocircuit}{\texttt{ucyclefree}}
+%\newcommand{\upath}{\texttt{upath}}
+%\newcommand{\usimple}{\mathtt{u\_simple}}
+
+% Graph Morphisms ---------------------------------------
+
+\newcommand{\id}{\mathrm{id}}
+%\newcommand{\inc}{\mathrm{inc}}
+\newcommand{\inc}{\mathrm{in}}
+%\newcommand{\inj}{\mathrm{in}}
+\newcommand{\inj}{\mathrm{inj}}
+\newcommand{\surj}{\mathrm{surj}}
+\newcommand{\iso}{\mathrm{iso}}
+
+% Graph Conditions ---------------------------------------
+
+\newcommand{\Empty}{\mathrm{Empty}}
+%\newcommand{\Incident}{\mathrm{Incident}}
+\newcommand{\NoEdge}{\mathrm{NoEdge}}
+\newcommand{\NoIncident}{\mathrm{NoIncident}}
+\newcommand{\NoMore}{\mathrm{NoMore}}
+\newcommand{\NoMoreNodes}{\mathrm{NoMoreNodes}}
+\newcommand{\NoMoreEdges}{\mathrm{NoMoreEdges}}
+\newcommand{\NoNode}{\mathrm{NoNode}}
+\newcommand{\NoFurther}{\mathrm{NoFurther}}
+\newcommand{\NoOne}{\mathrm{NoOne}}
+\newcommand{\NoTwo}{\mathrm{NoTwo}}
+\newcommand{\One}{\mathrm{One}}
+\newcommand{\Two}{\mathrm{Two}}
+
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\post}{\mathrm{post}}
+\newcommand{\spost}{\mathrm{sp}}
+\newcommand{\slpost}{\mathrm{slp}}
+\newcommand{\wpre}{\mathrm{wp}}
+\newcommand{\wlpre}{\mathrm{wlp}}
+\newcommand{\Spost}{\mathrm{Sp}}
+\newcommand{\Slpost}{\mathrm{Slp}}
+\newcommand{\Wpre}{\mathrm{Wp}}
+\newcommand{\Wlpre}{\mathrm{Wlp}}
+
+% GRAPH RULES --------------------------------------------------
+
+\newcommand{\arule}[3]{\langle\/{#1}\leftarrow{#2}\rightarrow{#3}\/\rangle}
+\newcommand{\brule}[3]{\langle\/{#1}\injlto{#2}\injto{#3}\/\rangle}
+\newcommand{\crule}[3]{\langle\/{#1}\injlto{#2}\to{#3}\/\rangle}
+%\newcommand{\drule}[3]{\langle\/{#1}\injlto{#2}\to{#3}\/\rangle}
+\newcommand{\mrule}[4]{\langle\/{#1}\leftarrow{#2}\rightarrow^{#4}{#3}\/\rangle}
+\newcommand{\grarule}{\arule{L}{K}{R}}
+\newcommand{\bgrarule}{\brule{L}{K}{R}}
+\newcommand{\mgrarule}{\mrule{L}{K}{R}{r}}
+\newcommand{\ngrarule}{\nrule{L}{K}{R}{l}{r}}
+\newcommand{\nrule}[5]{\langle\/{#1}\DSlto^{#4}{#2}\DSto^{#5}{#3}\/\rangle}
+
+% GRAPH PROGRAMS --------------------------------------------------
+
+\newcommand{\aslong}[1]{#1\!\!\downarrow}
+\newcommand{\Aslong}[1]{#1\!\Downarrow}
+\newcommand{\closure}[1]{#1^*}
+%\newcommand{\Closure}[1]{#1^\ostar}
+%\newcommand{\plus}[1]{#1^+}
+%\newcommand{\Plus}[1]{#1^\oplus}
+%\newcommand{\Seq}[2]{#1\ostar\;#2\;}
+\newcommand{\Skip}{\mathtt{Skip}}
+%\newcommand{\iter}[1]{#1\!\downarrow}
+%\newcommand{\para}[1]{#1\!\Downarrow}
+\newcommand{\epsem}[1]{\psem{#1}}
+%\newcommand{\asem}[1]{\llbracket#1\rrbracket_\A}
+%\newcommand{\msem}[1]{\llbracket#1\rrbracket_\M}
+\newcommand{\psem}[1]{\llbracket#1\rrbracket}
+%\newcommand{\Check}{\mathrm{Check}}
+\newcommand{\Select}{\mathrm{Select}}
+\newcommand{\Mark}{\mathrm{Mark}}
+
+% THEORY -------------
+
+\newcommand{\Protect}{\mathrm{Protect}}
+\newcommand{\Boundary}{\mathrm{Boundary}}
+\newcommand{\Context}{\mathrm{Context}}
+\newcommand{\Persist}{\mathrm{Persist}}
+\newcommand{\Use}{\mathrm{Use}}
+\newcommand{\Match}{\mathrm{Match}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\track}{\mathrm{tr}}
+
+\newcommand{\EFD}{\mathrm{EFD}}
+\newcommand{\WSFD}{\mathrm{WSFD}}
+\newcommand{\CON}{\mathrm{CON}}
+\newcommand{\AC}{\mathrm{AC}}
+
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\failrm}{\mathrm{fail}}
+\newcommand{\failtt}{\mathtt{fail}}
+\newcommand{\skiptt}{\mathtt{skip}}
+
+% Graph Formulas---------------------------------------
+
+\newcommand{\Sig}{\Sigma}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Free}{\mathrm{Free}}
+
+\newcommand{\FO}{\mathrm{FO}}
+\newcommand{\MSO}{\mathrm{MSO}}
+\newcommand{\SO}{\mathrm{SO}}
+
+%\newcommand{\CO}{\mathrm{Cond}}%graph conditions
+\newcommand{\HR}{\mathrm{HR}}
+\newcommand{\hr}{\mathrm{hr}}
+\newcommand{\HRC}{\mathrm{HRCond}}
+\newcommand{\prop}{\mathrm{prop}}
+
+\newcommand{\edg}{\mathrm{edg}}
+\newcommand{\pedge}{\mathrm{edge}}
+\newcommand{\pnode}{\mathrm{node}}
+
+\newcommand{\true}{\mathit{true}}
+\newcommand{\false}{\mathit{false}}
+\newcommand{\ctrue}{\mathit{true}}
+\newcommand{\cfalse}{\mathrm{false}}
+\newcommand{\ftrue}{\mathrm{true}}
+\newcommand{\ffalse}{\mathrm{false}}
+\newcommand{\op}{\mathit{op}\;}
+
+\def\cwedge{\mathord{\wedge}}
+\def\cvee{\mathord{\vee}}
+\newcommand{\wedgevee}{\stackrel{\wedge}{\tiny{\vee}}}
+%\newcommand{\andor}{\,\vcenter{\hbox{\tiny $\wedge$}\kern0.05cm\hbox{\tiny $\vee$}}\,}
+%\newcommand{\orand}{\,\vcenter{\hbox{\tiny $\vee$}\kern0.05cm\hbox{\tiny $\wedge$}}\,}
+\newcommand{\forallexists}{\,\vcenter{\hbox{\small $\forall$}{\kern0.05cm}\hbox{\small $\exists$}}\,}
+\newcommand{\existsforall} {\,\vcenter{\hbox{\small $\exists$}{\kern0.05cm}\hbox{\small $\forall$}}\,}
+
+\newlength{\uboxh}\newlength{\lboxh}\newsavebox{\uppers}\newsavebox{\lowers}
+\newcommand{\andor}{\savebox{\uppers}{\mbox{$\scriptsize\wedge$}}\savebox{\lowers}{\mbox{$\scriptsize\vee$}}\setlength{\uboxh}{\ht\uppers}\addtolength{\uboxh}{\dp\uppers}\setlength{\uboxh}{0.7\uboxh}\setlength{\lboxh}{\ht\uppers}\addtolength{\lboxh}{\dp\uppers}\setlength{\lboxh}{0.7\lboxh}\,\rlap{\raise\uboxh\hbox{\usebox{\uppers}}}\lower\lboxh\hbox{\usebox{\lowers}}\,}
+
+% Temporal togics --------
+
+\newcommand{\Next}{\bigcirc}
+\newcommand{\Always}{\Box}
+\newcommand{\Ev}{\Diamond}
+\newcommand{\Until}{\;{\U\;}}
+
+% Transformations -----
+
+\newcommand{\Asat}{\mathrm{Asat}} %for morphisms: from $\M$- to $\A$-satisfiability
+\newcommand{\ACond}{\mathrm{Cond}} %from formulas to conditions
+%\newcommand{\Cond}{\mathrm{Cond}} %from formulas to conditions
+%\newcommand{\Form}{\mathrm{Form}} % from conditions to formulas
+\newcommand{\Ac}{\mathrm{A}} % from constraints to right application cond
+\newcommand{\Integrate}{\mathrm{I}} %itegrate constraint into left application condition
+\newcommand{\Left}{\mathrm{Left}} % from right to left application cond
+\newcommand{\leftappl}{\mathrm{Left}} % from rule to rule with true right appl cond
+\newcommand{\Msat}{\mathrm{Msat}} %for morphisms: from $\A$- to $\M$-satisfiability
+\newcommand{\MCond}{\mathrm{Cond_\M}} %from formulas to conditions
+\newcommand{\Right}{\mathrm{R}} % from left to right application cond
+\newcommand{\Shift}{\mathrm{Shift}} % from left to right application cond
+
+\newcommand{\ocl}{\mathrm{ocl}} % OCL constraint
+\newcommand{\gc}{\mathrm{gc}} %graph condition
+
+\newcommand{\amodels}{\models_\A }
+\newcommand{\aprimemodels}{\models_{\A'} }
+\newcommand{\mmodels}{\models_\M }
+
+\newcommand{\dotequiv}{\stackrel{.}{\equiv}}
+\newcommand{\circequiv}{\stackrel{\circ}{\equiv}}
+\newcommand{\toequiv}{\stackrel{{}_\to}{\equiv}}
+\newcommand{\mequiv}{\toequiv}
+
+% NODE GRAPHS--------------------------------------------------
+
+\renewcommand{\Circlediameter}{0.2}% 
+\def\smaller#1{\scalebox{0.75}{\normalsize#1}}
+\def\node#1{\Circle[minimum size=\Circlediameter ex,label={[indexlabel,overlay]290:#1}]{}{}}%
+\def\leep{\Loop{}{}}%
+
+\newcommand{\nodegraph}[1]{
+\begin{graph}(0.4,0.3)(0,0.05)\opaquetextfalse
+\roundnode{A}(0.2,0.15)[\graphnodesize{0.30}\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{${#1}$}
+\end{graph}}
+
+%\newcommand{\nodegraph}[1]{\begin{graph}(0.5,0.5)\roundnode{A}(0.25,0.25)[\graphnodesize{0.5}\graphnodecolour{1}\graphlinecolour{0}]\nodetext{A}{${#1}$}\end{graph}}
+
+\newcommand{\varnodegraph}[1]{\graphlinewidth{.01}\graphlinecolour{0}\graphnodecolour{1}\graphnodesize{.4}\begin{graph}(.4,.2)\roundnode{n}(.2,.1)\autonodetext{n}{#1}\end{graph}}
+
+\newcommand{\onenode}[1]{\begin{graph}(0.2,0.2)\opaquetextfalse
+\roundnode{v1}(0.1,0.05)\autonodetext{v1}[s]{\tiny $#1$}\end{graph}}
+
+%\newcommand{\onevar}[1]{\begin{graph}(0.4,0.2)\textnode{x1}(0.2,0.1){$#1$}\end{graph}}
+
+\newcommand{\onevar}[1]{\begin{graph}(0.3,0.2)(0,0.02)\textnode{x}(0.15,0.1){\small $#1$}\end{graph}}
+
+\newcommand{\onenodeloop}[1]{\begin{graph}(0.4,0.2)
+\roundnode{v1}(0.2,0.0)\autonodetext{v1}[s]{\tiny $#1$}
+\dirloopedge{v1}(-0.1,0.1)(0.1,0.1)\end{graph}}
+
+\newcommand{\onenodevar}[2]{\begin{graph}(0.4,0.2)(0,-0.1)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[e]{\tiny $#1$}
+\textnode{x1}(0.2,-0.2){\tiny $#2$}\diredge{v1}{x1}
+\end{graph}}
+
+\newcommand{\ronenodevar}[2]{\begin{graph}(0.8,0.2)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[w]{\tiny $#1$}
+\textnode{x1}(0.6,0.1){\tiny $#2$}\diredge{v1}{x1}
+\end{graph}}
+
+\newcommand{\onenodevars}[3]{\begin{graph}(0.8,0.2)(0,-0.1)
+\roundnode{v1}(0.4,0.1)\autonodetext{v1}[e]{\tiny $#1$}
+\textnode{x1}(0.2,-0.2){\tiny $#2$}\diredge{v1}{x1}
+\textnode{x2}(0.6,-0.2){\tiny $#3$}\diredge{v1}{x2}
+\end{graph}}
+
+\newcommand{\twonodes}[2]{\begin{graph}(0.6,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\end{graph}}
+
+\newcommand{\oneedge}[3]{\begin{graph}(0.6,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#3$}
+\end{graph}}
+
+\newcommand{\oneedgeloopone}[3]{\begin{graph}(0.6,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#3$}
+\dirloopedge{v1}(-0.05,0.2)(0.05,0.2)\end{graph}}
+
+\newcommand{\oneedgelooptwo}[3]{\begin{graph}(0.6,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#3$}
+\dirloopedge{v2}(-0.05,0.2)(0.05,0.2)\end{graph}}
+
+
+\newcommand{\twoedgespar}[4]{\begin{graph}(0.8,0.2)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.6,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\dirbow{v1}{v2}{0.15}\bowtext{v1}{v2}{0.45}{\tiny $#3$}
+\dirbow{v1}{v2}{-0.15}\bowtext{v1}{v2}{-0.45}{\tiny $#4$}
+\end{graph}}
+
+\newcommand{\twoedgesreverse}[4]{\begin{graph}(0.8,0.2)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.6,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\dirbow{v1}{v2}{0.15}\bowtext{v1}{v2}{0.45}{\tiny $#3$}
+\dirbow{v2}{v1}{0.15}\bowtext{v2}{v1}{0.45}{\tiny $#4$}
+\end{graph}}
+
+\newcommand{\twoedges}[5]{\begin{graph}(1.0,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\roundnode{v3}(0.9,0.1)\autonodetext{v3}[s]{\tiny $#3$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#4$}
+\diredge{v2}{v3}\bowtext{v2}{v3}{0.3}{\tiny $#5$}
+\end{graph}}
+
+\newcommand{\twoedgesplus}[7]{\begin{graph}(1.0,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\roundnode{v3}(0.9,0.1)\autonodetext{v3}[s]{\tiny $#3$}
+\roundnode{v4}(0.9,0.4)\autonodetext{v4}[s]{\tiny $#4$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#5$}
+\diredge{v2}{v3}\bowtext{v2}{v3}{-0.3}{\tiny $#6$}
+\diredge{v2}{v4}\bowtext{v2}{v4}{0.3}{\tiny $#7$}
+\end{graph}}
+
+\newcommand{\threeedges}[7]{\begin{graph}(1.4,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\roundnode{v3}(0.9,0.1)\autonodetext{v3}[s]{\tiny $#3$}
+\roundnode{v4}(1.3,0.1)\autonodetext{v4}[s]{\tiny $#4$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#5$}
+\diredge{v2}{v3}\bowtext{v2}{v3}{0.3}{\tiny $#6$}
+\diredge{v3}{v4}\bowtext{v3}{v4}{0.3}{\tiny $#7$}
+\end{graph}}
+
+\newcommand{\threeedgespar}[7]{\begin{graph}(1.4,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\roundnode{v3}(0.9,0.1)\autonodetext{v3}[s]{\tiny $#3$}
+\roundnode{v4}(1.3,0.1)\autonodetext{v4}[s]{\tiny $#4$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#5$}
+\dirbow{v2}{v3}{0.15}\bowtext{v2}{v3}{0.45}{\tiny $#6$}
+\diredge{v3}{v4}\bowtext{v3}{v4}{0.3}{\tiny $#7$}
+\dirbow{v2}{v3}{-0.15}\bowtext{v2}{v3}{-0.45}{}
+\end{graph}}
+
+\newcommand{\threeedgesplus}[7]{\begin{graph}(1.4,0.2)
+\roundnode{v1}(0.1,0.1)\autonodetext{v1}[s]{\tiny $#1$}
+\roundnode{v2}(0.5,0.1)\autonodetext{v2}[s]{\tiny $#2$}
+\roundnode{v3}(0.9,0.1)\autonodetext{v3}[s]{\tiny $#3$}
+\roundnode{v4}(1.3,0.1)\autonodetext{v4}[s]{\tiny $#4$}
+\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#5$}
+\dirbow{v2}{v3}{0.15}\bowtext{v2}{v3}{0.45}{\tiny $#6$}
+\diredge{v3}{v4}\bowtext{v3}{v4}{0.3}{\tiny $#7$}
+\dirbow{v3}{v2}{0.15}\bowtext{v3}{v2}{0.45}{}
+\end{graph}}
+
+%\newcommand{\etwonodesedge}[1]{\begin{graph}(0.6,0.2)
+%\roundnode{v1}(0.1,0.1)\roundnode{v2}(0.5,0.1)\diredge{v1}{v2}\bowtext{v1}{v2}{0.3}{\tiny $#1$}
+%\end{graph}}
+
+%\newcommand{\etwoedges}[2]{\begin{graph}(0.6,0.2)
+%\roundnode{v1}(0.1,0.1)\roundnode{v2}(0.5,0.1)\diredge{v1}{v2}\bowtext{v1}{v2}{0.2}{\tiny $#1$}
+%\roundnode{v1'}(0.1,0)\roundnode{v2'}(0.5,0)\diredge{v1'}{v2'}\bowtext{v1'}{v2'}{-0.2}{\tiny $#2$}
+%\end{graph}}
+
+\newcommand{\twonodesedges}[2]{\begin{graph}(0.8,0.2)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[w]{\tiny $#1$}
+\roundnode{v2}(0.6,0.1)\autonodetext{v2}[e]{\tiny $#2$}
+\dirbow{v1}{v2}{0.15}\dirbow{v1}{v2}{-0.15}
+\end{graph}}
+
+\newcommand{\twonodesedgevar}[3]{\begin{graph}(0.8,0.2)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[w]{\tiny $#1$}
+\roundnode{v2}(0.6,0.1)\autonodetext{v2}[e]{\tiny $#2$}\diredge{v1}{v2}
+\textnode{x}(0.4,-0.2){\tiny $#3$}\diredge{v1}{x}\diredge{v2}{x}
+\end{graph}}
+
+\newcommand{\twonodesedgevars}[4]{\begin{graph}(0.8,0.2)(0,-0.1)
+\roundnode{v1}(0.2,0.1)\autonodetext{v1}[w]{\tiny $#1$}
+\roundnode{v2}(0.6,0.1)\autonodetext{v2}[e]{\tiny $#2$}\diredge{v1}{v2}
+\textnode{x1}(0.2,-0.2){\tiny $#3$}\diredge{v1}{x1}
+\textnode{x2}(0.6,-0.2){\tiny $#4$}\diredge{v2}{x2}
+\end{graph}}
+
+% GRAPHS -------------------
+
+\ignore{\newcommand{\emptygraph}{\begin{framegraph}(1,1)
+\textnode{E}(0.5,0.5){$\emptyset$}\end{framegraph}}
+
+\newcommand{\one}[1]{\begin{framegraph}(1,1)
+\roundnode{A}(0.5,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny 1}\end{framegraph}}
+
+%\newcommand{\textone}[1]{\begin{graph}(0.2,0.2)\roundnode{v1}(0.1,0.1)\end{graph}}
+%\newcommand{\textonevar}[1]{\begin{graph}(0.4,0.2)\textnode{x}(0.2,0.1){$#1$}\end{graph}}
+%\newcommand{\texttwo}[1]{\begin{graph}(0.2,0.2)\roundnode{v1}(0.1,0.1)\end{graph}}
+
+\newcommand{\two}[2]{\begin{framegraph}(1,1.2)(0,-0.1)
+\roundnode{A}(0.5,0.8)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.5,0.2)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}
+\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}
+\autonodetext{B}[se]{\tiny 2}
+\end{framegraph}}
+
+\newcommand{\twoedge}[2]{\begin{framegraph}(1,1)
+\roundnode{A}(0.5,0.8)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.5,0.2)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}
+\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}
+\autonodetext{B}[se]{\tiny 2}
+\diredge{A}{B}[\graphlinecolour{0}]
+\end{framegraph}}}
+%------------------------------------------------------------------------------------
+\newcommand{\newone}[2]{\begin{graph}(0.6,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny #2}
+\end{graph}}
+
+\newcommand{\newxone}[2]{\begin{graph}(1.1,0.6)%x for large
+\roundnode{A}(0.6,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny #2}
+\end{graph}}
+
+\newcommand{\newtwo}[2]{\begin{graph}(1.1,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.8,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\end{graph}}
+
+\newcommand{\newtwomod}[4]{\begin{graph}(1.1,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.8,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny #3}\autonodetext{B}[se]{\tiny #4}\end{graph}}
+
+\newcommand{\newtwoedge}[2]{\begin{graph}(1.2,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.9,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\diredge{A}{B}[\graphlinecolour{0}]
+\end{graph}}
+
+\newcommand{\vnewtwoedge}[2]{\begin{graph}(0.6,1.2)%vertical
+\roundnode{A}(0.3,0.9)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\diredge{A}{B}[\graphlinecolour{0}]
+\end{graph}}
+
+\newcommand{\newthree}[3]{\begin{graph}(1.6,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.8,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{C}(1.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}\nodetext{C}{$\mathtt{#3}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}\autonodetext{C}[se]{\tiny 3}
+\end{graph}}
+
+\newcommand{\frameone}[2]{\begin{framegraph}(1,1)
+\roundnode{A}(0.5,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny #2}
+\end{framegraph}}
+
+\newcommand{\frameoneenv}[2]{\begin{framegraph}(1.4,1.4)(-0.2,-0.2)%node with environment
+\roundnode{A}(0.5,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{A1}(0.1,0.9)[\graphnodecolour{1}\graphlinecolour{0}\graphnodesize{0.1}]
+\roundnode{A2}(0.5,1)[\graphnodecolour{1}\graphlinecolour{0}\graphnodesize{0.1}]
+\roundnode{A3}(0.9,0.9)[\graphnodecolour{1}\graphlinecolour{0}\graphnodesize{0.1}]
+\roundnode{A4}(0.1,0.1)[\graphnodecolour{1}\graphlinecolour{0}\graphnodesize{0.1}]
+\roundnode{A5}(0.9,0.1)[\graphnodecolour{1}\graphlinecolour{0}\graphnodesize{0.1}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[e]{\tiny #2}
+\diredge{A1}{A}[\graphlinecolour{0}]
+\diredge{A2}{A}[\graphlinecolour{0}]
+\diredge{A3}{A}[\graphlinecolour{0}]
+\diredge{A}{A4}[\graphlinecolour{0}]
+\diredge{A}{A5}[\graphlinecolour{0}]
+\end{framegraph}}
+
+\newcommand{\frametwo}[2]{\begin{framegraph}(1.4,1)
+\roundnode{A}(0.4,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(1,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\end{framegraph}}
+
+\newcommand{\framevtwo}[2]{\begin{framegraph}(1,1.4)
+\roundnode{A}(0.5,1)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.5,0.4)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\end{framegraph}}
+
+\newcommand{\frametwoedge}[2]{\begin{framegraph}(1.4,1)%horizontal
+\roundnode{A}(0.4,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(1,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\diredge{A}{B}[\graphlinecolour{0}]
+\end{framegraph}}
+
+\newcommand{\framevtwoedge}[2]{\begin{framegraph}(1,1.4)%vertical
+\roundnode{A}(0.5,1)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.5,0.4)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\diredge{A}{B}[\graphlinecolour{0}]
+\end{framegraph}}
+
+\newcommand{\framethree}[3]{\begin{graph}(1.6,0.6)
+\roundnode{A}(0.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.8,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{C}(1.3,0.3)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}\nodetext{C}{$\mathtt{#3}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}\autonodetext{C}[se]{\tiny 3}
+\end{graph}}
+
+%\newcommand{\newtwoid}[1]{\begin{graph}(1,1.2)(0,-0.1)
+%\roundnode{A}(0.5,0.5)[\graphnodecolour{1}\graphlinecolour{0}]
+%\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny 1=2}\end{graph}}
+
+\newcommand{\textone}[2]{\begin{graph}(0.5,0.35)(0,0.15)
+\roundnode{A}(0.25,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny #2}\end{graph}}
+
+\newcommand{\texttwo}[2]{\begin{graph}(1.1,0.35)(0,0.15)
+\roundnode{A}(0.25,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.75,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\end{graph}}
+
+\newcommand{\textvtwo}[2]{\begin{framegraph}(0.5,1)%vertical
+\roundnode{A}(0.25,0.75)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.25,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}
+\end{framegraph}}
+
+\newcommand{\texttwoedge}[4]{\begin{graph}(1.1,0.35)(0,0.15)
+\roundnode{A}(0.25,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.85,0.25)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny #3}\autonodetext{B}[se]{\tiny #4}
+\diredge{A}{B}[\graphlinecolour{0}]\end{graph}}
+
+\newcommand{\smallone}[2]{\begin{graph}(0.5.0.4)%
+\roundnode{A}(0.25,0.2)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\autonodetext{A}[se]{\tiny #2}\end{graph}}
+
+\newcommand{\smalltwo}[2]{\begin{graph}(1.0,0.4)%
+\roundnode{A}(0.25,0.2)[\graphnodecolour{1}\graphlinecolour{0}]
+\roundnode{B}(0.75,0.2)[\graphnodecolour{1}\graphlinecolour{0}]
+\nodetext{A}{$\mathtt{#1}$}\nodetext{B}{$\mathtt{#2}$}
+\autonodetext{A}[se]{\tiny 1}\autonodetext{B}[se]{\tiny 2}\end{graph}}
+
+
+
+
+
+

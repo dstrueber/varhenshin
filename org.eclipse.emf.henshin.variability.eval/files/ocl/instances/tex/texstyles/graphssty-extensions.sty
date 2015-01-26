@@ -1,0 +1,377 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN graph.sty extensions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Changes:
+%  11.04.2003  \specialedge \specialdiredge
+%     05.2006  \Dir* \morphism* \autographlinecolour \annotate
+%  30.08.2006  \specialtextnode and 
+\makeatletter
+%_________________________________________________________________%%
+% Definition of round nodes:
+%
+% Arguments:
+%
+% Nodename (a character sequence like abc)
+% Position (x,y) = a pair of numbers
+%_________________________________________________________________%%
+%
+\g@test{specialroundnode}
+\def\specialroundnode#1(#2,#3){
+	\@ifnextchar[{\g@specialroundnode{#1}(#2,#3)}{\g@specialroundnode{#1}(#2,#3)[]}
+}
+%
+\def\g@specialroundnode#1(#2,#3)[#4]{
+	\g@extendlist\g@nodeinfo{\g@node{#1}{\g@circletype}(#2,#3)[#4]}
+}
+%_________________________________________________________________%%
+% Definition of text nodes (rectangular nodes whose dimension is
+% determined by the given text):
+%
+% Arguments:
+%
+% Nodename (a character sequence like abc)
+% Position (x,y) = a pair of numbers
+% Text (=anything that may occur as a \put argument in a picture
+%	environment, i.e., even lines, vectors, and so on.)
+%_________________________________________________________________%%
+%
+\g@test{specialtextnode}
+\def\specialtextnode#1(#2,#3)#4{
+	\@ifnextchar[{\g@specialtextnode{#1}(#2,#3){#4}}%
+		{\g@specialtextnode{#1}(#2,#3){#4}[]}
+}
+%
+\def\g@specialtextnode#1(#2,#3)#4[#5]{
+	\autonodetext{#1}{#4}[#5]
+	\g@extendlist\g@nodeinfo{\g@nodebytext{#1}(#2,#3){#4}[#5]}
+}
+%_________________________________________________________________%%
+% Definition of an edge:
+%
+% Arguments:
+%
+% The two incident nodes
+%_________________________________________________________________%%
+%
+\g@test{specialedge}
+\def\specialedge#1#2{%
+	\@ifnextchar[{\g@specialedge{#1}{#2}}{\g@specialedge{#1}{#2}[]}%
+}
+%
+\def\g@specialedge#1#2[#3]{%
+	\g@extendlist\g@edges{\g@drawspecialedge{#1}{#2}[#3]}%
+}
+%
+% The actual drawing routine:
+%
+	\newdimen\g@diffh%
+	\newdimen\g@diffx%
+	\newdimen\g@diffy%
+\def\getx#1{\expandafter\g@getx#1}
+\def\gety#1{\expandafter\g@gety#1}
+\def\g@getx(#1,#2){#1}
+\def\g@gety(#1,#2){#2}
+\def\g@drawspecialedge#1#2[#3]{%
+	\g@testname{#1}\g@testname{#2}%
+	\g@differentpositions{#1}{#2}{\specialedge{#1}{#2}}%
+	
+	\edef\g@firstcoords{\g@nodecoords{#1}}%
+	\edef\g@secondcoords{\g@nodecoords{#2}}%
+	\g@diffx=\getx{\g@firstcoords}\unitlength%
+	\g@diffh=\getx{\g@secondcoords}\unitlength%
+	\advance\g@diffx by -\g@diffh\relax%
+	\g@diffy=\gety{\g@firstcoords}\unitlength%
+	\g@diffh=\gety{\g@secondcoords}\unitlength%
+	\advance\g@diffy by -\g@diffh\relax%
+	\ifdim\g@diffx<0mm\g@diffx=-\g@diffx\fi%
+	\ifdim\g@diffy<0mm\g@diffy=-\g@diffy\fi%
+	
+	\edef\g@thirdcoords{%
+		\ifdim \g@diffx<\g@diffy%
+			(\getx{\g@firstcoords},\gety{\g@secondcoords})%
+		\else%
+			(\getx{\g@secondcoords},\gety{\g@firstcoords})%
+		\fi%
+	}
+	\g@defcoorddiff{\g@diffcoords}{\g@firstcoords}{\g@thirdcoords}%
+	{#3%
+	\expandafter\put\g@firstcoords{\expandafter\ps@line\g@diffcoords}%
+	}%
+	
+	\g@defcoorddiff{\g@diffcoords}{\g@thirdcoords}{\g@secondcoords}%
+	{#3%
+	\expandafter\put\g@thirdcoords{\expandafter\ps@line\g@diffcoords}%
+	}%
+}
+%_________________________________________________________________%%
+% Definition of a directed edge:
+%
+% Arguments (same as for \edge):
+%
+% The two incident nodes (order indicates direction of the arrow)
+%_________________________________________________________________%%
+%
+\g@test{specialdiredge}
+\def\specialdiredge#1#2{
+	\@ifnextchar[{\g@specialdiredge{#1}{#2}}{\g@specialdiredge{#1}{#2}[]}
+}
+%
+\def\g@specialdiredge#1#2[#3]{
+	\g@extendlist\g@edges{\g@drawspecialdiredge{#1}{#2}[#3]}
+}
+%
+% The actual drawing routine:
+%
+\def\g@drawspecialdiredge#1#2[#3]{%
+	\g@testname{#1}\g@testname{#2}%
+	\g@differentpositions{#1}{#2}{\specialdiredge{#1}{#2}}%
+	\edef\g@firstcoords{\g@nodecoords{#1}}%
+	\edef\g@secondcoords{\g@nodecoords{#2}}%
+	%
+	% Choose the right drawing procedure, according to the node's type:
+	%
+	\edef\g@type{\g@nodetype{#2}}%
+	\ifnum\g@circletype=\g@type%
+	  \let\g@draw=\ps@arrowoncircle%
+	\else%
+	  \let\g@draw=\ps@arrowonrectangle%
+	  \ifnum\g@rectangletype=\g@type%
+	  \else%
+	    \typeout{}%
+	    \typeout{Error in \string\g@drawspecialdiredge: unrecognized node type}%
+	  \fi%
+	\fi%
+	%
+	% and draw it:
+	%
+%	\newdimen\g@diffh%
+%	\newdimen\g@diffx%
+%	\newdimen\g@diffy%
+	\g@diffx=\getx{\g@firstcoords}\unitlength%
+	\g@diffh=\getx{\g@secondcoords}\unitlength%
+	\advance\g@diffx by -\g@diffh\relax%
+	\g@diffy=\gety{\g@firstcoords}\unitlength%
+	\g@diffh=\gety{\g@secondcoords}\unitlength%
+	\advance\g@diffy by -\g@diffh\relax%
+	\ifdim\g@diffx<0mm\g@diffx=-\g@diffx\fi%
+	\ifdim\g@diffy<0mm\g@diffy=-\g@diffy\fi%
+	
+	\edef\g@thirdcoords{%
+		\ifdim \g@diffx<\g@diffy%
+			(\getx{\g@firstcoords},\gety{\g@secondcoords})%
+		\else%
+			(\getx{\g@secondcoords},\gety{\g@firstcoords})%
+		\fi%
+	}
+	
+	\g@defcoorddiff{\g@diffcoords}{\g@firstcoords}{\g@thirdcoords}%
+	{#3%
+	\expandafter\put\g@firstcoords{\expandafter\ps@line\g@diffcoords}%
+	}%
+	
+	\g@defcoorddiff{\g@diffcoords}{\g@thirdcoords}{\g@secondcoords}%
+	\edef\g@diffcoordsandsize{\g@diffcoords\g@thenodesize{#2}}%
+	{#3%
+	\expandafter\put\g@thirdcoords{\expandafter\g@draw\g@diffcoordsandsize}%
+	}%
+}
+%
+%
+%_________________________________________________________________%%
+% Definition of an edge's text (for straight edges only):
+%
+% Arguments:
+%
+% Both nodes incident with the edge in question
+% Text (=anything that may occur as a \put argument in a picture
+%	environment, i.e., even lines, vectors, and so on.)
+%_________________________________________________________________%%
+%
+\g@test{specialedgetext}
+\def\specialedgetext#1#2#3{%
+	\@ifnextchar[{\g@specialedgetext{#1}{#2}{#3}}%
+			{\g@specialedgetext{#1}{#2}{#3}[]}%
+}
+%
+\def\g@specialedgetext#1#2#3[#4]{%
+	\g@extendlist\g@texts{\g@putspecialedgetext{#1}{#2}{#3}[#4]}%
+}
+%
+% The actual drawing routine:
+%
+\def\g@putspecialedgetext#1#2#3[#4]{%
+	\g@testname{#1}\g@testname{#2}%
+	\g@differentpositions{#1}{#2}{\specialedgetext{#1}{#2}...}%
+	\edef\g@firstcoords{\g@nodecoords{#1}}%
+	\edef\g@secondcoords{\g@nodecoords{#2}}%
+%
+%	\newdimen\g@diffh%
+%	\newdimen\g@diffx%
+%	\newdimen\g@diffy%
+	\g@diffx=\getx{\g@firstcoords}\unitlength%
+	\g@diffh=\getx{\g@secondcoords}\unitlength%
+	\advance\g@diffx by -\g@diffh\relax%
+	\g@diffy=\gety{\g@firstcoords}\unitlength%
+	\g@diffh=\gety{\g@secondcoords}\unitlength%
+	\advance\g@diffy by -\g@diffh\relax%
+	\ifdim\g@diffx<0mm\g@diffx=-\g@diffx\fi%
+	\ifdim\g@diffy<0mm\g@diffy=-\g@diffy\fi%
+%
+	\edef\g@thirdcoords{%
+		\ifdim \g@diffx<\g@diffy%
+			(\getx{\g@firstcoords},\gety{\g@secondcoords})%
+		\else%
+			(\getx{\g@secondcoords},\gety{\g@firstcoords})%
+		\fi%
+	}%
+%
+%
+	{%
+	  #4%
+	  \g@textsize{#3}%
+	  \g@oldunitlength=\unitlength%
+	  \divide\unitlength by 2%
+	  \expandafter\put\g@firstcoords{%
+	    \ifopaquetext%
+	      \expandafter\put\g@thirdcoords{%
+	        \expandafter\ps@deletebox\g@thetextsize%
+	      }%
+	    \fi%
+	    \expandafter\put\g@thirdcoords{%
+	      \unitlength=\g@oldunitlength%
+	      \makebox(0,0){#3}%
+	    }%
+	  }%
+	}%
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Diredge#1#2{\Diredgeopt{#1}{#2}{}}
+\def\Diredgeopt#1#2#3{%
+\diredge{#1}{#2}[\graphlinewidth{0.28}\graphlinecolour{0}\grapharrowlength{0.6}\grapharrowwidth{1.3}#3]%black
+\diredge{#1}{#2}[\graphlinewidth{0.18}\graphlinecolour{1}\grapharrowlength{0.61}\grapharrowwidth{1.0}]%white
+\diredge{#1}{#2}[\graphlinewidth{0.28}\graphlinecolour{0}\grapharrowlength{0.3}\grapharrowwidth{1.3}#3]%black
+\diredge{#1}{#2}[\graphlinewidth{0.18}\graphlinecolour{1}\grapharrowlength{0.31}\grapharrowwidth{0.6}]%white
+}
+\def\Dirbow#1#2#3{\Dirbowopt{#1}{#2}{#3}{}}
+\def\Dirbowopt#1#2#3#4{%
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.28}\graphlinecolour{0}\grapharrowlength{0.6}\grapharrowwidth{1.3}#4]%black
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.18}\graphlinecolour{1}\grapharrowlength{0.61}\grapharrowwidth{1.0}]%white
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.28}\graphlinecolour{0}\grapharrowlength{0.3}\grapharrowwidth{1.3}#4]%black
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.18}\graphlinecolour{1}\grapharrowlength{0.31}\grapharrowwidth{0.6}]%white
+}
+\def\morphismbow#1#2#3{\morphismbowopt{#1}{#2}{#3}{}}
+\def\morphismbowopt#1#2#3#4{%
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.045}\graphlinecolour{0}\grapharrowlength{0.6}\grapharrowwidth{1.3}#4]%black
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.0}\graphlinecolour{1}\grapharrowlength{0.63}\grapharrowwidth{1.0}]%white
+\dirbow{#1}{#2}{#3}[\graphlinewidth{0.045}\graphlinecolour{0}\grapharrowlength{0.2}\grapharrowwidth{1.3}#4]%black
+}
+\def\morphism#1#2{\morphismopt{#1}{#2}{}}
+\def\morphismopt#1#2#3{%
+\diredge{#1}{#2}[\graphlinewidth{0.045}\graphlinecolour{0}\grapharrowlength{0.6}\grapharrowwidth{1.3}#3]%black
+\diredge{#1}{#2}[\graphlinewidth{0.0}\graphlinecolour{1}\grapharrowlength{0.63}\grapharrowwidth{1.0}]%white
+\diredge{#1}{#2}[\graphlinewidth{0.045}\graphlinecolour{0}\grapharrowlength{0.2}\grapharrowwidth{1.3}#3]%black
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END graph.sty extensions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN annotate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\annotate#1#2#3#4#5{%#1=start position, #2=relative X,Y coordinates, #3=end position, #4=annotation, #5=annotated text
+\def\myautodistance{1}%
+\atposition{#1}{%
+\begin{graph}(0,0)
+\roundnode{Start}(0,0)[\graphnodecolour{0.5}\graphlinecolour{1}\graphnodesize{0}]
+\roundnode{End}(#2)[\graphnodecolour{0.5}\graphlinecolour{1}\graphnodesize{0}] \specialedge{Start}{End}[\graphlinecolour{0.5}\graphlinewidth{0.03}]%\graphlinewidth{0.069}\graphlinedash{1 2}
+\autonodetext{End}[#3]{#4}
+\end{graph}%
+}{\gray\underbrace{{\black #5}}}%
+}
+\def\annotatediagleft#1#2{ \annotate{s}{-0.2,-0.25}{w}{#1}{#2}}%
+\def\annotateleft#1#2{     \annotate{s}{-0.225,-0.7}{w}{#1}{#2}}%
+\def\annotateright#1#2{    \annotate{s}{0.225,-0.7}{e}{#1}{#2}}%
+\def\annotatediagright#1#2{\annotate{s}{0.2,-0.25}{e}{#1}{#2}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END annotate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN autographlinecolour
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\getcolor{\current@color{}}   %debug
+%\def\graphlinecolour#1{\{#1\}}   %debug
+%\def\autographlinecolour{\expandafter\parsecolor\current@color{}{}{}}
+% \def\parsecolor#1#2#3#4#5#6#7#8{
+%  \if\strequal{rgb}{#1#2#3}\graphlinecolour(#4,#5,#6)\fi
+%  \if\strequal{cmyk}{#1#2#3#4}\graphlinecolourCYMK{#5}{#6}{#7}{#8}\fi%\graphlinecolour(\CKtoR{#5}{#8},\CKtoR{#6}{#8},\CKtoR{#7}{#8})\fi%
+%  \if\strequal{gray}{#1#2#3#4}\graphlinecolour{#5#6}\fi
+%  \if\strequal{Black}{#1#2#3#4#5}\graphlinecolour{0}#6\fi
+% }
+\def\autographlinecolour{\expandafter\parsecolor\current@color]}
+\def\parsecolor#1#2#3#4{%
+ \def\printargs{}%
+ \if\strequal{rgb}{#1#2#3}\def\printargs{\parsecolorRGB#4}\fi%
+ \if\strequal{cmyk}{#1#2#3#4}\def\printargs{\parsecolorCYMK}\fi%
+ \if\strequal{gray}{#1#2#3#4}\def\printargs{\parsecolorG}\fi%
+ \if\strequal{Blac}{#1#2#3#4}\def\printargs{\parsecolorB}\fi%
+ \printargs%
+}
+\def\parsecolorRGB#1 #2 #3]{\graphlinecolour(#1,#2,#3)}
+\def\parsecolorCYMK #1 #2 #3 #4 #5]{%
+  \def\tempR{}\CKtoR{\tempR}{#2}{#5}%
+  \def\tempG{}\CKtoR{\tempG}{#3}{#5}%
+  \def\tempB{}\CKtoR{\tempB}{#4}{#5}%
+  \graphlinecolour({\tempR},{\tempG},{\tempB})}%
+\def\parsecolorG#1]{\graphlinecolour{#1}}
+\def\parsecolorB#1]{\graphlinecolour{0}}
+
+\def\tempcolorname{}
+% \def\autonewrgbcolor#1{\def\tempcolorname{#1}\expandafter\parseRGBcolor\current@color{}{}{}}
+% \def\parseRGBcolor#1#2#3#4#5#6#7#8{
+%  \if\strequal{rgb}{#1#2#3}\newrgbcolor{\tempcolorname}{#4 #5 #6}\fi
+%  \if\strequal{cmyk}{#1#2#3#4}\newrgbcolorCYMK{#5}{#6}{#7}{#8}\fi
+%  \if\strequal{gray}{#1#2#3#4}\newrgbcolor{diafillcolor}{#5#6 #5#6 #5#6}\fi
+%  \if\strequal{Black}{#1#2#3#4#5}\newrgbcolor{diafillcolor}{0 0 0}#6\fi
+% }
+\def\autonewrgbcolor#1{\def\tempcolorname{#1}\expandafter\parseRGBcolor\current@color]}
+\def\parseRGBcolor#1#2#3#4{%
+ \def\printargs{}%
+ \if\strequal{rgb}{#1#2#3}\def\printargs{\parseRGBcolorRGB#4}\fi%
+ \if\strequal{cmyk}{#1#2#3#4}\def\printargs{\parseRGBcolorCYMK}\fi%
+ \if\strequal{gray}{#1#2#3#4}\def\printargs{\parseRGBcolorG}\fi%
+ \if\strequal{Blac}{#1#2#3#4}\def\printargs{\parseRGBcolorB}\fi%
+ \printargs%
+}
+\def\parseRGBcolorRGB#1 #2 #3]{\newrgbcolor{\tempcolorname}{{#1} {#2} {#3}}}
+\def\parseRGBcolorCYMK#1 #2 #3 #4 #5]{%
+  \def\tempR{}\CKtoR{\tempR}{#2}{#5}%
+  \def\tempG{}\CKtoR{\tempG}{#3}{#5}%
+  \def\tempB{}\CKtoR{\tempB}{#4}{#5}%
+  \newrgbcolor{\tempcolorname}{{\tempR} {\tempG} {\tempB}}}
+\def\parseRGBcolorG#1]{\newrgbcolor{\tempcolorname}{{#1} {#1} {#1}}}
+\def\parseRGBcolorB#1]{\newrgbcolor{\tempcolorname}{0 0 0}}
+\makeatother
+
+\usepackage{fp}
+\def\CKtoR#1#2#3{%R = {1-(C(1-K)+K)
+\FPset\One{1}\FPset\C{#2}\FPset\K{#3}%
+\FPsub#1\One\K%  = (1-K)
+\FPmul#1#1\C%    = C(1-K)
+\FPadd#1#1\K%    = C(1-K)+K
+\FPsub#1\One#1%  = 1-(C(1-K)+K)
+\FPtrunc#1#1{5}% ~ R
+\FPclip#1#1%     ~ R
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% from David Kastrup: Comparing two strings known to consist only of characters
+% \if\strequal{junk}{#1} will be true for #1 being "junk", and false otherwise.
+\def\strequal#1{\number\strequalstart{}{}#1\relax}
+\def\strequalstart#1#2#3{\if#3\relax\strequalstop\fi\strequalstart{\if#3#1}{#2\fi}}
+\def\strequalstop\fi\strequalstart#1#2#3{\fi#1#3\relax'#213 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END autographlinecolour
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

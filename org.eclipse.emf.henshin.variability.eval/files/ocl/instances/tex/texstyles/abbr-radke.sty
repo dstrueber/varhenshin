@@ -1,0 +1,90 @@
+\RequirePackage{xspace}
+%% == Mathematische Helfer =================================================
+%\newcommand\Nat{\ensuremath{\mathbb{N}}}                    % Natürliche Zahlen
+%\newcommand\impl{\ensuremath{\Rightarrow}}                  % Implikationspfeil
+%\newcommand\tuple[1]{\ensuremath{\left\langle #1 \right\rangle}}
+
+% Nützliche Abkürzungen
+\newcommand\bigland{\bigwedge}
+\newcommand\biglor{\bigvee}
+\providecommand\impl{\Rightarrow}
+\newcommand\ruleor{\ |\ }
+\newcommand\oclc[1]{\texttt{#1}}
+
+
+% Operatoren, die man ab und zu mal verwendet.
+\renewcommand\HR{\ensuremath{\mathrm{HR}}\xspace}
+\newcommand\HRs{\ensuremath{\mathrm{HR}^*}\xspace}
+\newcommand\DSIG{\ensuremath{\mathrm{DSIG}}\xspace}
+\DeclareMathOperator\upac{ac}
+% Transformations
+\DeclareMathOperator\tCond{Cond}
+\DeclareMathOperator\tForm{Form}
+\DeclareMathOperator\tLeft{Left}
+\DeclareMathOperator\tShift{Shift}
+\DeclareMathOperator\Inheritance{Inh}
+
+
+\newcommand\tentakelplus{t^+}
+\newcommand\tIntegrate{\mathrm{integrate}}
+
+\newcommand\emptygraph{\ensuremath{\emptyset}}
+\ignore{
+%\newcommand\pointed[1]{#1^\bullet}
+%\newcommand\unpointed[1]{#1_\circ}
+%\newcommand\pin[1]{\mathrm{pin}_{#1}}
+%\newcommand\Pin[1]{\mathrm{Pin}(#1)}
+
+% Lots of arrows
+\newcommand\replto{\,\tikz[baseline=-0.8ex]{\draw[->>] (0,0) to (1em,0);}\,}%<< Bringt das Syntax-Highlighting vom XEmacs durcheinander.
+\newcommand\injto{\hookrightarrow}
+\newcommand\injfrom{\hookleftarrow}
+\newcommand{\DSinjto}{\mathop{\injto}\limits}
+
+\newcommand{\lto}{\leftarrow}
+\newcommand{\DSto}{\mathop{\to}\limits}
+\newcommand{\DSlto}{\mathop{\leftarrow}\limits}
+\newcommand{\DSLongto}{\mathop{\longrightarrow}\limits}
+\newcommand{\DSLonglto}{\mathop{\longrightarrow}\limits}
+\newcommand{\LongLongto}{-\!\!\!-\!\!\!-\!\!\!-\!\!\!-\!\!\!-\!\!\!\longrightarrow}
+\newcommand{\DSLongLongto}{\mathop{\LongLongto}\limits}
+
+\newcommand{\dder}{\Rightarrow}
+\newcommand{\ldder}{\Leftarrow}
+\newcommand{\DSdder}{\mathop{\Rightarrow}\limits}
+\newcommand{\DSldder}{\mathop{\Longleftarrow}\limits} 
+\newcommand{\Longdder}{\Longrightarrow}
+\newcommand{\Longldder}{\Longleftarrow}
+\newcommand{\DSLongdder}{\mathop{\Longrightarrow}\limits}
+\newcommand{\der}{\Rightarrow^*}
+\newcommand{\lder}{\Leftarrow^*}
+\newcommand{\DSder}{\mathop{\Rightarrow^*}\limits}
+\newcommand{\DSlder}{\mathop{\Leftarrow^*}\limits}
+\newcommand{\DSLongder}{\mathop{\Longrightarrow^*}\limits}
+\newcommand{\DSLonglder}{\mathop{\Longleftarrow^*}\limits}
+\newcommand{\LongLongleftarrow}{\Longleftarrow\!=\!=\!\!=\!=\!=\!=\!=\!=}
+\newcommand{\DSLongLongdder}{\mathop{\LongLongrightarrow}\limits}
+\newcommand{\DSLongLongldder}{\mathop{\LongLongleftarrow}\limits}
+\newcommand{\DSExtraLongdder}{\mathop{\ExtraLongrightarrow}\limits}
+\newcommand{\DSExtraLongldder}{\mathop{\ExtraLongleftarrow}\limits}
+
+\newcommand{\bdder}[2]{\vcapsule{#1}\DSLongdder\vcapsule{#2}}
+
+\newcommand\Epi{\mathcal{E}}
+\newcommand\semantics[1]{[\![#1]\!]}
+
+% Graphprogramme, Rules u.ä.
+\newcommand\Skip{\mathrm{Skip}}
+\newcommand{\brule}[3]{\langle\/{#1}\hookleftarrow{#2}\hookrightarrow{#3}\/\rangle}
+\newcommand{\mrule}[5]{\langle\/ {#1} \mathop{\hookleftarrow}\limits^{#2} {#3} \mathop{\hookrightarrow}\limits^{#4} {#5} \/\rangle}
+\newcommand\condInclusion[4][\exists]{#1 (#2 \sqsupseteq #3, #4)}
+%\newcommand\condSplitNu[5][\exists]{#1 (#2 \circeq_{#3} #4, #5)}
+\newcommand\condSplitNu[5][\exists]{#1 (#2 \injfrom #3 \injto #4, #5)}
+\newcommand\condSplitSpan[3][\exists]{#1 (#2, #3)}
+\newcommand\injspan[3]{#1 \injfrom #2 \injto #3}
+\newcommand\Prog{\mathrm{P}}
+\newcommand\Post{\mathrm{post}}
+\newcommand\Pre{\mathrm{pre}}
+
+\newenvironment{casedistinction}{\begin{asparaenum}[{Case }1:]}{\end{asparaenum}}
+}

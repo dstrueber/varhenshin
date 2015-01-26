@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<predformula:Expression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:predformula="http://predformula/1.0" xsi:schemaLocation="http://predformula/1.0 PredFormula.ecore">
+  <predicates name="F"/>
+  <predicates name="G"/>
+  <predicates name="H"/>
+  <predicates name="I"/>
+  <condition xsi:type="predformula:Formula" op="AND">
+    <args xsi:type="predformula:Formula" predicate="//@predicates.0">
+      <args xsi:type="predformula:QuantifiedCondition" predicate="//@predicates.0" variable="//@variables.0">
+        <nested xsi:type="predformula:Formula" predicate="//@predicates.0">
+          <args xsi:type="predformula:Formula" predicate="//@predicates.1" op="AND">
+            <args xsi:type="predformula:Formula" predicate="//@predicates.1">
+              <args xsi:type="predformula:QuantifiedCondition" predicate="//@predicates.1" variable="//@variables.1">
+                <nested xsi:type="predformula:Formula" predicate="//@predicates.1">
+                  <args xsi:type="predformula:Formula" predicate="//@predicates.2" op="AND">
+                    <args xsi:type="predformula:Formula" predicate="//@predicates.2">
+                      <args xsi:type="predformula:QuantifiedCondition" predicate="//@predicates.2" variable="//@variables.2">
+                        <nested xsi:type="predformula:Formula" predicate="//@predicates.2">
+                          <args xsi:type="predformula:Formula" predicate="//@predicates.3" op="AND">
+                            <args xsi:type="predformula:True"/>
+                            <args xsi:type="predformula:QuantifiedCondition" predicate="//@predicates.3" quantifier="EXISTS" variable="//@variables.3">
+                              <nested predicate="//@predicates.3"/>
+                            </args>
+                          </args>
+                        </nested>
+                      </args>
+                    </args>
+                    <args xsi:type="predformula:True"/>
+                  </args>
+                </nested>
+              </args>
+            </args>
+            <args xsi:type="predformula:True"/>
+          </args>
+        </nested>
+      </args>
+    </args>
+    <args xsi:type="predformula:True"/>
+  </condition>
+  <variables name="X1"/>
+  <variables name="X2"/>
+  <variables name="X3"/>
+  <variables name="X4"/>
+</predformula:Expression>

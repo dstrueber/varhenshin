@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_0XjmYEryEeSFv8wDQ_GmTQ">
+  <imports href="http://www.eclipse.org/emf/2011/Henshin#/"/>
+  <imports href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_7gzhAEryEeSFv8wDQ_GmTQ" name="propagateNodePC">
+    <lhs xmi:id="_7gzhBUryEeSFv8wDQ_GmTQ" name="Lhs">
+      <nodes xmi:id="_neN3QEsEEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_7gzhBkryEeSFv8wDQ_GmTQ" name="Rhs">
+      <nodes xmi:id="_neN3QUsEEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_neN3QksEEeSRQsOzDJoCCg" origin="_neN3QEsEEeSRQsOzDJoCCg" image="_neN3QUsEEeSRQsOzDJoCCg"/>
+    <multiRules xmi:id="_qTzkUEsEEeSRQsOzDJoCCg" name="l1">
+      <lhs xmi:id="_qTzkUUsEEeSRQsOzDJoCCg" name="Lhs">
+        <nodes xmi:id="_qTzkVUsEEeSRQsOzDJoCCg" outgoing="_3GGyIEsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_ayxfYEsEEeSRQsOzDJoCCg" incoming="_3GGyIEsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_3GGyIEsEEeSRQsOzDJoCCg" source="_qTzkVUsEEeSRQsOzDJoCCg" target="_ayxfYEsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_qTzkUksEEeSRQsOzDJoCCg" name="Rhs">
+        <nodes xmi:id="_qTzkU0sEEeSRQsOzDJoCCg" outgoing="_3GGyIUsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_ayxfYUsEEeSRQsOzDJoCCg" incoming="_3GGyIUsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_3GGyIUsEEeSRQsOzDJoCCg" source="_qTzkU0sEEeSRQsOzDJoCCg" target="_ayxfYUsEEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_qTzkV0sEEeSRQsOzDJoCCg" origin="_qTzkVUsEEeSRQsOzDJoCCg" image="_qTzkU0sEEeSRQsOzDJoCCg"/>
+      <mappings xmi:id="_ayxfYksEEeSRQsOzDJoCCg" origin="_ayxfYEsEEeSRQsOzDJoCCg" image="_ayxfYUsEEeSRQsOzDJoCCg"/>
+      <multiRules xmi:id="_rbJm_0sEEeSRQsOzDJoCCg" name="l2">
+        <parameters xmi:id="_LnAvkErzEeSFv8wDQ_GmTQ" name="pc"/>
+        <lhs xmi:id="_rbJnAEsEEeSRQsOzDJoCCg" name="Lhs">
+          <nodes xmi:id="_rbJnBEsEEeSRQsOzDJoCCg" outgoing="_3GGyI0sEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_rbJnCUsEEeSRQsOzDJoCCg" incoming="_3GGyI0sEEeSRQsOzDJoCCg" outgoing="_4BVEQEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_89Q38EryEeSFv8wDQ_GmTQ" incoming="_4BVEQEsEEeSRQsOzDJoCCg" outgoing="_4apjMEsEEeSRQsOzDJoCCg _4vcHcEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_v3KfMEsEEeSRQsOzDJoCCg" incoming="_4apjMEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_7e9owEsEEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_w24PwEsEEeSRQsOzDJoCCg" incoming="_4vcHcEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <edges xmi:id="_3GGyI0sEEeSRQsOzDJoCCg" source="_rbJnBEsEEeSRQsOzDJoCCg" target="_rbJnCUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_4BVEQEsEEeSRQsOzDJoCCg" source="_rbJnCUsEEeSRQsOzDJoCCg" target="_89Q38EryEeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_4apjMEsEEeSRQsOzDJoCCg" source="_89Q38EryEeSFv8wDQ_GmTQ" target="_v3KfMEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_4vcHcEsEEeSRQsOzDJoCCg" source="_89Q38EryEeSFv8wDQ_GmTQ" target="_w24PwEsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </lhs>
+        <rhs xmi:id="_rbJnAUsEEeSRQsOzDJoCCg" name="Rhs">
+          <nodes xmi:id="_rbJnAksEEeSRQsOzDJoCCg" outgoing="_3GGyIksEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_rbJnB0sEEeSRQsOzDJoCCg" incoming="_3GGyIksEEeSRQsOzDJoCCg" outgoing="_4BVEQUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_89Q38UryEeSFv8wDQ_GmTQ" incoming="_4BVEQUsEEeSRQsOzDJoCCg" outgoing="_4apjMUsEEeSRQsOzDJoCCg _4vcHcUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_v3KfMUsEEeSRQsOzDJoCCg" incoming="_4apjMUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_7e9owUsEEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_w24PwUsEEeSRQsOzDJoCCg" incoming="_4vcHcUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_9Qpo0EsEEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <edges xmi:id="_3GGyIksEEeSRQsOzDJoCCg" source="_rbJnAksEEeSRQsOzDJoCCg" target="_rbJnB0sEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_4BVEQUsEEeSRQsOzDJoCCg" source="_rbJnB0sEEeSRQsOzDJoCCg" target="_89Q38UryEeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_4apjMUsEEeSRQsOzDJoCCg" source="_89Q38UryEeSFv8wDQ_GmTQ" target="_v3KfMUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_4vcHcUsEEeSRQsOzDJoCCg" source="_89Q38UryEeSFv8wDQ_GmTQ" target="_w24PwUsEEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </rhs>
+        <mappings xmi:id="_rbJnBksEEeSRQsOzDJoCCg" origin="_rbJnBEsEEeSRQsOzDJoCCg" image="_rbJnAksEEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_rbJnC0sEEeSRQsOzDJoCCg" origin="_rbJnCUsEEeSRQsOzDJoCCg" image="_rbJnB0sEEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_rbJm_ksEEeSRQsOzDJoCCg" origin="_89Q38EryEeSFv8wDQ_GmTQ" image="_89Q38UryEeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_v3KfN0sEEeSRQsOzDJoCCg" origin="_v3KfMEsEEeSRQsOzDJoCCg" image="_v3KfMUsEEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_w27TFEsEEeSRQsOzDJoCCg" origin="_w24PwEsEEeSRQsOzDJoCCg" image="_w24PwUsEEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_rbJnA0sEEeSRQsOzDJoCCg" origin="_qTzkU0sEEeSRQsOzDJoCCg" image="_rbJnAksEEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_rbJnBUsEEeSRQsOzDJoCCg" origin="_qTzkVUsEEeSRQsOzDJoCCg" image="_rbJnBEsEEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_rbJnCEsEEeSRQsOzDJoCCg" origin="_ayxfYUsEEeSRQsOzDJoCCg" image="_rbJnB0sEEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_rbJnCksEEeSRQsOzDJoCCg" origin="_ayxfYEsEEeSRQsOzDJoCCg" image="_rbJnCUsEEeSRQsOzDJoCCg"/>
+      </multiRules>
+      <multiMappings xmi:id="_qTzkVEsEEeSRQsOzDJoCCg" origin="_neN3QUsEEeSRQsOzDJoCCg" image="_qTzkU0sEEeSRQsOzDJoCCg"/>
+      <multiMappings xmi:id="_qTzkVksEEeSRQsOzDJoCCg" origin="_neN3QEsEEeSRQsOzDJoCCg" image="_qTzkVUsEEeSRQsOzDJoCCg"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_uqkjgEr0EeSFv8wDQ_GmTQ" name="propagateAttribs">
+    <lhs xmi:id="_uqkjhUr0EeSFv8wDQ_GmTQ" name="Lhs">
+      <nodes xmi:id="_sWBo0EsGEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_uqkjhkr0EeSFv8wDQ_GmTQ" name="Rhs">
+      <nodes xmi:id="_sWEsIEsGEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_sWEsIUsGEeSRQsOzDJoCCg" origin="_sWBo0EsGEeSRQsOzDJoCCg" image="_sWEsIEsGEeSRQsOzDJoCCg"/>
+    <multiRules xmi:id="_w0bGwEsGEeSRQsOzDJoCCg" name="l1">
+      <lhs xmi:id="_w0bGwUsGEeSRQsOzDJoCCg" name="Lhs">
+        <nodes xmi:id="_tYBRUEsGEeSRQsOzDJoCCg" incoming="_tYBRU0sGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_w0bG7UsGEeSRQsOzDJoCCg" outgoing="_tYBRU0sGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <edges xmi:id="_tYBRU0sGEeSRQsOzDJoCCg" source="_w0bG7UsGEeSRQsOzDJoCCg" target="_tYBRUEsGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_w0bGwksGEeSRQsOzDJoCCg" name="Rhs">
+        <nodes xmi:id="_tYBRUUsGEeSRQsOzDJoCCg" incoming="_tYBRVEsGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_w0bG6ksGEeSRQsOzDJoCCg" outgoing="_tYBRVEsGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <edges xmi:id="_tYBRVEsGEeSRQsOzDJoCCg" source="_w0bG6ksGEeSRQsOzDJoCCg" target="_tYBRUUsGEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_w0bG8EsGEeSRQsOzDJoCCg" origin="_w0bG7UsGEeSRQsOzDJoCCg" image="_w0bG6ksGEeSRQsOzDJoCCg"/>
+      <mappings xmi:id="_tYBRUksGEeSRQsOzDJoCCg" origin="_tYBRUEsGEeSRQsOzDJoCCg" image="_tYBRUUsGEeSRQsOzDJoCCg"/>
+      <multiRules xmi:id="_x9lHMEsGEeSRQsOzDJoCCg" name="l2">
+        <lhs xmi:id="_x9lHMUsGEeSRQsOzDJoCCg" name="Lhs">
+          <nodes xmi:id="_wj4OgEr0EeSFv8wDQ_GmTQ" incoming="_uCmfYEsGEeSRQsOzDJoCCg" outgoing="_1Sn1kEr0EeSFv8wDQ_GmTQ _1jBpEEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_x9lHQEsGEeSRQsOzDJoCCg" incoming="_x9lHT0sGEeSRQsOzDJoCCg" outgoing="_uCmfYEsGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_yWUcgEr0EeSFv8wDQ_GmTQ" incoming="_1Sn1kEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_y2OEkEr0EeSFv8wDQ_GmTQ" incoming="_1jBpEEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_x9lHTUsGEeSRQsOzDJoCCg" outgoing="_x9lHT0sGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <edges xmi:id="_x9lHT0sGEeSRQsOzDJoCCg" source="_x9lHTUsGEeSRQsOzDJoCCg" target="_x9lHQEsGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_uCmfYEsGEeSRQsOzDJoCCg" source="_x9lHQEsGEeSRQsOzDJoCCg" target="_wj4OgEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_1Sn1kEr0EeSFv8wDQ_GmTQ" source="_wj4OgEr0EeSFv8wDQ_GmTQ" target="_yWUcgEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_1jBpEEr0EeSFv8wDQ_GmTQ" source="_wj4OgEr0EeSFv8wDQ_GmTQ" target="_y2OEkEr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </lhs>
+        <rhs xmi:id="_x9lHMksGEeSRQsOzDJoCCg" name="Rhs">
+          <nodes xmi:id="_wj4OgUr0EeSFv8wDQ_GmTQ" incoming="_uCmfYUsGEeSRQsOzDJoCCg" outgoing="_1Sn1kUr0EeSFv8wDQ_GmTQ _1jBpEUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_x9lHNUsGEeSRQsOzDJoCCg" incoming="_x9lHTEsGEeSRQsOzDJoCCg" outgoing="_uCmfYUsGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_yWUcgUr0EeSFv8wDQ_GmTQ" incoming="_1Sn1kUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_y2OEkUr0EeSFv8wDQ_GmTQ" incoming="_1jBpEUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_Dvj7EEsHEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_x9lHSksGEeSRQsOzDJoCCg" outgoing="_x9lHTEsGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <edges xmi:id="_x9lHTEsGEeSRQsOzDJoCCg" source="_x9lHSksGEeSRQsOzDJoCCg" target="_x9lHNUsGEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_uCmfYUsGEeSRQsOzDJoCCg" source="_x9lHNUsGEeSRQsOzDJoCCg" target="_wj4OgUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_1Sn1kUr0EeSFv8wDQ_GmTQ" source="_wj4OgUr0EeSFv8wDQ_GmTQ" target="_yWUcgUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_1jBpEUr0EeSFv8wDQ_GmTQ" source="_wj4OgUr0EeSFv8wDQ_GmTQ" target="_y2OEkUr0EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </rhs>
+        <mappings xmi:id="_x9lHUEsGEeSRQsOzDJoCCg" origin="_x9lHQEsGEeSRQsOzDJoCCg" image="_x9lHNUsGEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_x9lHYUsGEeSRQsOzDJoCCg" origin="_x9lHTUsGEeSRQsOzDJoCCg" image="_x9lHSksGEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_w0bG2UsGEeSRQsOzDJoCCg" origin="_wj4OgEr0EeSFv8wDQ_GmTQ" image="_wj4OgUr0EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_w0bG4EsGEeSRQsOzDJoCCg" origin="_yWUcgEr0EeSFv8wDQ_GmTQ" image="_yWUcgUr0EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_w0bG50sGEeSRQsOzDJoCCg" origin="_y2OEkEr0EeSFv8wDQ_GmTQ" image="_y2OEkUr0EeSFv8wDQ_GmTQ"/>
+        <multiRules xmi:id="_ZeKVgEsHEeSRQsOzDJoCCg" name="l3">
+          <lhs xmi:id="_ZeNY0EsHEeSRQsOzDJoCCg" name="Lhs">
+            <nodes xmi:id="_ZeNY3ksHEeSRQsOzDJoCCg" incoming="_ZeNY4ksHEeSRQsOzDJoCCg" outgoing="_ZeNY5UsHEeSRQsOzDJoCCg _ZeNY6EsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY4EsHEeSRQsOzDJoCCg" incoming="_ZeNY70sHEeSRQsOzDJoCCg" outgoing="_ZeNY4ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY40sHEeSRQsOzDJoCCg" incoming="_ZeNY5UsHEeSRQsOzDJoCCg" outgoing="_zWaAg0r0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY5ksHEeSRQsOzDJoCCg" incoming="_ZeNY6EsHEeSRQsOzDJoCCg" outgoing="_1sd48Er0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY7UsHEeSRQsOzDJoCCg" outgoing="_ZeNY70sHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+            </nodes>
+            <nodes xmi:id="_zWaAgEr0EeSFv8wDQ_GmTQ" incoming="_zWaAg0r0EeSFv8wDQ_GmTQ" outgoing="_knUbQEsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute"/>
+              <attributes xmi:id="_8msa8EsGEeSRQsOzDJoCCg" value="pc">
+                <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_zjYFgEr0EeSFv8wDQ_GmTQ" incoming="_1sd48Er0EeSFv8wDQ_GmTQ" outgoing="_kCmkoEsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute"/>
+            </nodes>
+            <nodes xmi:id="_jkaMwEsHEeSRQsOzDJoCCg" incoming="_kCmkoEsHEeSRQsOzDJoCCg _knUbQEsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            </nodes>
+            <edges xmi:id="_ZeNY4ksHEeSRQsOzDJoCCg" source="_ZeNY4EsHEeSRQsOzDJoCCg" target="_ZeNY3ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+            </edges>
+            <edges xmi:id="_ZeNY5UsHEeSRQsOzDJoCCg" source="_ZeNY3ksHEeSRQsOzDJoCCg" target="_ZeNY40sHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+            </edges>
+            <edges xmi:id="_ZeNY6EsHEeSRQsOzDJoCCg" source="_ZeNY3ksHEeSRQsOzDJoCCg" target="_ZeNY5ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+            </edges>
+            <edges xmi:id="_ZeNY70sHEeSRQsOzDJoCCg" source="_ZeNY7UsHEeSRQsOzDJoCCg" target="_ZeNY4EsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+            </edges>
+            <edges xmi:id="_zWaAg0r0EeSFv8wDQ_GmTQ" source="_ZeNY40sHEeSRQsOzDJoCCg" target="_zWaAgEr0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node/attributes"/>
+            </edges>
+            <edges xmi:id="_1sd48Er0EeSFv8wDQ_GmTQ" presenceCondition="pc" source="_ZeNY5ksHEeSRQsOzDJoCCg" target="_zjYFgEr0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node/attributes"/>
+            </edges>
+            <edges xmi:id="_kCmkoEsHEeSRQsOzDJoCCg" source="_zjYFgEr0EeSFv8wDQ_GmTQ" target="_jkaMwEsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute/type"/>
+            </edges>
+            <edges xmi:id="_knUbQEsHEeSRQsOzDJoCCg" source="_zWaAgEr0EeSFv8wDQ_GmTQ" target="_jkaMwEsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute/type"/>
+            </edges>
+          </lhs>
+          <rhs xmi:id="_ZeNY0UsHEeSRQsOzDJoCCg" name="Rhs">
+            <nodes xmi:id="_ZeNY0ksHEeSRQsOzDJoCCg" incoming="_ZeNY1ksHEeSRQsOzDJoCCg" outgoing="_ZeNY2UsHEeSRQsOzDJoCCg _ZeNY3UsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY1EsHEeSRQsOzDJoCCg" incoming="_ZeNY7EsHEeSRQsOzDJoCCg" outgoing="_ZeNY1ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY10sHEeSRQsOzDJoCCg" incoming="_ZeNY2UsHEeSRQsOzDJoCCg" outgoing="_zWaAhEr0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            </nodes>
+            <nodes xmi:id="_ZeNY2ksHEeSRQsOzDJoCCg" incoming="_ZeNY3UsHEeSRQsOzDJoCCg" outgoing="_1sd48Ur0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+              <attributes xmi:id="_ZeNY20sHEeSRQsOzDJoCCg" value="pc">
+                <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_ZeNY6ksHEeSRQsOzDJoCCg" outgoing="_ZeNY7EsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+            </nodes>
+            <nodes xmi:id="_zWaAgUr0EeSFv8wDQ_GmTQ" incoming="_zWaAhEr0EeSFv8wDQ_GmTQ" outgoing="_knUbQUsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute"/>
+              <attributes xmi:id="_8msa8UsGEeSRQsOzDJoCCg" value="pc">
+                <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_zjYFgUr0EeSFv8wDQ_GmTQ" incoming="_1sd48Ur0EeSFv8wDQ_GmTQ" outgoing="_kCmkoUsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute"/>
+            </nodes>
+            <nodes xmi:id="_jkaMwUsHEeSRQsOzDJoCCg" incoming="_kCmkoUsHEeSRQsOzDJoCCg _knUbQUsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            </nodes>
+            <edges xmi:id="_ZeNY1ksHEeSRQsOzDJoCCg" source="_ZeNY1EsHEeSRQsOzDJoCCg" target="_ZeNY0ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+            </edges>
+            <edges xmi:id="_ZeNY2UsHEeSRQsOzDJoCCg" source="_ZeNY0ksHEeSRQsOzDJoCCg" target="_ZeNY10sHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+            </edges>
+            <edges xmi:id="_ZeNY3UsHEeSRQsOzDJoCCg" source="_ZeNY0ksHEeSRQsOzDJoCCg" target="_ZeNY2ksHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+            </edges>
+            <edges xmi:id="_ZeNY7EsHEeSRQsOzDJoCCg" source="_ZeNY6ksHEeSRQsOzDJoCCg" target="_ZeNY1EsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+            </edges>
+            <edges xmi:id="_zWaAhEr0EeSFv8wDQ_GmTQ" source="_ZeNY10sHEeSRQsOzDJoCCg" target="_zWaAgUr0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node/attributes"/>
+            </edges>
+            <edges xmi:id="_1sd48Ur0EeSFv8wDQ_GmTQ" source="_ZeNY2ksHEeSRQsOzDJoCCg" target="_zjYFgUr0EeSFv8wDQ_GmTQ">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Node/attributes"/>
+            </edges>
+            <edges xmi:id="_kCmkoUsHEeSRQsOzDJoCCg" source="_zjYFgUr0EeSFv8wDQ_GmTQ" target="_jkaMwUsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute/type"/>
+            </edges>
+            <edges xmi:id="_knUbQUsHEeSRQsOzDJoCCg" source="_zWaAgUr0EeSFv8wDQ_GmTQ" target="_jkaMwUsHEeSRQsOzDJoCCg">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//Attribute/type"/>
+            </edges>
+          </rhs>
+          <mappings xmi:id="_ZeNY6UsHEeSRQsOzDJoCCg" origin="_ZeNY3ksHEeSRQsOzDJoCCg" image="_ZeNY0ksHEeSRQsOzDJoCCg"/>
+          <mappings xmi:id="_ZeNY8EsHEeSRQsOzDJoCCg" origin="_ZeNY4EsHEeSRQsOzDJoCCg" image="_ZeNY1EsHEeSRQsOzDJoCCg"/>
+          <mappings xmi:id="_ZeNY-UsHEeSRQsOzDJoCCg" origin="_ZeNY40sHEeSRQsOzDJoCCg" image="_ZeNY10sHEeSRQsOzDJoCCg"/>
+          <mappings xmi:id="_ZeNZAEsHEeSRQsOzDJoCCg" origin="_ZeNY5ksHEeSRQsOzDJoCCg" image="_ZeNY2ksHEeSRQsOzDJoCCg"/>
+          <mappings xmi:id="_ZeNZAUsHEeSRQsOzDJoCCg" origin="_ZeNY7UsHEeSRQsOzDJoCCg" image="_ZeNY6ksHEeSRQsOzDJoCCg"/>
+          <mappings xmi:id="_w0bG6EsGEeSRQsOzDJoCCg" origin="_zWaAgEr0EeSFv8wDQ_GmTQ" image="_zWaAgUr0EeSFv8wDQ_GmTQ"/>
+          <mappings xmi:id="_w0bG6UsGEeSRQsOzDJoCCg" origin="_zjYFgEr0EeSFv8wDQ_GmTQ" image="_zjYFgUr0EeSFv8wDQ_GmTQ"/>
+          <mappings xmi:id="_jkaMzEsHEeSRQsOzDJoCCg" origin="_jkaMwEsHEeSRQsOzDJoCCg" image="_jkaMwUsHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY00sHEeSRQsOzDJoCCg" origin="_wj4OgUr0EeSFv8wDQ_GmTQ" image="_ZeNY0ksHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY1UsHEeSRQsOzDJoCCg" origin="_x9lHNUsGEeSRQsOzDJoCCg" image="_ZeNY1EsHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY2EsHEeSRQsOzDJoCCg" origin="_yWUcgUr0EeSFv8wDQ_GmTQ" image="_ZeNY10sHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY3EsHEeSRQsOzDJoCCg" origin="_y2OEkUr0EeSFv8wDQ_GmTQ" image="_ZeNY2ksHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY30sHEeSRQsOzDJoCCg" origin="_wj4OgEr0EeSFv8wDQ_GmTQ" image="_ZeNY3ksHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY4UsHEeSRQsOzDJoCCg" origin="_x9lHQEsGEeSRQsOzDJoCCg" image="_ZeNY4EsHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY5EsHEeSRQsOzDJoCCg" origin="_yWUcgEr0EeSFv8wDQ_GmTQ" image="_ZeNY40sHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY50sHEeSRQsOzDJoCCg" origin="_y2OEkEr0EeSFv8wDQ_GmTQ" image="_ZeNY5ksHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY60sHEeSRQsOzDJoCCg" origin="_x9lHSksGEeSRQsOzDJoCCg" image="_ZeNY6ksHEeSRQsOzDJoCCg"/>
+          <multiMappings xmi:id="_ZeNY7ksHEeSRQsOzDJoCCg" origin="_x9lHTUsGEeSRQsOzDJoCCg" image="_ZeNY7UsHEeSRQsOzDJoCCg"/>
+        </multiRules>
+        <multiMappings xmi:id="_x9lHNksGEeSRQsOzDJoCCg" origin="_tYBRUUsGEeSRQsOzDJoCCg" image="_x9lHNUsGEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_x9lHQUsGEeSRQsOzDJoCCg" origin="_tYBRUEsGEeSRQsOzDJoCCg" image="_x9lHQEsGEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_x9lHS0sGEeSRQsOzDJoCCg" origin="_w0bG6ksGEeSRQsOzDJoCCg" image="_x9lHSksGEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_x9lHTksGEeSRQsOzDJoCCg" origin="_w0bG7UsGEeSRQsOzDJoCCg" image="_x9lHTUsGEeSRQsOzDJoCCg"/>
+      </multiRules>
+      <multiMappings xmi:id="_w0bG60sGEeSRQsOzDJoCCg" origin="_sWEsIEsGEeSRQsOzDJoCCg" image="_w0bG6ksGEeSRQsOzDJoCCg"/>
+      <multiMappings xmi:id="_w0bG7ksGEeSRQsOzDJoCCg" origin="_sWBo0EsGEeSRQsOzDJoCCg" image="_w0bG7UsGEeSRQsOzDJoCCg"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_E58v7kr1EeSFv8wDQ_GmTQ" name="propagateEdges" injectiveMatching="false">
+    <lhs xmi:id="_E58v8Er1EeSFv8wDQ_GmTQ" name="Lhs">
+      <nodes xmi:id="_EPvh4EsFEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_E58v-0r1EeSFv8wDQ_GmTQ" name="Rhs">
+      <nodes xmi:id="_EPvh4UsFEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_EPvh4ksFEeSRQsOzDJoCCg" origin="_EPvh4EsFEeSRQsOzDJoCCg" image="_EPvh4UsFEeSRQsOzDJoCCg"/>
+    <multiRules xmi:id="_LUPfZUsFEeSRQsOzDJoCCg" name="l1">
+      <lhs xmi:id="_LUPfZksFEeSRQsOzDJoCCg" name="Lhs">
+        <nodes xmi:id="_LUSis0sFEeSRQsOzDJoCCg" outgoing="_LUPfY0sFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_LUPfYEsFEeSRQsOzDJoCCg" incoming="_LUPfY0sFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_LUPfY0sFEeSRQsOzDJoCCg" source="_LUSis0sFEeSRQsOzDJoCCg" target="_LUPfYEsFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_LUPfZ0sFEeSRQsOzDJoCCg" name="Rhs">
+        <nodes xmi:id="_LUPfo0sFEeSRQsOzDJoCCg" outgoing="_LUPfZEsFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_LUPfYUsFEeSRQsOzDJoCCg" incoming="_LUPfZEsFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_LUPfZEsFEeSRQsOzDJoCCg" source="_LUPfo0sFEeSRQsOzDJoCCg" target="_LUPfYUsFEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_LUSiuEsFEeSRQsOzDJoCCg" origin="_LUSis0sFEeSRQsOzDJoCCg" image="_LUPfo0sFEeSRQsOzDJoCCg"/>
+      <mappings xmi:id="_LUPfYksFEeSRQsOzDJoCCg" origin="_LUPfYEsFEeSRQsOzDJoCCg" image="_LUPfYUsFEeSRQsOzDJoCCg"/>
+      <multiRules xmi:id="_M8DxwEsFEeSRQsOzDJoCCg" name="l2">
+        <parameters xmi:id="_d34M8Er1EeSFv8wDQ_GmTQ" name="pc"/>
+        <lhs xmi:id="_M8DxwUsFEeSRQsOzDJoCCg" name="Lhs">
+          <nodes xmi:id="_E58v8Ur1EeSFv8wDQ_GmTQ" incoming="_XsHbAEsFEeSRQsOzDJoCCg" outgoing="_E58v-Er1EeSFv8wDQ_GmTQ _E58v-Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_E58v8kr1EeSFv8wDQ_GmTQ" incoming="_oU-d8Er1EeSFv8wDQ_GmTQ _E58v-Er1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_E58v80r1EeSFv8wDQ_GmTQ" incoming="_o9E_wEr1EeSFv8wDQ_GmTQ _E58v-Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_crQBwEr1EeSFv8wDQ_GmTQ" outgoing="_or6XQEr1EeSFv8wDQ_GmTQ _oU-d8Er1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge"/>
+            <attributes xmi:id="_fBNzkEr1EeSFv8wDQ_GmTQ" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_dEJC4Er1EeSFv8wDQ_GmTQ" outgoing="_pPxSQEr1EeSFv8wDQ_GmTQ _o9E_wEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge"/>
+          </nodes>
+          <nodes xmi:id="_TXiasEr1EeSFv8wDQ_GmTQ" incoming="_YqzrIEr1EeSFv8wDQ_GmTQ _or6XQEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_WClEoEr1EeSFv8wDQ_GmTQ" incoming="_ZJqKUEr1EeSFv8wDQ_GmTQ _pPxSQEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_XwNEEEr1EeSFv8wDQ_GmTQ" incoming="_Z4vDkEsFEeSRQsOzDJoCCg" outgoing="_YqzrIEr1EeSFv8wDQ_GmTQ _ZJqKUEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_M8G1Q0sFEeSRQsOzDJoCCg" outgoing="_M8G1R0sFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_M8G1RUsFEeSRQsOzDJoCCg" incoming="_M8G1R0sFEeSRQsOzDJoCCg" outgoing="_XsHbAEsFEeSRQsOzDJoCCg _Z4vDkEsFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <edges xmi:id="_M8G1R0sFEeSRQsOzDJoCCg" source="_M8G1Q0sFEeSRQsOzDJoCCg" target="_M8G1RUsFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_E58v-Er1EeSFv8wDQ_GmTQ" source="_E58v8Ur1EeSFv8wDQ_GmTQ" target="_E58v8kr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_E58v-Ur1EeSFv8wDQ_GmTQ" source="_E58v8Ur1EeSFv8wDQ_GmTQ" target="_E58v80r1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+          <edges xmi:id="_oU-d8Er1EeSFv8wDQ_GmTQ" source="_crQBwEr1EeSFv8wDQ_GmTQ" target="_E58v8kr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/source"/>
+          </edges>
+          <edges xmi:id="_o9E_wEr1EeSFv8wDQ_GmTQ" source="_dEJC4Er1EeSFv8wDQ_GmTQ" target="_E58v80r1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/source"/>
+          </edges>
+          <edges xmi:id="_pPxSQEr1EeSFv8wDQ_GmTQ" source="_dEJC4Er1EeSFv8wDQ_GmTQ" target="_WClEoEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/target"/>
+          </edges>
+          <edges xmi:id="_or6XQEr1EeSFv8wDQ_GmTQ" source="_crQBwEr1EeSFv8wDQ_GmTQ" target="_TXiasEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/target"/>
+          </edges>
+          <edges xmi:id="_YqzrIEr1EeSFv8wDQ_GmTQ" source="_XwNEEEr1EeSFv8wDQ_GmTQ" target="_TXiasEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_ZJqKUEr1EeSFv8wDQ_GmTQ" source="_XwNEEEr1EeSFv8wDQ_GmTQ" target="_WClEoEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+          <edges xmi:id="_XsHbAEsFEeSRQsOzDJoCCg" source="_M8G1RUsFEeSRQsOzDJoCCg" target="_E58v8Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_Z4vDkEsFEeSRQsOzDJoCCg" source="_M8G1RUsFEeSRQsOzDJoCCg" target="_XwNEEEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+        </lhs>
+        <rhs xmi:id="_M8DxwksFEeSRQsOzDJoCCg" name="Rhs">
+          <nodes xmi:id="_E58v_Er1EeSFv8wDQ_GmTQ" incoming="_XsHbAUsFEeSRQsOzDJoCCg" outgoing="_E58wBEr1EeSFv8wDQ_GmTQ _E58wBUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_E58v_Ur1EeSFv8wDQ_GmTQ" incoming="_oU-d8Ur1EeSFv8wDQ_GmTQ _E58wBEr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_E58v_kr1EeSFv8wDQ_GmTQ" incoming="_o9E_wUr1EeSFv8wDQ_GmTQ _E58wBUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_crQBwUr1EeSFv8wDQ_GmTQ" outgoing="_or6XQUr1EeSFv8wDQ_GmTQ _oU-d8Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge"/>
+            <attributes xmi:id="_fBNzkUr1EeSFv8wDQ_GmTQ" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_dEJC4Ur1EeSFv8wDQ_GmTQ" outgoing="_pPxSQUr1EeSFv8wDQ_GmTQ _o9E_wUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge"/>
+            <attributes xmi:id="_fd7xgEsFEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_TXiasUr1EeSFv8wDQ_GmTQ" incoming="_YqzrIUr1EeSFv8wDQ_GmTQ _or6XQUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_WClEoUr1EeSFv8wDQ_GmTQ" incoming="_ZJqKUUr1EeSFv8wDQ_GmTQ _pPxSQUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+          </nodes>
+          <nodes xmi:id="_XwNEEUr1EeSFv8wDQ_GmTQ" incoming="_Z4vDkUsFEeSRQsOzDJoCCg" outgoing="_YqzrIUr1EeSFv8wDQ_GmTQ _ZJqKUUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_M8G1PksFEeSRQsOzDJoCCg" outgoing="_M8G1QksFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_M8G1QEsFEeSRQsOzDJoCCg" incoming="_M8G1QksFEeSRQsOzDJoCCg" outgoing="_XsHbAUsFEeSRQsOzDJoCCg _Z4vDkUsFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <edges xmi:id="_M8G1QksFEeSRQsOzDJoCCg" source="_M8G1PksFEeSRQsOzDJoCCg" target="_M8G1QEsFEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_E58wBEr1EeSFv8wDQ_GmTQ" source="_E58v_Er1EeSFv8wDQ_GmTQ" target="_E58v_Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_E58wBUr1EeSFv8wDQ_GmTQ" source="_E58v_Er1EeSFv8wDQ_GmTQ" target="_E58v_kr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+          <edges xmi:id="_oU-d8Ur1EeSFv8wDQ_GmTQ" source="_crQBwUr1EeSFv8wDQ_GmTQ" target="_E58v_Ur1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/source"/>
+          </edges>
+          <edges xmi:id="_o9E_wUr1EeSFv8wDQ_GmTQ" source="_dEJC4Ur1EeSFv8wDQ_GmTQ" target="_E58v_kr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/source"/>
+          </edges>
+          <edges xmi:id="_pPxSQUr1EeSFv8wDQ_GmTQ" source="_dEJC4Ur1EeSFv8wDQ_GmTQ" target="_WClEoUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/target"/>
+          </edges>
+          <edges xmi:id="_or6XQUr1EeSFv8wDQ_GmTQ" source="_crQBwUr1EeSFv8wDQ_GmTQ" target="_TXiasUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Edge/target"/>
+          </edges>
+          <edges xmi:id="_YqzrIUr1EeSFv8wDQ_GmTQ" source="_XwNEEUr1EeSFv8wDQ_GmTQ" target="_TXiasUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_ZJqKUUr1EeSFv8wDQ_GmTQ" source="_XwNEEUr1EeSFv8wDQ_GmTQ" target="_WClEoUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+          <edges xmi:id="_XsHbAUsFEeSRQsOzDJoCCg" source="_M8G1QEsFEeSRQsOzDJoCCg" target="_E58v_Er1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_Z4vDkUsFEeSRQsOzDJoCCg" source="_M8G1QEsFEeSRQsOzDJoCCg" target="_XwNEEUr1EeSFv8wDQ_GmTQ">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+        </rhs>
+        <mappings xmi:id="_M8G1SEsFEeSRQsOzDJoCCg" origin="_M8G1Q0sFEeSRQsOzDJoCCg" image="_M8G1PksFEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_M8G1SUsFEeSRQsOzDJoCCg" origin="_M8G1RUsFEeSRQsOzDJoCCg" image="_M8G1QEsFEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_LUPfeEsFEeSRQsOzDJoCCg" origin="_E58v8Ur1EeSFv8wDQ_GmTQ" image="_E58v_Er1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfgUsFEeSRQsOzDJoCCg" origin="_E58v8kr1EeSFv8wDQ_GmTQ" image="_E58v_Ur1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfiUsFEeSRQsOzDJoCCg" origin="_E58v80r1EeSFv8wDQ_GmTQ" image="_E58v_kr1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfoksFEeSRQsOzDJoCCg" origin="_dEJC4Er1EeSFv8wDQ_GmTQ" image="_dEJC4Ur1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfoUsFEeSRQsOzDJoCCg" origin="_crQBwEr1EeSFv8wDQ_GmTQ" image="_crQBwUr1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPflksFEeSRQsOzDJoCCg" origin="_TXiasEr1EeSFv8wDQ_GmTQ" image="_TXiasUr1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfn0sFEeSRQsOzDJoCCg" origin="_WClEoEr1EeSFv8wDQ_GmTQ" image="_WClEoUr1EeSFv8wDQ_GmTQ"/>
+        <mappings xmi:id="_LUPfoEsFEeSRQsOzDJoCCg" origin="_XwNEEEr1EeSFv8wDQ_GmTQ" image="_XwNEEUr1EeSFv8wDQ_GmTQ"/>
+        <multiMappings xmi:id="_M8G1P0sFEeSRQsOzDJoCCg" origin="_LUPfo0sFEeSRQsOzDJoCCg" image="_M8G1PksFEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_M8G1QUsFEeSRQsOzDJoCCg" origin="_LUPfYUsFEeSRQsOzDJoCCg" image="_M8G1QEsFEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_M8G1REsFEeSRQsOzDJoCCg" origin="_LUSis0sFEeSRQsOzDJoCCg" image="_M8G1Q0sFEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_M8G1RksFEeSRQsOzDJoCCg" origin="_LUPfYEsFEeSRQsOzDJoCCg" image="_M8G1RUsFEeSRQsOzDJoCCg"/>
+      </multiRules>
+      <multiMappings xmi:id="_LUPfpEsFEeSRQsOzDJoCCg" origin="_EPvh4UsFEeSRQsOzDJoCCg" image="_LUPfo0sFEeSRQsOzDJoCCg"/>
+      <multiMappings xmi:id="_LUSitEsFEeSRQsOzDJoCCg" origin="_EPvh4EsFEeSRQsOzDJoCCg" image="_LUSis0sFEeSRQsOzDJoCCg"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_DsqwEExwEeSRQsOzDJoCCg" name="propagateNodePC2">
+    <lhs xmi:id="_DsqwEUxwEeSRQsOzDJoCCg" name="Lhs">
+      <nodes xmi:id="_DsqwEkxwEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_DsqwE0xwEeSRQsOzDJoCCg" name="Rhs">
+      <nodes xmi:id="_DsqwFExwEeSRQsOzDJoCCg">
+        <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_DsqwFUxwEeSRQsOzDJoCCg" origin="_DsqwEkxwEeSRQsOzDJoCCg" image="_DsqwFExwEeSRQsOzDJoCCg"/>
+    <multiRules xmi:id="_DsqwFkxwEeSRQsOzDJoCCg" name="l1">
+      <lhs xmi:id="_DsqwF0xwEeSRQsOzDJoCCg" name="Lhs">
+        <nodes xmi:id="_DsqwGExwEeSRQsOzDJoCCg" outgoing="_DsqwGkxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_DsqwGUxwEeSRQsOzDJoCCg" incoming="_DsqwGkxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_DsqwGkxwEeSRQsOzDJoCCg" source="_DsqwGExwEeSRQsOzDJoCCg" target="_DsqwGUxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_DsqwG0xwEeSRQsOzDJoCCg" name="Rhs">
+        <nodes xmi:id="_DsqwHExwEeSRQsOzDJoCCg" outgoing="_DsqwHkxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+        </nodes>
+        <nodes xmi:id="_DsqwHUxwEeSRQsOzDJoCCg" incoming="_DsqwHkxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+        </nodes>
+        <edges xmi:id="_DsqwHkxwEeSRQsOzDJoCCg" source="_DsqwHExwEeSRQsOzDJoCCg" target="_DsqwHUxwEeSRQsOzDJoCCg">
+          <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_DsqwH0xwEeSRQsOzDJoCCg" origin="_DsqwGExwEeSRQsOzDJoCCg" image="_DsqwHExwEeSRQsOzDJoCCg"/>
+      <mappings xmi:id="_DsqwIExwEeSRQsOzDJoCCg" origin="_DsqwGUxwEeSRQsOzDJoCCg" image="_DsqwHUxwEeSRQsOzDJoCCg"/>
+      <multiRules xmi:id="_DsqwIUxwEeSRQsOzDJoCCg" name="l2">
+        <parameters xmi:id="_DsqwIkxwEeSRQsOzDJoCCg" name="pc"/>
+        <lhs xmi:id="_DsqwI0xwEeSRQsOzDJoCCg" name="Lhs">
+          <nodes xmi:id="_DsqwJExwEeSRQsOzDJoCCg" outgoing="_DsqwKkxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_DsqwJUxwEeSRQsOzDJoCCg" incoming="_DsqwKkxwEeSRQsOzDJoCCg" outgoing="_DsqwK0xwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_DsqwJkxwEeSRQsOzDJoCCg" incoming="_DsqwK0xwEeSRQsOzDJoCCg" outgoing="_DsqwLExwEeSRQsOzDJoCCg _DsqwLUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_DsqwJ0xwEeSRQsOzDJoCCg" incoming="_DsqwLExwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_DsqwKExwEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_DsqwKUxwEeSRQsOzDJoCCg" incoming="_DsqwLUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_DsqwNUxwEeSRQsOzDJoCCg" value="&quot;&quot;">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <edges xmi:id="_DsqwKkxwEeSRQsOzDJoCCg" source="_DsqwJExwEeSRQsOzDJoCCg" target="_DsqwJUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_DsqwK0xwEeSRQsOzDJoCCg" source="_DsqwJUxwEeSRQsOzDJoCCg" target="_DsqwJkxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_DsqwLExwEeSRQsOzDJoCCg" source="_DsqwJkxwEeSRQsOzDJoCCg" target="_DsqwJ0xwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_DsqwLUxwEeSRQsOzDJoCCg" source="_DsqwJkxwEeSRQsOzDJoCCg" target="_DsqwKUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </lhs>
+        <rhs xmi:id="_DsqwLkxwEeSRQsOzDJoCCg" name="Rhs">
+          <nodes xmi:id="_DsqwL0xwEeSRQsOzDJoCCg" outgoing="_DsqwNkxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module"/>
+          </nodes>
+          <nodes xmi:id="_DsqwMExwEeSRQsOzDJoCCg" incoming="_DsqwNkxwEeSRQsOzDJoCCg" outgoing="_DsqwN0xwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule"/>
+          </nodes>
+          <nodes xmi:id="_DsqwMUxwEeSRQsOzDJoCCg" incoming="_DsqwN0xwEeSRQsOzDJoCCg" outgoing="_DsqwOExwEeSRQsOzDJoCCg _DsqwOUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping"/>
+          </nodes>
+          <nodes xmi:id="_DsqwMkxwEeSRQsOzDJoCCg" incoming="_DsqwOExwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_DsqwM0xwEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_DsqwNExwEeSRQsOzDJoCCg" incoming="_DsqwOUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Node"/>
+            <attributes xmi:id="_Gy120ExwEeSRQsOzDJoCCg" value="pc">
+              <type href="http://www.eclipse.org/emf/2011/Henshin#//GraphElement/presenceCondition"/>
+            </attributes>
+          </nodes>
+          <edges xmi:id="_DsqwNkxwEeSRQsOzDJoCCg" source="_DsqwL0xwEeSRQsOzDJoCCg" target="_DsqwMExwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Module/units"/>
+          </edges>
+          <edges xmi:id="_DsqwN0xwEeSRQsOzDJoCCg" source="_DsqwMExwEeSRQsOzDJoCCg" target="_DsqwMUxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Rule/mappings"/>
+          </edges>
+          <edges xmi:id="_DsqwOExwEeSRQsOzDJoCCg" source="_DsqwMUxwEeSRQsOzDJoCCg" target="_DsqwMkxwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/origin"/>
+          </edges>
+          <edges xmi:id="_DsqwOUxwEeSRQsOzDJoCCg" source="_DsqwMUxwEeSRQsOzDJoCCg" target="_DsqwNExwEeSRQsOzDJoCCg">
+            <type href="http://www.eclipse.org/emf/2011/Henshin#//Mapping/image"/>
+          </edges>
+        </rhs>
+        <mappings xmi:id="_DsqwOkxwEeSRQsOzDJoCCg" origin="_DsqwJExwEeSRQsOzDJoCCg" image="_DsqwL0xwEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_DsqwO0xwEeSRQsOzDJoCCg" origin="_DsqwJUxwEeSRQsOzDJoCCg" image="_DsqwMExwEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_DsqwPExwEeSRQsOzDJoCCg" origin="_DsqwJkxwEeSRQsOzDJoCCg" image="_DsqwMUxwEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_DsqwPUxwEeSRQsOzDJoCCg" origin="_DsqwJ0xwEeSRQsOzDJoCCg" image="_DsqwMkxwEeSRQsOzDJoCCg"/>
+        <mappings xmi:id="_DsqwPkxwEeSRQsOzDJoCCg" origin="_DsqwKUxwEeSRQsOzDJoCCg" image="_DsqwNExwEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_DsqwP0xwEeSRQsOzDJoCCg" origin="_DsqwHExwEeSRQsOzDJoCCg" image="_DsqwL0xwEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_DsqwQExwEeSRQsOzDJoCCg" origin="_DsqwGExwEeSRQsOzDJoCCg" image="_DsqwJExwEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_DsqwQUxwEeSRQsOzDJoCCg" origin="_DsqwHUxwEeSRQsOzDJoCCg" image="_DsqwMExwEeSRQsOzDJoCCg"/>
+        <multiMappings xmi:id="_DsqwQkxwEeSRQsOzDJoCCg" origin="_DsqwGUxwEeSRQsOzDJoCCg" image="_DsqwJUxwEeSRQsOzDJoCCg"/>
+      </multiRules>
+      <multiMappings xmi:id="_DsqwQ0xwEeSRQsOzDJoCCg" origin="_DsqwFExwEeSRQsOzDJoCCg" image="_DsqwHExwEeSRQsOzDJoCCg"/>
+      <multiMappings xmi:id="_DsqwRExwEeSRQsOzDJoCCg" origin="_DsqwEkxwEeSRQsOzDJoCCg" image="_DsqwGExwEeSRQsOzDJoCCg"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_Eyk9ME36EeSL06lgwf6CcQ" name="main" subUnits="_7gzhAEryEeSFv8wDQ_GmTQ _E58v7kr1EeSFv8wDQ_GmTQ" strict="false" rollback="false"/>
+</henshin:Module>

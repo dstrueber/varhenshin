@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{texstyles/tikz-cellular}
+\usepackage{texstyles/tikz-vcond}
+\usepackage{texstyles/tikz-extension}
+\begin{document}
+TransitionConnectedToPlace:
+\[\begin{array}{l} 
+\forall \left( \tikz { \node (self) [SClass] { self:PetriNet }  ; 
+\node (n1) [SClass, strictly right of= self,node distance=4em] { :Transition }  ; 
+\draw [->] (self)  to node [above,sloped] { \tiny transition }  (n1)  ; 
+ }  \sqsupseteq \tikz { \node (t) [SClass] { t:Transition }  ; 
+ }  , 
+\right. \cr \left. 
+\exists \tikz { \node (t) [SClass] { t:Transition }  ; 
+\node (n0) [SClass, strictly right of= t,node distance=4em] { :ArcPT }  ; 
+\node (n1) [SClass, strictly right of= n0,node distance=4em] { :Place }  ; 
+\draw [->] (n0)  to node [above,sloped] { \tiny place }  (n1)  ; 
+\draw [->] (t)  to node [above,sloped] { \tiny preArc }  (n0)  ; 
+ }  
+\right. \cr \left. 
+\lor \exists \tikz { \node (t) [SClass] { t:Transition }  ; 
+\node (n0) [SClass, strictly right of= t,node distance=4em] { :ArcTP }  ; 
+\node (n1) [SClass, strictly right of= n0,node distance=4em] { :Place }  ; 
+\draw [->] (n0)  to node [above,sloped] { \tiny place }  (n1)  ; 
+\draw [->] (t)  to node [above,sloped] { \tiny postArc }  (n0)  ; 
+ }  \right)
+\end{array}\]
+\end{document}

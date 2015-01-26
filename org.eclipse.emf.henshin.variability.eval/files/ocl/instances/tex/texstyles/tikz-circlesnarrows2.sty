@@ -1,0 +1,386 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN Circles and Arrows
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN Dependencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter%
+% depends on pgf+tikz
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN legacy graph.sty settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Circleradius}{0.5}%
+\newcommand{\Circlediameter}{1}%              % --- is used here
+\newcommand{\Arrowlength}{1.0}%               % --- is used here
+\newcommand{\Indexfont}{\scalebox{0.6}}%      % --- is used here
+\newcommand{\Indexcolour}[1]{#1}%             % --- is used here
+\newcommand{\Labelfont}{\scalebox{0.75}}%     % --- is used here
+\@ifundefined{graphlinedash}{%
+  \newcommand{\arrowgraphdefaults}{}
+}{%
+  \newcommand{\arrowgraphdefaults}{%
+    \setlength{\unitlength}{1em}%
+    \opaquetextfalse%
+    \graphnodesize{0.18}%
+    \graphlinewidth{0.046}%
+    \graphlinecolour{0}%
+    \grapharrowlength{0.4}%
+    \grapharrowwidth{0.6}%
+    \autodistance{1.15}%
+    \graphlinedash{1 0}%
+    \fillednodestrue%
+  }%
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END legacy graph.sty settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END Dependencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\myleftrightarrows#1#2{\tikz[baseline=(anchor.center),outer sep=2pt,inner sep=1pt,]{
+\node[overlay](anchor) at (0,0.25){};
+\node at (0.5,0) {\ensuremath{#1}};
+\node at (0.5,0.75) {\ensuremath{#2}};
+\draw[transformation] (0,0.5) -- (1,0.5);
+\draw[transformation] (1,0.25) -- (0,0.25);
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN Macros for the handling of optional parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% usage: \optionalarg{a}{b}[c] is transformed to a{c}b
+\makeatletter
+\def\optionalarg#1#2{% #1=insert before,  #2=insert after optional parameter
+\@ifnextchar[{\parseoptarg{#1}{#2}}{#1{}#2}% do not append anything here! If necessary, use #2 of \parseoptarg. Use #1 to force expandition of \parseoptarg.
+}
+\def\parseoptarg#1#2[#3]{#1{#3}#2}% #1=insert before, #2=insert after optional parameter, [#3]=optional parameter itself
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END Macros for the handling of optional parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}%
+\usetikzlibrary{arrows,shapes,backgrounds}%
+%
+%\tikzstyle{every picture}+=[remember picture]
+%
+\def\invisibleshape{rectangle}%
+%\def\invisibleshape{circle}%
+\tikzstyle{null}=[line width=0pt,minimum size=0pt,inner sep=0pt,outer sep=0pt,draw=none]%as small as possible, but not necessarily overlay
+\tikzstyle{invisible}=[shape=\invisibleshape,outer sep=0pt,overlay,minimum size=\Circlediameter em,inner sep=0pt]%
+\tikzstyle{round}=[shape=circle,outer sep=0pt,line width=0.046em,draw=.,text=black,minimum size=\Circlediameter em,inner sep=0pt]%
+\tikzstyle{rectangle}=[shape=rectangle,line width=0.046em,draw=.,text=black,minimum size=\Circlediameter em,inner sep=2pt]%
+\tikzstyle{index}=[overlay,minimum size=1ex,inner sep=0pt,outer sep=0pt]%font=\scriptsize
+\tikzstyle{uedge}=[draw=.,line width=0.046em,bend angle=20]%[-triangle 45]
+
+
+\pgfarrowsdeclarealias{morph}{morph}{to}{to}
+\pgfarrowsdeclarealias{mono}{mono}{right hook}{right hook}
+\pgfarrowsdeclarealias{amono}{amono}{left hook}{left hook}
+\pgfarrowsdeclaredouble{epi}{epi}{to reversed}{to reversed}
+\pgfarrowsdeclarealias{aepi}{aepi}{epi}{epi}
+%\pgfarrowsdeclarealias{gmorph}{gmorph}{open triangle 45}{open triangle 45}
+\pgfarrowsdeclarealias{gmorph}{gmorph}{to}{to}
+\pgfarrowsdeclaredouble{rmorph}{rmorph}{to}{to}
+\tikzstyle{morphism}=[-morph]
+\tikzstyle{monomorphism}=[mono-morph]
+\tikzstyle{epimorphism}=[epi-morph]%
+\tikzstyle{graph morphism}=[-gmorph]%
+\tikzstyle{replacement}=[double,double distance=1pt,-myarc]%
+\tikzstyle{replacement morphism}=[-rmorph]%
+\tikzstyle{repl morphism}=[-rmorph]%
+
+
+\makeatletter
+\tikzstyle{loop}=                    [to path={
+  \pgfextra{\let\tikztotarget=\tikztostart}
+  [looseness=8,min distance=5mm,every loop]
+  \tikz@to@curve@path
+  }]
+\tikzstyle{every loop}=              [shorten >=1pt]
+\tikzstyle{loop right}=              [right,out=15,in=-15,loop]
+\tikzstyle{loop above}=              [above,out=105,in=75,loop]
+\tikzstyle{loop left}=               [left,out=195,in=165,loop]
+\tikzstyle{loop below}=              [below,out=285,in=255,loop]
+
+\tikzstyle{myloop2}= [to path={
+  \pgfextra{\let\tikztotarget=\tikztostart}
+  [looseness=3,min distance=3mm,max distance=5mm,every myloop]
+  \tikz@to@curve@path
+  }]
+\tikzstyle{myloop}= [to path={
+  \pgfextra{\let\tikztotarget=\tikztostart}
+  [looseness=8,min distance=3mm,max distance=5mm,every myloop]
+  \tikz@to@curve@path
+  }]
+\makeatother
+\tikzstyle{every myloop}= [-latex,outer sep=0pt,shorten >=1pt]
+%\tikzstyle{every loop}+=[-latex]
+\tikzstyle{myloop right}= [right,in=-15,out=30,myloop]
+\tikzstyle{myloop above}= [above,in=65,out=130,myloop]
+\tikzstyle{myloop left}=  [left,out=195,in=165,myloop]
+\tikzstyle{myloop below}= [below,in=245,out=310,myloop]
+
+\tikzstyle{indexlabel}=[font=\tiny,outer sep=0pt,inner sep=0pt]
+\tikzstyle{marking}=[outer sep=0pt,inner sep=0pt]
+
+%
+%\def\orient{base}              % --- Nodes are aligned according to the label text
+\def\orient{center}            % --- Nodes are vertically centered
+%\def\pushup{}                  % --- do nothing
+\def\pushup{\raisebox{0.567ex}}% --- for compatibility to earlier versions (works also quite well for a hack)
+%
+%
+\def\Circle{\optionalarg{\CircleImpl}{}}%
+\def\CircleImpl#1#2#3{\pushup{\tikz[baseline=(n.\orient),remember picture=false]{%
+%\node[round,#1](n){$#2$};%                  % ---- use this line to let the size of the node grow with the content
+ \node[round,#1](n){$\vphantom{M}$};%        % ____ use these two lines to let the size of the node remain constant
+ \draw[overlay] node(x){\Labelfont{$#2$}};   %
+ \node[index](index)[node distance=0ex,strictly below right of=n]{\Indexfont{\Indexcolour{$#3$}}};
+}}}%
+\def\Rectangle{\optionalarg{\RectangleImpl}{}}%
+\def\RectangleImpl#1#2#3{\pushup{\tikz[baseline=(n.\orient),remember picture=false]{%
+ \node[rectangle,#1](n){\Labelfont{$#2$}};%
+ \node[index](index)[node distance=0ex,strictly below right of=n]{\Indexfont{\Indexcolour{$#3$}}};
+}}}%
+\def\SpecialArrow#1{\pushup{\tikz[baseline=(n1.\orient),node distance=\Arrowlength em,remember picture=false]{
+ \node[invisible](n1){\vphantom{M}};%
+ \node[invisible](n2)[strictly right of=n1]{\vphantom{M}};%
+ #1%
+}}}%
+\def\Line{\optionalarg{\LineImpl}{}}%
+\def\LineImpl#1#2#3{\SpecialArrow{%
+ \path[uedge,#1] (n1) -- node[overlay,above] {\Labelfont{$#2$}} (n2);%
+ \node[index](index)[node distance=0.3ex,strictly half below left of=n2]{\Indexfont{\Indexcolour{$#3$}}};
+}}%
+\def\Arrow{\optionalarg{\ArrowImpl}{}}%
+\def\ArrowImpl#1#2#3{\SpecialArrow{%
+ \path[arrow,#1] (n1) -- node[overlay,above] {\Labelfont{$#2$}} (n2);%
+ \node[index](index)[node distance=0.3ex,strictly half below left of=n2]{\Indexfont{\Indexcolour{$#3$}}};
+}}%
+\def\Worra{\optionalarg{\WorraImpl}{}}%
+\def\WorraImpl#1#2#3{\SpecialArrow{%%\mirror{\ArrowImpl{#1}{\mirror{#2}}{\mirror{#3}}}}%
+ \path[arrow,#1] (n2) -- node[overlay,above] {\Labelfont{$#2$}} (n1);%
+ \node[index](index)[node distance=0.3ex,strictly half below right of=n1]{\Indexfont{\Indexcolour{$#3$}}};
+}}%
+\def\Loop{\optionalarg{\LoopImpl}{}}%
+% \def\LoopImpl#1#2#3{\pushup{\tikz[baseline=(lo.\orient),x=1em,y=1em,remember picture=false]{%
+%  \node[invisible](lo){\vphantom{M}};%
+%  \path[use as bounding box](0.425,-\Circleradius) rectangle (1.5,\Circleradius);
+%  \path[overlay,#1] (lo) edge [myloop right,overlay] node[overlay,above] {\Labelfont{$#2$}} node[index,inner sep=1ex,below] {\Indexfont{\Indexcolour{$#3$}}} ();%
+%  }%
+% }}%
+\def\LoopImpl#1#2#3{\pushup{\tikz[baseline=(n.\orient),node distance=0em,x=1em,y=1em,remember picture=false]{%
+ \node(n)[invisible,inner sep=0pt,outer sep=0pt]{\vphantom{M}};%
+ \node(n2)[strictly right of=n,inner sep=0pt,outer sep=0pt]{\hspace{0.75em}\mbox{}};
+ \draw[overlay,#1] (n) edge [shorten <=-1pt,right,in=-15,out=30,myloop2,overlay] node[overlay,above] {\Labelfont{$#2$}} node[index,inner sep=1ex,below] {\Indexfont{\Indexcolour{$#3$}}} ();%
+ }%
+}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN arrow head myarc % to be used with double=white, e.g., derivation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\myarrowsize
+\newdimen\mypgflinewidth
+\gdef\mymemory{1}
+\pgfarrowsdeclare{myarc}{myarc}
+{
+\mypgflinewidth=0.43pt
+\myarrowsize=0.2pt
+\advance\myarrowsize by .275\mypgflinewidth
+\pgfarrowsleftextend{-4\myarrowsize-0.5\mypgflinewidth}
+\pgfarrowsrightextend{7.5\mypgflinewidth}
+}
+{
+\if\mymemory1
+\gdef\mymemory{0}
+\myarrowsize=0.2pt
+\advance\myarrowsize by .275\pgflinewidth
+\pgfsetlinewidth{0.43pt}
+\pgfsetdash{}{0pt} % do not dash
+\pgfsetroundjoin % fix join
+\pgfsetroundcap % fix cap
+\pgfpathmoveto{\pgfpoint{3.05\myarrowsize}{0\myarrowsize}}
+\pgfpatharc{270}{200}{4\myarrowsize}
+\pgfusepathqstroke
+\pgfpathmoveto{\pgfpointorigin}
+\pgfpathmoveto{\pgfpoint{3.05\myarrowsize}{0\myarrowsize}}
+\pgfpatharc{90}{160}{4\myarrowsize}
+\pgfusepathqstroke
+\else\gdef\mymemory{1}\fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END arrow head myarc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN macro braces
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newsavebox{\contentbox}%
+\def\braces#1{%
+\sbox{\contentbox}{\ensuremath{\,\vphantom{|}#1}\,}%
+\tikz[baseline=(content.base),remember picture=false]{%
+ \node[shape=rectangle,minimum size=0ex,inner sep=0ex,outer sep=0ex](content){\usebox{\contentbox}};%%draw=black,
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@al)[node distance=0ex,strictly above left of=content]{};
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@l)[node distance=0.5em,strictly left of=content]{};
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@bl)[node distance=0ex,strictly below left of=content]{};
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@ar)[node distance=0ex,strictly above right of=content]{};
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@r)[node distance=0.5em,strictly right of=content]{};
+  \node[minimum size=0ex,inner sep=0ex,outer sep=0ex](node@br)[node distance=0ex,strictly below right of=content]{};
+  \draw[-] (node@al) edge (node@l);
+  \draw[-] (node@l) edge (node@bl);
+  \path[-] (node@ar) edge (node@r);
+  \path[-] (node@r) edge (node@br);
+}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END macro braces
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN atposition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% from David Kastrup: Comparing two strings known to consist only of characters
+% \if\strequal{junk}{#1} will be true for #1 being "junk", and false otherwise.
+\def\strequal#1{\number\strequalstart{}{}#1\relax}
+\def\strequalstart#1#2#3{\if#3\relax\strequalstop\fi\strequalstart{\if#3#1}{#2\fi}}
+\def\strequalstop\fi\strequalstart#1#2#3{\fi#1#3\relax'#213 }
+%%%%%%%%%%
+\def\atpositionsmall#1#2#3{\atposition{#1}{\scalebox{0.8}{\ensuremath{#2}}}{#3}}
+\def\atposition#1#2#3{\tikz[baseline=(n.base)]{%, label distance=myautodistance
+  \node[annotated,label={[overlay]\translateposi{#1}:\ensuremath{#2}}](n){\ensuremath{#3}};%
+  %\node[annotated,#1](m){\ensuremath{#2}};%
+}}
+\def\translateposi#1{%
+\if\strequal{#1}{n}above%
+\else\if\strequal{#1}{ne}above right%
+\else\if\strequal{#1}{e}right%
+\else\if\strequal{#1}{se}below right%
+\else\if\strequal{#1}{s}below%
+\else\if\strequal{#1}{sw}below left%
+\else\if\strequal{#1}{w}left%
+\else\if\strequal{#1}{nw}above left%
+\else%
+\fi\fi\fi\fi\fi\fi\fi\fi%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END atposition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN annotation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzstyle{annotated}=[shape=rectangle,text=black,minimum size=\Circlediameter em,inner sep=0pt]%
+\def\refer#1#2{{\tikz[baseline=(#1ref.base)]{%\pushup
+  \node[annotated](#1ref){\ensuremath{#2\vphantom{|}}};%
+}}}%
+\def\annotate#1#2{{\tikz[baseline=(#1ann.base)]{%\pushup
+  \node[annotated](#1ann){#2\vphantom{|}};%
+}}}%
+\def\dolink#1{\tikz[overlay]{%
+  \path[-,line width=0.092em,style=dotted,draw=black!66,overlay] (#1ann) edge (#1ref);%
+}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END annotation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% you may want to use these shortcuts instead and redefine them as you see fit!
+
+\def\smaller#1{\scalebox{0.75}{\normalsize#1}}
+\def\node#1{\Circle[minimum size=\Circlediameter ex,label={[indexlabel,overlay]290:#1}]{}{}}%
+\def\outgoing{\Arrow{}{}}%
+\def\incoming{\Worra{}{}}%
+\def\outgoingstar{\Arrow{\vspace{-0.1cm}*\vspace{0.1cm}}{}}%
+%\def\outgoingslash{\Arrow{/}{}}%
+\def\incomingstar{\Worra{*}{}}%
+%\def\nooutgoing{\Arrow{\}{}}%
+\def\leep{\Loop{}{}}%
+\def\leepstar{\Loop{*}{}}%
+\def\leepbullet{\Loop{\bullet}{}}%
+\newcommand{\mirror}[1]{\scalebox{-1}[1]{#1}}%  % for graphicx
+
+\def\outgoingslashone{\SpecialArrow{%
+\path[arrow,shorten <=-0.04ex] (n1) -- node[null,overlay,left](mid){\scriptsize{\textbf{/}}} (n2);%
+\node[marking,node distance=0.2ex+2pt,overlay,strictly above of=mid] {};
+\node[index](index)[node distance=0.3ex,strictly half below left of=n2]{};
+}}%
+
+\def\outgoingslash{\SpecialArrow{%
+\path[arrow,shorten <=-0.04ex] (n1) -- node[null,overlay,left](mid){\textsf{x}} (n2);%
+\node[marking,node distance=0.2ex+2pt,overlay,strictly above of=mid] {};
+\node[index](index)[node distance=0.3ex,strictly half below left of=n2]{};
+}}% 
+
+\newcommand{\leftloop}{\mirror{\leep}}% left loop
+\newcommand{\leftloopstar}{\mirror{\leepstar}}% left loop
+\newcommand{\leftloopbullet}{\mirror{\leepbullet}}% left loop
+\newcommand{\noleftloop}{\;\;/\!\!\!\!\!\mirror{\leep}}% no left loop
+\newcommand{\noleftloopstar}{\;\;/\!\!\!\!\!\mirror{\leepstar}}% no left loop
+\newcommand{\noleftloopbullet}{\;\;/\!\!\!\!\!\mirror{\leepbullet}}% no left loop
+
+\newcommand{\espace}{\phantom{\outgoing}}%
+\newcommand{\outgoingincoming}{\SpecialArrow{%
+\path[arrow] (n1) edge[bend left] node[overlay,above] {} node[index,below right] {} (n2);%
+\path[arrow] (n2) edge[bend left] node[overlay,below] {} node[index,below right] {} (n1);%
+}{}}%
+\newcommand{\twooutgoing}{\SpecialArrow{%
+\path[arrow] (n1) edge[bend left] node[overlay,above] {} node[index,above right] {} (n2);%
+\path[arrow] (n1) edge[bend right] node[overlay,below] {} node[index,below right] {} (n2);%
+}{}}%
+\newcommand{\threeoutgoing}{\SpecialArrow{%
+\path[arrow] (n1) edge[bend left] node[overlay,above] {} node[index,above right] {} (n2);%
+\path[arrow] (n1) edge[bend] node[overlay] {} node[index] {} (n2);%
+\path[arrow] (n1) edge[bend right] node[overlay,below] {} node[index,below right] {} (n2);%
+}{}}%
+\newcommand{\twoincoming}{\SpecialArrow{%
+\path[arrow] (n2) edge[bend left] node[overlay,above] {} node[index,above right] {} (n1);%
+\path[arrow] (n2) edge[bend right] node[overlay,below] {} node[index,below right] {} (n1);%
+}{}}%
+\newcommand{\testCirclesAndArrows}{
+\renewcommand{\Arrowlength}{5.5}
+\mirror{\Loop{\mirror{ist}}{\mirror{index0}}}\Rectangle{Anton}{index1}\Arrow{arbeitet}{index2}\Rectangle{Buero}{index3}\Worra{befindet}{index4}\Rectangle{Caesar}{index5}\Loop{zitiert}{index6}\ \\\ \\
+
+\renewcommand{\Arrowlength}{1.5}
+\mirror{\Loop{\mirror{z}}{\mirror{0}}}\Circle{A}{1}\Arrow{a}{2}\Circle{B}{3}\Worra{b}{4}\Circle{C}{5}\Loop{c}{6}\ \\\ \\
+
+\tikz[baseline=(L.base),node distance=2em]{
+\node[rectangle](A){$\mirror{\leep}\node{}\leep$};
+\node[rectangle](C)[node distance=1.5em,strictly right of=A]{$\node{}\leep$};
+\node[rectangle](B')[node distance=1.5em,strictly right of=C]{$\node{}\leep$};
+\node[rectangle](B)[node distance=1.5em,strictly right of=B']{$\node{}\leep$};
+\node[rectangle](L)[strictly above of=A]{$\node{}\leep$};
+\node[rectangle](K)[strictly above of=C]{$\node{}$};
+\node[rectangle](R)[strictly above of=B']{$\node{}$};
+\node[rectangle](G)[strictly below of=A]{$\node{}\leep$};
+\node[invisible](D)[strictly below of=C]{$?$};
+%\node[rectangle](H)[strictly below of=B']{$H$};
+\draw[morphism] (K) -- node[font=\scriptsize,text=gray,overlay,above] {$l$} (L);
+\draw[morphism] (K) -- node[font=\scriptsize,text=gray,overlay,above] {$r$} (R);
+\draw[morphism] (L) -- (A);\draw[morphism] (K) -- (C);\draw[morphism] (R) -- (B');
+\draw[morphism] (D) -- (G);%\draw[morphism] (D) -- (H);
+\draw[morphism] (A) -- (G);\draw[morphism] (C) -- (D);%\draw[morphism] (B') -- (H);
+\draw[morphism] (C) -- (A);\draw[morphism] (C) -- (B');\draw[morphism] (B) -- (B');
+\draw[draw=white] (L) -- node[overlay](po1){\scriptsize (1)} (C);
+\draw[draw=white] (R) -- node[overlay](po2){\scriptsize (2)} (C);
+%\draw[draw=white] (G) -- node[overlay](po3){\scriptsize (3)} (C);
+%\draw[draw=white] (H) -- node[overlay](po4){\scriptsize (4)} (C);
+}\ \\\ \\
+
+\centerline{$G\Rightarrow H$ \qquad\qquad \tikz[node distance=\Arrowlength em,remember picture=false]{
+\node(G){$G$};
+\node(H)[strictly right of=G]{$H$};
+\node(A)[strictly below right of=G]{$A$};
+\draw[morphism] (G) -- (A);
+\draw[derivation] (G) -- (H);
+%
+% \tikzstyle{invisible}=[shape=\invisibleshape,outer sep=0pt,overlay,minimum size=\Circlediameter em,inner sep=0pt]%
+% \tikzstyle{round}=[shape=circle,outer sep=0pt,line width=0.046em,draw=.,text=black,minimum size=\Circlediameter em,inner sep=0pt]%
+% \tikzstyle{rectangle}=[shape=rectangle,line width=0.046em,draw=.,text=black,minimum size=\Circlediameter em,inner sep=2pt]%
+% \tikzstyle{index}=[overlay,text=blue,minimum size=1ex,inner sep=0pt,outer sep=0pt]%font=\scriptsize
+% \tikzstyle{uedge}=[draw=.,line width=0.046em,bend angle=20]%[-triangle 45]
+% \tikzstyle{arrow}=[draw=.,-latex,line width=0.046em,bend angle=20]%[-triangle 45]
+% \tikzstyle{worra}=[draw=.,latex-,line width=0.046em,bend angle=20]%[-triangle 45]
+% \tikzstyle{morphism}=[->,shorten >=-3pt]%
+% \tikzstyle{derivation}=[double=white,double distance=2pt]%
+}}
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END Circles and Arrows
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

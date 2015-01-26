@@ -1,0 +1,12 @@
+%\newcommand\carLead[1][]{\framebox{\scalebox{0.6}{\color{green}$\car{}_{\color{black}#1}$}}}
+%\newcommand\carLast[1][]{\framebox{\scalebox{0.6}{\color{red}$\car{}_{\color{black}#1}$}}}
+%\newcommand\carNorm[1][]{\framebox{\scalebox{0.6}{\color{gray}$\car{}_{\color{black}#1}$}}}
+\newcommand\carLead[1][]{\framebox{\scalebox{0.6}{\color{black!80}$\car{}_{\color{black}#1}$}}}
+\newcommand\carNorm[1][]{\framebox{\scalebox{0.6}{\color{black!20}$\car{}_{\color{black}#1}$}}}
+\newcommand\carBase[1][]{\framebox{\scalebox{0.6}{\color{white}$\car{}_{\color{black}#1}$}}}
+\newcommand\car[1]{\tikz[x=0.25em,y=0.25em,baseline=(anchor.center),.,draw=.,line width=0.33pt]{
+\fill[draw=black,line width=0.5pt,fill=.,rounded corners=0.1em](3.45,-2.90)--(7.10,-2.85)--(10.05,-3.15)--(12.75,-4.80)--(15.50,-5.25)--(17.25,-6.35)--(17.65,-7.55)--(17.05,-8.5)--(1.60,-8.5)--(0.85,-7.40)--(1.05,-5.55)--cycle;
+\filldraw[draw=black,line width=2pt,fill=white] (4.125,-8.125) ellipse (1.375 and 1.375); % wheel 1
+\filldraw[draw=black,line width=2pt,fill=white] (13.025,-8.125) ellipse (1.375 and 1.375);% wheel 2
+\node[overlay,inner sep=0pt,outer sep=0pt](text) at (8,-6) {\color{black}#1};
+\node[overlay,inner sep=0pt,outer sep=0pt](anchor) at (0,-2) {}; }}

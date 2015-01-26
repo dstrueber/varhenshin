@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gc:NestedGraphConstraint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gc="http://www.example.org/GraphConstraint" name="TransitionConnectedToPlace">
+  <import href="../PetriNetWithOCLPaper.ecore#/"/>
+  <condition xsi:type="gc:QuantifiedGraphCondition" domain="//@emptyDomain" quantifier="FORALL">
+    <codomain>
+      <edges src="//@condition/@codomain/@nodes.0" tgt="//@condition/@codomain/@nodes.1">
+        <type href="../PetriNetWithOCLPaper.ecore#//PetriNet/transition"/>
+      </edges>
+      <nodes name="self">
+        <type href="../PetriNetWithOCLPaper.ecore#//PetriNet"/>
+      </nodes>
+      <nodes>
+        <type href="../PetriNetWithOCLPaper.ecore#//Transition"/>
+      </nodes>
+    </codomain>
+    <restriction>
+      <nodes name="t">
+        <type href="../PetriNetWithOCLPaper.ecore#//Transition"/>
+      </nodes>
+    </restriction>
+    <restrictionMapping from="//@condition/@restriction" to="//@condition/@codomain">
+      <mappings origin="//@condition/@restriction/@nodes.0" image="//@condition/@codomain/@nodes.1"/>
+    </restrictionMapping>
+    <codomainMapping from="//@emptyDomain" to="//@condition/@codomain"/>
+    <nested xsi:type="gc:Formula" domain="//@condition/@restriction" op="OR">
+      <args xsi:type="gc:QuantifiedGraphCondition" domain="//@condition/@restriction">
+        <codomain>
+          <edges src="//@condition/@nested/@args.0/@codomain/@nodes.0" tgt="//@condition/@nested/@args.0/@codomain/@nodes.1">
+            <type href="../PetriNetWithOCLPaper.ecore#//ArcPT/place"/>
+          </edges>
+          <edges src="//@condition/@nested/@args.0/@codomain/@nodes.2" tgt="//@condition/@nested/@args.0/@codomain/@nodes.0">
+            <type href="../PetriNetWithOCLPaper.ecore#//Transition/preArc"/>
+          </edges>
+          <nodes name="">
+            <type href="../PetriNetWithOCLPaper.ecore#//ArcPT"/>
+          </nodes>
+          <nodes>
+            <type href="../PetriNetWithOCLPaper.ecore#//Place"/>
+          </nodes>
+          <nodes name="t">
+            <type href="../PetriNetWithOCLPaper.ecore#//Transition"/>
+          </nodes>
+        </codomain>
+        <codomainMapping from="//@condition/@restriction" to="//@condition/@nested/@args.0/@codomain"/>
+        <nested xsi:type="gc:True" domain="//@condition/@nested/@args.0/@codomain"/>
+      </args>
+      <args xsi:type="gc:QuantifiedGraphCondition" domain="//@condition/@restriction">
+        <codomain>
+          <edges src="//@condition/@nested/@args.1/@codomain/@nodes.0" tgt="//@condition/@nested/@args.1/@codomain/@nodes.1">
+            <type href="../PetriNetWithOCLPaper.ecore#//ArcTP/place"/>
+          </edges>
+          <edges src="//@condition/@nested/@args.1/@codomain/@nodes.2" tgt="//@condition/@nested/@args.1/@codomain/@nodes.0">
+            <type href="../PetriNetWithOCLPaper.ecore#//Transition/postArc"/>
+          </edges>
+          <nodes name="">
+            <type href="../PetriNetWithOCLPaper.ecore#//ArcTP"/>
+          </nodes>
+          <nodes>
+            <type href="../PetriNetWithOCLPaper.ecore#//Place"/>
+          </nodes>
+          <nodes name="t">
+            <type href="../PetriNetWithOCLPaper.ecore#//Transition"/>
+          </nodes>
+        </codomain>
+        <codomainMapping from="//@condition/@restriction" to="//@condition/@nested/@args.1/@codomain"/>
+        <nested xsi:type="gc:True" domain="//@condition/@nested/@args.1/@codomain"/>
+      </args>
+    </nested>
+  </condition>
+  <emptyDomain/>
+</gc:NestedGraphConstraint>

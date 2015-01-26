@@ -1,0 +1,91 @@
+\newtheorem{fact}{Fact}{\bfseries}{\itshape}
+%\newtheorem{proofidea}{Proof Idea}{\itshape}{\rmfamily} \qed
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}\newcommand{\factautorefname}{Fact}
+%\newcommand{\proofideaautorefname}{Proof Idea}
+
+%%%%%%%%%%% Macros for Figures (needed for pdflatex)
+\newcommand{\fig}[3]{ % {FIGNAME}{SCALE FACTOR}{CAPTION}
+\vspace{-.4cm}
+\begin{figure}[h!tb]
+\centering
+\includegraphics*[scale=#2]{figures/#1}
+\caption{\label{#1}#3} %  \hspace{5mm}#1}
+\vspace{-.4cm}
+\end{figure}
+}
+
+\newcommand{\figinline}[2]{% {NAME}{FACTOR}
+\includegraphics*[scale=#2]{figures/#1}
+}
+
+% end of proof symbol
+\newcommand\qedsymbol{\hbox{\rlap{$\sqcap$}$\sqcup$}}
+\renewcommand\qed{\hfill \qedsymbol}
+
+%%%%%%%%%%% GraTra
+\newcommand{\N}{\ensuremath{\mathds{N}}}
+%\newcommand{\Cat}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\Rule}[1]{\stackrel{#1}{\Longrightarrow}}
+\newcommand{\TT}[1]{\begin{sf}\begin{small}#1\end{small}\end{sf}}
+\newcommand{\mor}[1]{\stackrel{#1}{\longrightarrow}}
+\newcommand{\lmor}[1]{\stackrel{#1}{\longleftarrow}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\deriv}[1]{\stackrel{#1}{\Longrightarrow}}
+\newcommand{\eq}{\Longleftrightarrow}
+%\newcommand{\implies}{\Longrightarrow}
+\newcommand{\abb}[3]{#1 \colon #2 \rightarrow #3}
+\newcommand{\grule}[5]{#1 \stackrel{#4}{\longleftarrow} #2
+               \stackrel{#5}{\longrightarrow} #3}
+\newcommand{\cospan}[5]{#1 \stackrel{#4}{\longrightarrow} #2
+               \stackrel{#5}{\longleftarrow} #3}
+\newcommand{\trans}[3]{\xymatrix{ {#1} \ar @{=>} [r] ^{#3} & {#2}}}
+
+%%%%%%%%%%% To display changes
+\newcommand{\new}[1]{\textcolor{blue}{#1}}
+\newcommand{\old}[1]{\textcolor{red}{#1}}
+
+%%%%%%%%%%  Commentary
+\newcounter{comCounter}[page]
+\setlength{\marginparsep}{4mm}
+\setlength{\marginparwidth}{3.5cm}
+\newcommand{\com}[1]{\marginpar{\normalfont \textsl{\small #1}}}
+%
+% Uncomment the next command to make comments invisible.
+%\renewcommand{\com}[1]{}
+
+\renewcommand{\ttdefault}{cmr}
+
+%%%%%%%%%%% Names
+\newcommand{\names}[1]{{\normalfont\scshape #1}}
+\newcommand{\agg}{{\sc AGG}\xspace}
+\newcommand{\tiger}{{\sc Tiger}\xspace}
+\newcommand{\eclipse}{{\sc Eclipse}\xspace}
+\newcommand{\actigra}{{\sc ActiGra}\xspace}
+\newcommand{\EMF}{{\sc EMF}\xspace}
+\newcommand{\emftiger}{\textsc{EMF Ti\-ger}\xspace}
+\newcommand{\GEF}{{\sc GEF}\xspace}
+\newcommand{\figlabel}[1]{\TT{#1}}
+%
+%%%%%%%%%%% To distinguish long and short version parts
+\newcommand{\longv}[1]{#1}
+\newcommand{\shortv}[1]{}
+\newcommand{\itemC}{\vspace{-1.5ex}\item}
+
+% Put edit comments in a really ugly standout display
+\usepackage{ifthen}
+\usepackage{amssymb}
+\newboolean{showcomments}
+\setboolean{showcomments}{true} %%%% toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}
+  {\newcommand{\nb}[2]{
+    \fcolorbox{gray}{yellow}{\bfseries\sffamily\scriptsize#1}
+    {\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+   }
+   \newcommand{\version}{\emph{\scriptsize$-$working$-$}}
+  }
+  {\newcommand{\nb}[2]{}
+   \newcommand{\version}{}
+  }
+\newcommand\todo[1]{\nb{ToDo}{#1}}

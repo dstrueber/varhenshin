@@ -1,0 +1,67 @@
+\RequirePackage{tikz}
+\RequirePackage{xparse}
+
+\newenvironment{graph}{%
+  \begin{tikzpicture}
+}{%
+  \end{tikzpicture}
+}
+\newenvironment{framegraph}{%
+  \begin{tikzpicture}[show background rectangle]
+}{%
+  \end{tikzpicture}
+}
+
+\def\freetext(#1)#2{\node at(#1){#2};}
+\def\bubble#1#2[#3]{}%TODO
+\DeclareDocumentCommand\textnode{ m d() m O{} }{#4 \node[draw,shape=rectangle](#1) at(#2){#3};}
+
+\def\roundnode#1(#2){\node(#1) at(#2)[draw,shape=circle]{};}
+
+\def\nodetext#1#2{\node at(#1.center){#2};}
+
+\def\autonodetext#1[#2]#3{%
+  \ifx#2n       \node at(#1.north)     [yshift=2pt]{#3};%
+  \else\ifx#2ne \node at(#1.north east)[xshift=2pt]{#3};%
+  \else\ifx#2e  \node at(#1.east)      [xshift=2pt]{#3};%
+  \else\ifx#2se \node at(#1.south east)[xshift=2pt]{#3};%
+  \else\ifx#2s  \node at(#1.south)     [yshift=-2pt]{#3};%
+  \else\ifx#2sw \node at(#1.south west)[xshift=-2pt]{#3};%
+  \else\ifx#2w  \node at(#1.west)      [xshift=-2pt]{#3};%
+  \else\ifx#2nw \node at(#1.north west)[xshift=-2pt]{#3};%
+  \fi\fi\fi\fi\fi\fi\fi\fi
+}
+
+\DeclareDocumentCommand\edge{ m m O{} }{%
+  \edef\deopts{#3}%
+  \expandafter\expandafter\expandafter\draw\expandafter[\deopts,] (#1) -- (#2);%
+}
+\DeclareDocumentCommand\diredge{ m m O{} }{%
+  \edef\deopts{#3}%
+  \expandafter\expandafter\expandafter\draw\expandafter[\deopts,->] (#1) to (#2);%
+}
+\DeclareDocumentCommand\dirloopedge{ m r() r() }{%
+  \draw[->] (#1) .. controls ++(#2) and ++(#3) .. (#1);%
+}
+\DeclareDocumentCommand\bowtext{ m m m m }{%
+  \pgfmathmultiply{#3}{150}
+  \draw (#1) to[bend right=\pgfmathresult] node[auto]{#4} (#2);%
+}
+\DeclareDocumentCommand\bow{ m m m }{%
+  \pgfmathmultiply{#3}{150}
+  \draw (#1) to[bend right=\pgfmathresult] (#2);%
+}
+\DeclareDocumentCommand\dirbow{ m m m }{%
+  \pgfmathmultiply{#3}{150}
+  \draw[->] (#1) to[bend right=\pgfmathresult] (#2);%
+}
+%\edef\graphlinecolour#1{opacity=#1,}
+%\edef\graphlinewidth#1{line width=#1,}
+%\edef\graphlinedash#1{dashed,}
+%\edef\graphfillcolour#1{}
+\edef\graphlinecolour#1{opacity=#1,}
+\edef\graphlinewidth#1{line width=#1,}
+\edef\graphlinedash#1{dashed,}
+\def\graphnodesize#1{\tikzset{minimum size=#1cm}}
+\def\graphnodecolour#1{\tikzset{opacity=#1}}
+\def\graphfillcolour#1{\tikzset{}}%TODO
