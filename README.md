@@ -1,2 +1,2 @@
 # varhenshin
-VarHenshin: variability-based model transformation specification and execution
+Variability-based model transformation specification and execution
