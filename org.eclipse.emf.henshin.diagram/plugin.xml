@@ -9,6 +9,19 @@
 
 <plugin>
 
+   <extension
+         id="org.eclipse.emf.henshin.menu"
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               id="org.eclipse.emf.henshin.menu"
+               label="Henshin">
+         </menu>
+      </menuContribution>
+   </extension>
+   
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
       <fileTypes type="text" extension="henshin_diagram"/>
