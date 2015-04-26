@@ -6,13 +6,11 @@ import org.eclipse.emf.henshin.interpreter.ApplicationMonitor;
 import org.eclipse.emf.henshin.interpreter.Assignment;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
-import org.eclipse.emf.henshin.interpreter.RuleApplication;
 import org.eclipse.emf.henshin.interpreter.impl.MatchImpl;
 import org.eclipse.emf.henshin.interpreter.impl.RuleApplicationImpl;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareMatch;
 import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareMatchFinder;
-import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareSingleMatchFinder;
 import org.eclipse.emf.henshin.variability.util.RuleUtil;
 
 /**

@@ -521,7 +521,7 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRule_ForbiddenVariants() {
+	public EAttribute getRule_FeatureModel() {
 		return (EAttribute)ruleEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1106,6 +1106,15 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNestedCondition_PresenceCondition() {
+		return (EAttribute)nestedConditionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFormula() {
 		return formulaEClass;
 	}
@@ -1284,7 +1293,7 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 		createEAttribute(ruleEClass, RULE__INJECTIVE_MATCHING);
 		createEReference(ruleEClass, RULE__MULTI_RULES);
 		createEReference(ruleEClass, RULE__MULTI_MAPPINGS);
-		createEAttribute(ruleEClass, RULE__FORBIDDEN_VARIANTS);
+		createEAttribute(ruleEClass, RULE__FEATURE_MODEL);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEReference(parameterEClass, PARAMETER__UNIT);
@@ -1358,6 +1367,7 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 		nestedConditionEClass = createEClass(NESTED_CONDITION);
 		createEReference(nestedConditionEClass, NESTED_CONDITION__CONCLUSION);
 		createEReference(nestedConditionEClass, NESTED_CONDITION__MAPPINGS);
+		createEAttribute(nestedConditionEClass, NESTED_CONDITION__PRESENCE_CONDITION);
 
 		unaryFormulaEClass = createEClass(UNARY_FORMULA);
 		createEReference(unaryFormulaEClass, UNARY_FORMULA__CHILD);
@@ -1478,7 +1488,7 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 		initEAttribute(getRule_InjectiveMatching(), ecorePackage.getEBoolean(), "injectiveMatching", "true", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_MultiRules(), this.getRule(), null, "multiRules", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_MultiMappings(), this.getMapping(), null, "multiMappings", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_ForbiddenVariants(), ecorePackage.getEString(), "forbiddenVariants", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_FeatureModel(), ecorePackage.getEString(), "featureModel", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(ruleEClass, this.getRule(), "getKernelRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1677,6 +1687,7 @@ public class HenshinPackageImpl extends EPackageImpl implements HenshinPackage {
 		initEClass(nestedConditionEClass, NestedCondition.class, "NestedCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNestedCondition_Conclusion(), this.getGraph(), null, "conclusion", null, 0, 1, NestedCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNestedCondition_Mappings(), this.getMapping(), null, "mappings", null, 0, -1, NestedCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNestedCondition_PresenceCondition(), ecorePackage.getEString(), "presenceCondition", null, 0, 1, NestedCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(nestedConditionEClass, this.getGraph(), "getHost", 0, 1, IS_UNIQUE, IS_ORDERED);
 

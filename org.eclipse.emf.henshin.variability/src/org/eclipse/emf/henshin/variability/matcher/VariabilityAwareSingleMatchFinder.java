@@ -2,11 +2,9 @@ package org.eclipse.emf.henshin.variability.matcher;
 
 import java.util.BitSet;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,10 +24,8 @@ import org.eclipse.emf.henshin.model.Edge;
 import org.eclipse.emf.henshin.model.GraphElement;
 import org.eclipse.emf.henshin.model.Node;
 import org.eclipse.emf.henshin.model.Rule;
-import org.eclipse.emf.henshin.variability.util.FeatureExprLibUtil;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
-import de.fosd.typechef.featureexpr.FeatureExprParser;
 
 /**
  * Applies the algorithm described in [1] to determine a single variability-aware
@@ -196,9 +192,8 @@ public class VariabilityAwareSingleMatchFinder {
 			for (FeatureExpr expr : conditions) {
 				info.put(expr, null);
 			}
-			for (String expr : ruleInfo.getForbiddenExpressions().keySet()) {
-				assumedFalse.add(ruleInfo.getForbiddenExpressions().get(expr));
-			}
+
+			assumedTrue.add(ruleInfo.getFeatureModel());
 			neutrals.addAll(conditions);
 		}
 
@@ -469,11 +464,12 @@ public class VariabilityAwareSingleMatchFinder {
 
 		Map<String, FeatureExpr> usedExpressions;
 
-		Map<String, FeatureExpr> forbiddenExpressions;
+		FeatureExpr featureModel;
 		
-		public Map<String, FeatureExpr> getForbiddenExpressions() {
-			return forbiddenExpressions;
+		FeatureExpr getFeatureModel() {
+				return featureModel;
 		}
+		
 
 		Map<Rule, Map<String, FeatureExpr>> featureMaps;
 
@@ -508,7 +504,7 @@ public class VariabilityAwareSingleMatchFinder {
 
 		public void populateMaps() {
 			usedExpressions = new HashMap<String, FeatureExpr>();
-			forbiddenExpressions = new HashMap<String, FeatureExpr>();
+			featureModel = ExprInfo.getExpr(rule.getFeatureModel());
 			pc2elem = new HashMap<FeatureExpr, Set<GraphElement>>();
 			TreeIterator<EObject> it = rule.eAllContents();
 			
@@ -526,18 +522,16 @@ public class VariabilityAwareSingleMatchFinder {
 					}
 				}
 			}
-			
-			String forbiddenExprs = rule.getForbiddenVariants();
-			if (forbiddenExprs != null && !forbiddenExprs.isEmpty()) {
-				String[] forbidden = forbiddenExprs.split(";");
-				for (String a : forbidden) {
-					FeatureExpr expr = ExprInfo.getExpr(a);
-					forbiddenExpressions.put(a, expr);
-					if (!pc2elem.containsKey(expr))
-						pc2elem.put(expr, new HashSet<GraphElement>());
-					else
-						System.err.println("A graph element was labelled with a forbidden expression: "+a);
-				}
+
+			if (featureModel != null && !featureModel.equals("")) {
+				if (!pc2elem.containsKey(featureModel))
+					pc2elem.put(featureModel, new HashSet<GraphElement>());
+//				for (FeatureExpr e : pc2elem.keySet()) {
+//					if (ExprInfo.contradicts(featureModel, e))
+//						System.err
+//								.println("A graph element was labelled with a forbidden expression: "
+//										+ e);
+//				}
 			}
 		}
 	}

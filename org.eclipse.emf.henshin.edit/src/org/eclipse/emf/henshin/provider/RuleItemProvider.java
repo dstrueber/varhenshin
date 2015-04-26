@@ -92,7 +92,7 @@ public class RuleItemProvider extends UnitItemProvider {
 
 			addCheckDanglingPropertyDescriptor(object);
 			addInjectiveMatchingPropertyDescriptor(object);
-			addForbiddenVariantsPropertyDescriptor(object);
+			addFeatureModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,19 +142,19 @@ public class RuleItemProvider extends UnitItemProvider {
 	}
 	
 	/**
-	 * This adds a property descriptor for the Forbidden Variants feature.
+	 * This adds a property descriptor for the Feature Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addForbiddenVariantsPropertyDescriptor(Object object) {
+	protected void addFeatureModelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Rule_forbiddenVariants_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_forbiddenVariants_feature", "_UI_Rule_type"),
-				 HenshinPackage.Literals.RULE__FORBIDDEN_VARIANTS,
+				 getString("_UI_Rule_featureModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_featureModel_feature", "_UI_Rule_type"),
+				 HenshinPackage.Literals.RULE__FEATURE_MODEL,
 				 true,
 				 false,
 				 false,

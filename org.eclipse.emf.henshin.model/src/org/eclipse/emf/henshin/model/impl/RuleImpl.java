@@ -64,7 +64,7 @@ import org.eclipse.emf.henshin.model.actions.NodeActionHelper;
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#isInjectiveMatching <em>Injective Matching</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getMultiRules <em>Multi Rules</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getMultiMappings <em>Multi Mappings</em>}</li>
- *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getForbiddenVariants <em>Forbidden Variants</em>}</li>
+ *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getFeatureModel <em>Feature Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -173,24 +173,24 @@ public class RuleImpl extends UnitImpl implements Rule {
 	protected EList<Mapping> multiMappings;
 	
 	/**
-	 * The default value of the '{@link #getForbiddenVariants() <em>Forbidden Variants</em>}' attribute.
+	 * The default value of the '{@link #getFeatureModel() <em>Feature Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getForbiddenVariants()
+	 * @see #getFeatureModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FORBIDDEN_VARIANTS_EDEFAULT = null;
+	protected static final String FEATURE_MODEL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getForbiddenVariants() <em>Forbidden Variants</em>}' attribute.
+	 * The cached value of the '{@link #getFeatureModel() <em>Feature Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getForbiddenVariants()
+	 * @see #getFeatureModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected String forbiddenVariants = FORBIDDEN_VARIANTS_EDEFAULT;
+	protected String featureModel = FEATURE_MODEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -937,8 +937,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getForbiddenVariants() {
-		return forbiddenVariants;
+	public String getFeatureModel() {
+		return featureModel;
 	}
 
 	/**
@@ -946,11 +946,11 @@ public class RuleImpl extends UnitImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setForbiddenVariants(String newForbiddenVariants) {
-		String oldForbiddenVariants = forbiddenVariants;
-		forbiddenVariants = newForbiddenVariants;
+	public void setFeatureModel(String newFeatureModel) {
+		String oldFeatureModel = featureModel;
+		featureModel = newFeatureModel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HenshinPackage.RULE__FORBIDDEN_VARIANTS, oldForbiddenVariants, forbiddenVariants));
+			eNotify(new ENotificationImpl(this, Notification.SET, HenshinPackage.RULE__FEATURE_MODEL, oldFeatureModel, featureModel));
 	}
 
 	/**
@@ -1018,8 +1018,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 				return getMultiRules();
 			case HenshinPackage.RULE__MULTI_MAPPINGS:
 				return getMultiMappings();
-			case HenshinPackage.RULE__FORBIDDEN_VARIANTS:
-				return getForbiddenVariants();
+			case HenshinPackage.RULE__FEATURE_MODEL:
+				return getFeatureModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1061,8 +1061,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 				getMultiMappings().clear();
 				getMultiMappings().addAll((Collection<? extends Mapping>)newValue);
 				return;
-			case HenshinPackage.RULE__FORBIDDEN_VARIANTS:
-				setForbiddenVariants((String)newValue);
+			case HenshinPackage.RULE__FEATURE_MODEL:
+				setFeatureModel((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1100,8 +1100,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 			case HenshinPackage.RULE__MULTI_MAPPINGS:
 				getMultiMappings().clear();
 				return;
-			case HenshinPackage.RULE__FORBIDDEN_VARIANTS:
-				setForbiddenVariants(FORBIDDEN_VARIANTS_EDEFAULT);
+			case HenshinPackage.RULE__FEATURE_MODEL:
+				setFeatureModel(FEATURE_MODEL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1131,8 +1131,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 				return multiRules != null && !multiRules.isEmpty();
 			case HenshinPackage.RULE__MULTI_MAPPINGS:
 				return multiMappings != null && !multiMappings.isEmpty();
-			case HenshinPackage.RULE__FORBIDDEN_VARIANTS:
-				return FORBIDDEN_VARIANTS_EDEFAULT == null ? forbiddenVariants != null : !FORBIDDEN_VARIANTS_EDEFAULT.equals(forbiddenVariants);
+			case HenshinPackage.RULE__FEATURE_MODEL:
+				return FEATURE_MODEL_EDEFAULT == null ? featureModel != null : !FEATURE_MODEL_EDEFAULT.equals(featureModel);
 		}
 		return super.eIsSet(featureID);
 	}

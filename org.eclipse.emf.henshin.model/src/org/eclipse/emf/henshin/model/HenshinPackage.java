@@ -482,13 +482,13 @@ public interface HenshinPackage extends EPackage {
 	int RULE__MULTI_MAPPINGS = UNIT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Forbidden Variants</b></em>' attribute.
+	 * The feature id for the '<em><b>Feature Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__FORBIDDEN_VARIANTS = UNIT_FEATURE_COUNT + 8;
+	int RULE__FEATURE_MODEL = UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -1687,13 +1687,22 @@ public interface HenshinPackage extends EPackage {
 	int NESTED_CONDITION__MAPPINGS = FORMULA_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Presence Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NESTED_CONDITION__PRESENCE_CONDITION = FORMULA_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Nested Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NESTED_CONDITION_FEATURE_COUNT = FORMULA_FEATURE_COUNT + 2;
+	int NESTED_CONDITION_FEATURE_COUNT = FORMULA_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Child</b></em>' containment reference.
@@ -1980,15 +1989,15 @@ public interface HenshinPackage extends EPackage {
 	EReference getRule_MultiMappings();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.emf.henshin.model.Rule#getForbiddenVariants <em>Forbidden Variants</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.emf.henshin.model.Rule#getFeatureModel <em>Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Forbidden Variants</em>'.
-	 * @see org.eclipse.emf.henshin.model.Rule#getForbiddenVariants()
+	 * @return the meta object for the attribute '<em>Feature Model</em>'.
+	 * @see org.eclipse.emf.henshin.model.Rule#getFeatureModel()
 	 * @see #getRule()
 	 * @generated
 	 */
-	EAttribute getRule_ForbiddenVariants();
+	EAttribute getRule_FeatureModel();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.emf.henshin.model.AttributeCondition <em>Attribute Condition</em>}'.
@@ -2676,6 +2685,17 @@ public interface HenshinPackage extends EPackage {
 	EReference getNestedCondition_Mappings();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.emf.henshin.model.NestedCondition#getPresenceCondition <em>Presence Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Presence Condition</em>'.
+	 * @see org.eclipse.emf.henshin.model.NestedCondition#getPresenceCondition()
+	 * @see #getNestedCondition()
+	 * @generated
+	 */
+	EAttribute getNestedCondition_PresenceCondition();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.emf.henshin.model.Formula <em>Formula</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2944,12 +2964,12 @@ public interface HenshinPackage extends EPackage {
 		EReference RULE__MULTI_MAPPINGS = eINSTANCE.getRule_MultiMappings();
 
 		/**
-		 * The meta object literal for the '<em><b>Forbidden Variants</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Feature Model</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RULE__FORBIDDEN_VARIANTS = eINSTANCE.getRule_ForbiddenVariants();
+		EAttribute RULE__FEATURE_MODEL = eINSTANCE.getRule_FeatureModel();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.emf.henshin.model.impl.AttributeConditionImpl <em>Attribute Condition</em>}' class.
@@ -3500,6 +3520,14 @@ public interface HenshinPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NESTED_CONDITION__MAPPINGS = eINSTANCE.getNestedCondition_Mappings();
+
+		/**
+		 * The meta object literal for the '<em><b>Presence Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NESTED_CONDITION__PRESENCE_CONDITION = eINSTANCE.getNestedCondition_PresenceCondition();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.emf.henshin.model.Formula <em>Formula</em>}' class.

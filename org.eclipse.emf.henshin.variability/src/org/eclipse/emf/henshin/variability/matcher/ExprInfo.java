@@ -1,9 +1,13 @@
 package org.eclipse.emf.henshin.variability.matcher;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.henshin.variability.util.FeatureExprLibUtil;
+import org.eclipse.emf.henshin.variability.util.XorEncoderUtil;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
 import de.fosd.typechef.featureexpr.FeatureExprParser;
@@ -79,11 +83,12 @@ class ExprInfo {
 		}
 	}
 
-	public static FeatureExpr getExpr(String presenceCondition) {
-		FeatureExpr result = string2expr.get(presenceCondition);
+	public static FeatureExpr getExpr(String condition) {
+		condition = XorEncoderUtil.encodeXor(condition);
+		FeatureExpr result = string2expr.get(condition);
 		if (result == null) {
-			result = parser.parse(presenceCondition);
-			string2expr.put(presenceCondition, result);
+			result = parser.parse(condition);
+			string2expr.put(condition, result);
 		}
 		return result;
 	}

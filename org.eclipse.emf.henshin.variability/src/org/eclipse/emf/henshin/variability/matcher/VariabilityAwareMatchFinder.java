@@ -70,20 +70,6 @@ public class VariabilityAwareMatchFinder {
 		this.ruleInfo = ruleInfoRegistry.get(rule);
 		populateExpressionMap();
 	}
-
-	// public VariabilityAwareMatcher(Rule rule, EGraph graph,
-	// FeatureModel featureModel) {
-	// this.rule = rule;
-	// this.graph = graph;
-	// this.featureModel = featureModel;
-	// this.engine = new EngineImpl();
-	// this.subrule2bitset = new HashMap<Rule, BitSet>();
-	// if (!ruleInfoRegistry.containsKey(rule))
-	// ruleInfoRegistry.put(rule, new RuleInfo(rule));
-	// this.ruleInfo = ruleInfoRegistry.get(rule);
-	// populateExpressionMap();
-	// }
-
 	private void populateExpressionMap() {
 		if (ruleInfoRegistry.containsKey(rule)) {
 			expressions = ruleInfo.getExpressions();
@@ -194,9 +180,7 @@ public class VariabilityAwareMatchFinder {
 			for (FeatureExpr expr : conditions) {
 				info.put(expr, null);
 			}
-			for (String expr : ruleInfo.getForbiddenExpressions().keySet()) {
-				assumedFalse.add(ruleInfo.getForbiddenExpressions().get(expr));
-			}
+			assumedTrue.add(ruleInfo.getFeatureModel());
 			neutrals.addAll(conditions);
 		}
 
@@ -466,10 +450,10 @@ public class VariabilityAwareMatchFinder {
 
 		Map<String, FeatureExpr> usedExpressions;
 
-		Map<String, FeatureExpr> forbiddenExpressions;
+		FeatureExpr featureModel;
 
-		public Map<String, FeatureExpr> getForbiddenExpressions() {
-			return forbiddenExpressions;
+		public FeatureExpr getFeatureModel() {
+			return featureModel;
 		}
 
 		Map<Rule, Map<String, FeatureExpr>> featureMaps;
@@ -505,7 +489,8 @@ public class VariabilityAwareMatchFinder {
 
 		public void populateMaps() {
 			usedExpressions = new HashMap<String, FeatureExpr>();
-			forbiddenExpressions = new HashMap<String, FeatureExpr>();
+
+			featureModel = ExprInfo.getExpr(rule.getFeatureModel());
 			pc2elem = new HashMap<FeatureExpr, Set<GraphElement>>();
 			TreeIterator<EObject> it = rule.eAllContents();
 
@@ -524,19 +509,15 @@ public class VariabilityAwareMatchFinder {
 				}
 			}
 
-			String forbiddenExprs = rule.getForbiddenVariants();
-			if (forbiddenExprs != null && !forbiddenExprs.isEmpty()) {
-				String[] forbidden = forbiddenExprs.split(";");
-				for (String a : forbidden) {
-					FeatureExpr expr = ExprInfo.getExpr(a);
-					forbiddenExpressions.put(a, expr);
-					if (!pc2elem.containsKey(expr))
-						pc2elem.put(expr, new HashSet<GraphElement>());
-					else
-						System.err
-								.println("A graph element was labelled with a forbidden expression: "
-										+ a);
-				}
+			if (featureModel != null && !featureModel.equals("")) {
+				if (!pc2elem.containsKey(featureModel))
+					pc2elem.put(featureModel, new HashSet<GraphElement>());
+//				for (FeatureExpr e : pc2elem.keySet()) {
+//					if (ExprInfo.contradicts(featureModel, e))
+//						System.err
+//								.println("A graph element was labelled with a forbidden expression: "
+//										+ e);
+//				}
 			}
 		}
 	}

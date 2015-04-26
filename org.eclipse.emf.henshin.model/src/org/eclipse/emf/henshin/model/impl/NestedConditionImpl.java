@@ -39,6 +39,7 @@ import org.eclipse.emf.henshin.model.Not;
  * <ul>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.NestedConditionImpl#getConclusion <em>Conclusion</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.NestedConditionImpl#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link org.eclipse.emf.henshin.model.impl.NestedConditionImpl#getPresenceCondition <em>Presence Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,26 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 	 */
 	protected EList<Mapping> mappings;
 	
+	/**
+	 * The default value of the '{@link #getPresenceCondition() <em>Presence Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPresenceCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRESENCE_CONDITION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPresenceCondition() <em>Presence Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPresenceCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected String presenceCondition = PRESENCE_CONDITION_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,6 +162,27 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 		return (MappingList) mappings;
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPresenceCondition() {
+		return presenceCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPresenceCondition(String newPresenceCondition) {
+		String oldPresenceCondition = presenceCondition;
+		presenceCondition = newPresenceCondition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HenshinPackage.NESTED_CONDITION__PRESENCE_CONDITION, oldPresenceCondition, presenceCondition));
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +293,8 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 				return getConclusion();
 			case HenshinPackage.NESTED_CONDITION__MAPPINGS:
 				return getMappings();
+			case HenshinPackage.NESTED_CONDITION__PRESENCE_CONDITION:
+				return getPresenceCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,6 +315,9 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 				getMappings().clear();
 				getMappings().addAll((Collection<? extends Mapping>)newValue);
 				return;
+			case HenshinPackage.NESTED_CONDITION__PRESENCE_CONDITION:
+				setPresenceCondition((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -289,6 +336,9 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 			case HenshinPackage.NESTED_CONDITION__MAPPINGS:
 				getMappings().clear();
 				return;
+			case HenshinPackage.NESTED_CONDITION__PRESENCE_CONDITION:
+				setPresenceCondition(PRESENCE_CONDITION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -305,6 +355,8 @@ public class NestedConditionImpl extends EObjectImpl implements NestedCondition 
 				return conclusion != null;
 			case HenshinPackage.NESTED_CONDITION__MAPPINGS:
 				return mappings != null && !mappings.isEmpty();
+			case HenshinPackage.NESTED_CONDITION__PRESENCE_CONDITION:
+				return PRESENCE_CONDITION_EDEFAULT == null ? presenceCondition != null : !PRESENCE_CONDITION_EDEFAULT.equals(presenceCondition);
 		}
 		return super.eIsSet(featureID);
 	}

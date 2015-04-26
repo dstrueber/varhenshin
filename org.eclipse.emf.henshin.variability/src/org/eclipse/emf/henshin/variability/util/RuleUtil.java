@@ -42,8 +42,9 @@ public class RuleUtil {
 
 	public static boolean isVarRule(Unit unit) {
 		if (unit instanceof Rule) {
-			if (((Rule)unit).getName().contains("_var"))
+			if (((Rule)unit).getFeatureModel() != null) {
 				return true;
+			}
 		}
 		return false;
 	}

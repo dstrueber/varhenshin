@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#isInjectiveMatching <em>Injective Matching</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#getMultiRules <em>Multi Rules</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#getMultiMappings <em>Multi Mappings</em>}</li>
- *   <li>{@link org.eclipse.emf.henshin.model.Rule#getForbiddenVariants <em>Forbidden Variants</em>}</li>
+ *   <li>{@link org.eclipse.emf.henshin.model.Rule#getFeatureModel <em>Feature Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -316,29 +316,29 @@ public interface Rule extends Unit {
 	MappingList getMultiMappings();
 
 	/**
-	 * Returns the value of the '<em><b>Forbidden Variants</b></em>' attribute.
+	 * Returns the value of the '<em><b>Feature Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Forbidden Variants</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Feature Model</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Forbidden Variants</em>' attribute.
-	 * @see #setForbiddenVariants(String)
-	 * @see org.eclipse.emf.henshin.model.HenshinPackage#getRule_ForbiddenVariants()
+	 * @return the value of the '<em>Feature Model</em>' attribute.
+	 * @see #setFeatureModel(String)
+	 * @see org.eclipse.emf.henshin.model.HenshinPackage#getRule_FeatureModel()
 	 * @model
 	 * @generated
 	 */
-	String getForbiddenVariants();
+	String getFeatureModel();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.emf.henshin.model.Rule#getForbiddenVariants <em>Forbidden Variants</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.emf.henshin.model.Rule#getFeatureModel <em>Feature Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Forbidden Variants</em>' attribute.
-	 * @see #getForbiddenVariants()
+	 * @param value the new value of the '<em>Feature Model</em>' attribute.
+	 * @see #getFeatureModel()
 	 * @generated
 	 */
-	void setForbiddenVariants(String value);
+	void setFeatureModel(String value);
 
 } // Rule
