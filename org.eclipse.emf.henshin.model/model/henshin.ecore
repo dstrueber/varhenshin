@@ -110,7 +110,7 @@
         eType="#//Rule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiMappings" upperBound="-1"
         eType="#//Mapping" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forbiddenVariants" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -288,6 +288,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
         eType="#//Mapping" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="presenceCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryFormula" abstract="true" eSuperTypes="#//Formula">
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" lowerBound="1" eType="#//Formula"
