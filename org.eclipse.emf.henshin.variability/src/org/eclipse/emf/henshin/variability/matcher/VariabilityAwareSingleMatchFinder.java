@@ -282,7 +282,7 @@ public class VariabilityAwareSingleMatchFinder {
 			if (classicMatches.iterator().hasNext()) {
 				Match classicMatch = classicMatches.iterator()
 						.next();
-				return new VariabilityAwareMatch(classicMatch, trueConditions);
+				return new VariabilityAwareMatch(classicMatch, trueConditions, reducedRule);
 			}
 
 		}

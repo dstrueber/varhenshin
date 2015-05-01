@@ -10,11 +10,12 @@ import org.eclipse.emf.henshin.interpreter.impl.MatchImpl;
 import org.eclipse.emf.henshin.interpreter.impl.RuleApplicationImpl;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareMatch;
-import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareMatchFinder;
+import org.eclipse.emf.henshin.variability.matcher.VariabilityAwareEngine;
 import org.eclipse.emf.henshin.variability.util.RuleUtil;
 
 /**
- * Variability-aware {@link org.eclipse.emf.henshin.interpreter.RuleApplication RuleApplication} implementation.
+ * Variability-aware {@link org.eclipse.emf.henshin.interpreter.RuleApplication
+ * RuleApplication} implementation.
  * 
  * @author Daniel Strüber
  */
@@ -56,27 +57,18 @@ public class VarRuleApplicationImpl extends RuleApplicationImpl {
 		// Do we need to derive a complete match?
 		long startTime = System.currentTimeMillis();
 		if (completeMatch == null) {
-			// completeMatch = engine.findMatches((Rule) unit, graph,
-			// partialMatch).iterator().next();
-
 			if (!RuleUtil.isVarRule(unit)) {
 				completeMatch = engine
 						.findMatches((Rule) unit, graph, partialMatch)
 						.iterator().next();
 			} else {
-//				VariabilityAwareMatch match = new VariabilityAwareSingleMatchFinder(
-//						(Rule) unit, graph).findMatch();
-//				if (match != null) {
-//					completeMatch = match.getMatch();
-//					unit = match.getMatch().getRule();
-					 Set<VariabilityAwareMatch> matches = new
-					 VariabilityAwareMatchFinder((Rule) unit,
-					 graph).findMatches();
-					 if (!matches.isEmpty()) {
-					 VariabilityAwareMatch firstVarMatch =
-					 ((VariabilityAwareMatch) matches.toArray()[0]);
-					 completeMatch = firstVarMatch.getMatch();
-					 unit = firstVarMatch.getMatch().getRule();
+				Set<VariabilityAwareMatch> matches = new VariabilityAwareEngine(
+						(Rule) unit, graph).findMatches();
+				if (!matches.isEmpty()) {
+					VariabilityAwareMatch firstVarMatch = ((VariabilityAwareMatch) matches
+							.toArray()[0]);
+					completeMatch = firstVarMatch.getMatch();
+					unit = firstVarMatch.getMatch().getRule();
 
 				}
 

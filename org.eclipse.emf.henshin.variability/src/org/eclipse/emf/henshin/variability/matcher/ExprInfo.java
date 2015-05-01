@@ -23,8 +23,9 @@ class ExprInfo {
 	private static FeatureExprParser parser = FeatureExprLibUtil
 			.createPresenceConditionParser();
 
-	public static final FeatureExpr true_ = parser.parse("true");
 
+	public static final FeatureExpr true_ = parser.parse("true");
+	
 	static Map<String, FeatureExpr> string2expr = new HashMap<String, FeatureExpr>();
 	static Map<FeatureExpr, Map<FeatureExpr, Boolean>> implies = new HashMap<FeatureExpr, Map<FeatureExpr, Boolean>>();
 	static Map<FeatureExpr, Map<FeatureExpr, Boolean>> contradicts = new HashMap<FeatureExpr, Map<FeatureExpr, Boolean>>();

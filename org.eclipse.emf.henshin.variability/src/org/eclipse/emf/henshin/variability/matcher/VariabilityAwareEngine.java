@@ -15,16 +15,23 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
 import org.eclipse.emf.henshin.interpreter.impl.MatchImpl;
 import org.eclipse.emf.henshin.interpreter.util.InterpreterUtil;
+import org.eclipse.emf.henshin.model.And;
 import org.eclipse.emf.henshin.model.Attribute;
+import org.eclipse.emf.henshin.model.BinaryFormula;
 import org.eclipse.emf.henshin.model.Edge;
+import org.eclipse.emf.henshin.model.Formula;
+import org.eclipse.emf.henshin.model.Graph;
 import org.eclipse.emf.henshin.model.GraphElement;
+import org.eclipse.emf.henshin.model.NestedCondition;
 import org.eclipse.emf.henshin.model.Node;
+import org.eclipse.emf.henshin.model.Not;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.variability.util.FeatureExprLibUtil;
 
@@ -43,23 +50,19 @@ import de.fosd.typechef.featureexpr.FeatureExprParser;
  * @author Daniel Strüber
  *
  */
-public class VariabilityAwareMatchFinder {
+public class VariabilityAwareEngine {
 
 	private Rule rule;
-
 	private EGraph graph;
-
 	private EngineImpl engine;
 
 	private Map<String, FeatureExpr> expressions;
-
 	private Map<Rule, BitSet> subrule2bitset;
-
 	private RuleInfo ruleInfo;
 
 	private static Map<Rule, RuleInfo> ruleInfoRegistry = new HashMap<Rule, RuleInfo>();
 
-	public VariabilityAwareMatchFinder(Rule rule, EGraph graph) {
+	public VariabilityAwareEngine(Rule rule, EGraph graph) {
 		super();
 		this.rule = rule;
 		this.graph = graph;
@@ -70,6 +73,8 @@ public class VariabilityAwareMatchFinder {
 		this.ruleInfo = ruleInfoRegistry.get(rule);
 		populateExpressionMap();
 	}
+	
+	
 	private void populateExpressionMap() {
 		if (ruleInfoRegistry.containsKey(rule)) {
 			expressions = ruleInfo.getExpressions();
@@ -268,7 +273,7 @@ public class VariabilityAwareMatchFinder {
 					graph, createMatch(reducedRule, bm));
 			if (classicMatches.iterator().hasNext()) {
 				Match classicMatch = classicMatches.iterator().next();
-				return new VariabilityAwareMatch(classicMatch, trueConditions);
+				return new VariabilityAwareMatch(classicMatch, trueConditions, reducedRule);
 			}
 
 		}
@@ -277,7 +282,7 @@ public class VariabilityAwareMatchFinder {
 
 	private Match createMatch(Rule reducedRule, Match bm) {
 		Match result = new MatchImpl(reducedRule);
-		Map<GraphElement, GraphElement> mappingsBaseToMain = ruleInfo
+		Map<EObject, EObject> mappingsBaseToMain = ruleInfo
 				.getMappingsSubrule2Mainrule().get(bm.getRule());
 		Copier mappingsMainToReduced = ruleInfo.getMappingsMainrule2Subrule()
 				.get(reducedRule);
@@ -319,6 +324,7 @@ public class VariabilityAwareMatchFinder {
 		Set<Node> deleteNodes = new HashSet<Node>();
 		Set<Edge> deleteEdges = new HashSet<Edge>();
 		Set<Attribute> deleteAttributes = new HashSet<Attribute>();
+		Set<NestedCondition> deleteNestedConditions = new HashSet<NestedCondition>();
 		for (FeatureExpr expr : rejected) {
 			for (GraphElement ge : ruleInfo.getPc2Elem().get(expr)) {
 				if (ge instanceof Node) {
@@ -328,14 +334,15 @@ public class VariabilityAwareMatchFinder {
 				} else if (ge instanceof Attribute) {
 					deleteAttributes.add((Attribute) copier.get(ge));
 				}
+
 			}
 		}
 
 		BitSet bitset = getAsBitSet(result, deleteAttributes, deleteNodes,
-				deleteEdges);
+				deleteEdges, deleteNestedConditions);
 		subrule2bitset.put(result, bitset);
 
-		Map<GraphElement, GraphElement> backwardsMap = new HashMap<GraphElement, GraphElement>();
+		Map<EObject, EObject> backwardsMap = new HashMap<EObject, EObject>();
 		ruleInfo.getMappingsSubrule2Mainrule().put(result, backwardsMap);
 		ruleInfo.getMappingsMainrule2Subrule().put(result, copier);
 		for (EObject o : copier.keySet()) {
@@ -344,13 +351,9 @@ public class VariabilityAwareMatchFinder {
 						.put((GraphElement) copier.get(o), (GraphElement) o);
 		}
 
-		// for (Attribute a : deleteAttributes)
-		// result.removeAttribute(a, false);
-		// for (Edge e : deleteEdges)
-		// result.removeEdge(e, false);
-		// for (Node n : deleteNodes)
-		// result.removeNode(n, false);
-		//
+		for (NestedCondition nc : deleteNestedConditions) {
+			removeNestedCondition(nc);
+		}
 		for (Attribute a : deleteAttributes)
 			a.getNode().getAttributes().remove(a);
 		for (Edge e : deleteEdges) {
@@ -360,21 +363,38 @@ public class VariabilityAwareMatchFinder {
 		}
 		for (Node n : deleteNodes)
 			n.getGraph().getNodes().remove(n);
-		// for (Attribute a : deleteAttributes)
-		// a.getNode().getAttributes().remove(a);
-		// for (Edge e : deleteEdges)
-		// result.getLhs().getEdges().remove(e);
-		// for (Node n : deleteNodes)
-		// result.getLhs().getNodes().remove(n);
-
 		result.setCheckDangling(false);
 		return result;
 	}
 
+	private void removeNestedCondition(NestedCondition nc) {
+		EStructuralFeature containingFeature = nc.eContainingFeature();
+		EObject container = nc.eContainer();
+		if (container instanceof Not) {
+			containingFeature = container.eContainingFeature();
+			container = container.eContainer();
+		}
+		
+		if (container instanceof And) {
+			// replace containing 'and' by the other side of the conjunction
+			And and = (And) container;
+			Formula child = (and.getLeft() == nc || and.getLeft() == nc.eContainer()) ? and.getRight() : and
+					.getLeft();
+			and.eContainer().eSet(and.eContainingFeature(), child);
+		} else if (container instanceof Graph) {
+			((Graph) container).eUnset(containingFeature);
+		} else {
+			// TODO: Only AND-based nesting of applications conditions supported yet.
+		}		
+	}
+	
+
 	private BitSet getAsBitSet(Rule rule, Set<Attribute> deleteAttributes,
-			Set<Node> deleteNodes, Set<Edge> deleteEdges) {
+			Set<Node> deleteNodes, Set<Edge> deleteEdges,
+			Set<NestedCondition> deleteNestedConditions) {
 		BitSet result = new BitSet(rule.getLhs().getNodes().size()
-				+ rule.getLhs().getEdges().size());
+				+ rule.getLhs().getEdges().size()
+				+ rule.getLhs().getNestedConditions().size());
 		int i = 0;
 		for (Node n : rule.getLhs().getNodes()) {
 			if (deleteNodes.contains(n))
@@ -423,6 +443,14 @@ public class VariabilityAwareMatchFinder {
 				result.set(i, true);
 			i++;
 		}
+
+		for (NestedCondition nc : rule.getLhs().getNestedConditions()) {
+			if (deleteNestedConditions.contains(nc))
+				result.set(i, false);
+			else
+				result.set(i, true);
+			i++;
+		}
 		return result;
 	}
 
@@ -462,12 +490,12 @@ public class VariabilityAwareMatchFinder {
 
 		Map<Rule, Copier> mappingsMainrule2Subrule;
 
-		Map<Rule, Map<GraphElement, GraphElement>> mappingsSubrule2Mainrule;
+		Map<Rule, Map<EObject, EObject>> mappingsSubrule2Mainrule;
 
 		public RuleInfo(Rule rule) {
 			this.rule = rule;
 			this.mappingsMainrule2Subrule = new HashMap<Rule, Copier>();
-			this.mappingsSubrule2Mainrule = new HashMap<Rule, Map<GraphElement, GraphElement>>();
+			this.mappingsSubrule2Mainrule = new HashMap<Rule, Map<EObject, EObject>>();
 			populateMaps();
 		}
 
@@ -483,7 +511,7 @@ public class VariabilityAwareMatchFinder {
 			return mappingsMainrule2Subrule;
 		}
 
-		public Map<Rule, Map<GraphElement, GraphElement>> getMappingsSubrule2Mainrule() {
+		public Map<Rule, Map<EObject, EObject>> getMappingsSubrule2Mainrule() {
 			return mappingsSubrule2Mainrule;
 		}
 
@@ -512,12 +540,6 @@ public class VariabilityAwareMatchFinder {
 			if (featureModel != null && !featureModel.equals("")) {
 				if (!pc2elem.containsKey(featureModel))
 					pc2elem.put(featureModel, new HashSet<GraphElement>());
-//				for (FeatureExpr e : pc2elem.keySet()) {
-//					if (ExprInfo.contradicts(featureModel, e))
-//						System.err
-//								.println("A graph element was labelled with a forbidden expression: "
-//										+ e);
-//				}
 			}
 		}
 	}

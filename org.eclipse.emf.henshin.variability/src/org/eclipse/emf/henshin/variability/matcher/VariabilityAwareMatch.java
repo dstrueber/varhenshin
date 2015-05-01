@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.henshin.interpreter.Match;
+import org.eclipse.emf.henshin.model.Rule;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
 
@@ -15,11 +16,14 @@ import de.fosd.typechef.featureexpr.FeatureExpr;
  *
  */
 public class VariabilityAwareMatch {
-	public VariabilityAwareMatch(Match match, Set<FeatureExpr> selected) {
+	private Rule rule;
+
+	public VariabilityAwareMatch(Match match, Set<FeatureExpr> selected, Rule rule) {
 		super();
 		this.match = match;
 		this.selected = new HashSet<FeatureExpr>();
 		this.selected.addAll(selected);
+		this.rule = rule;
 	}
 
 	public Match getMatch() {
@@ -41,4 +45,12 @@ public class VariabilityAwareMatch {
 	private Match match;
 
 	private Set<FeatureExpr> selected;
+
+	public Rule getRule() {
+		return rule;
+	}
+
+	public void setRule(Rule rule) {
+		this.rule = rule;
+	}
 }
