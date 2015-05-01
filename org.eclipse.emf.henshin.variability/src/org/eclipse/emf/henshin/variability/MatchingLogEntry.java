@@ -9,6 +9,23 @@ import org.eclipse.emf.henshin.model.Unit;
  *
  */
 public class MatchingLogEntry {
+	public MatchingLogEntry(Unit unit, boolean successful, long runtime, int graphNodes, int graphEdges) {
+		super();
+		this.unit = unit;
+		this.successful = successful;
+		this.runtime = runtime;
+		this.graphNodes = graphNodes;
+		this.graphEdges = graphEdges;
+	}
+	public MatchingLogEntry(Unit unit, boolean successful, long runtime, int graphNodes, int graphEdges, int numberOfMatches) {
+		super();
+		this.unit = unit;
+		this.successful = successful;
+		this.runtime = runtime;
+		this.graphNodes = graphNodes;
+		this.graphEdges = graphEdges;
+		this.numberOfMatches = numberOfMatches;
+	}
 	public Unit getUnit() {
 		return unit;
 	}
@@ -20,14 +37,6 @@ public class MatchingLogEntry {
 	}
 	public void setSuccessful(boolean successful) {
 		this.successful = successful;
-	}
-	public MatchingLogEntry(Unit unit, boolean successful, long runtime, int graphNodes, int graphEdges) {
-		super();
-		this.unit = unit;
-		this.successful = successful;
-		this.runtime = runtime;
-		this.graphNodes = graphNodes;
-		this.graphEdges = graphEdges;
 	}
 	Unit unit;
 	boolean successful;
@@ -46,11 +55,18 @@ public class MatchingLogEntry {
 	}
 	private int graphNodes;
 	private int graphEdges;
+	private int numberOfMatches;
 	
 	public long getRuntime() {
 		return runtime;
 	}
 	public void setRuntime(long runtime) {
 		this.runtime = runtime;
+	}
+	public int getNumberOfMatches() {
+		return numberOfMatches;
+	}
+	public void setNumberOfMatches(int numberOfMatches) {
+		this.numberOfMatches = numberOfMatches;
 	}
 }

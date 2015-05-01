@@ -88,6 +88,7 @@ public class VariabilityAwareEngine {
 		baseMatches.addAll(InterpreterUtil.findAllMatches(engine, baseRule,
 				graph, null));
 		Set<VariabilityAwareMatch> matches = new HashSet<VariabilityAwareMatch>();
+		
 		// Iterator<Match> it = engine.findMatches(baseRule, graph,null
 		// ).iterator();
 		// for (Match m = it.next(); it.hasNext(); m = it.next())
