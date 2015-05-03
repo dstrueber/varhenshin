@@ -1,9 +1,19 @@
-package org.eclipse.emf.henshin.variability.matcher;
+ package org.eclipse.emf.henshin.variability.matcher;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.henshin.interpreter.Match;
+import org.eclipse.emf.henshin.model.Attribute;
+import org.eclipse.emf.henshin.model.Edge;
+import org.eclipse.emf.henshin.model.Formula;
+import org.eclipse.emf.henshin.model.Node;
 import org.eclipse.emf.henshin.model.Rule;
 
 import de.fosd.typechef.featureexpr.FeatureExpr;
@@ -17,13 +27,15 @@ import de.fosd.typechef.featureexpr.FeatureExpr;
  */
 public class VariabilityAwareMatch {
 	private Rule rule;
-
-	public VariabilityAwareMatch(Match match, Set<FeatureExpr> selected, Rule rule) {
+	private RulePreparator rulePreperator;
+	
+	public VariabilityAwareMatch(Match match, Set<FeatureExpr> selected, Rule rule, RulePreparator rulePreparator) {
 		super();
 		this.match = match;
 		this.selected = new HashSet<FeatureExpr>();
 		this.selected.addAll(selected);
 		this.rule = rule;
+		this.rulePreperator = rulePreparator;
 	}
 
 	public Match getMatch() {
@@ -48,6 +60,14 @@ public class VariabilityAwareMatch {
 
 	public Rule getRule() {
 		return rule;
+	}
+	
+	public void prepareRule() {
+		rulePreperator.doPreparation();
+	}
+	
+	public void undoPreparation() {
+		rulePreperator.undo();
 	}
 
 	public void setRule(Rule rule) {

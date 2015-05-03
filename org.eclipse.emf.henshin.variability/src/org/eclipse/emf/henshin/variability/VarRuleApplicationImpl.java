@@ -56,6 +56,7 @@ public class VarRuleApplicationImpl extends RuleApplicationImpl {
 		}
 		// Do we need to derive a complete match?
 		long startTime = System.currentTimeMillis();
+		VariabilityAwareMatch completeMatchVar = null;
 		if (completeMatch == null) {
 			if (!RuleUtil.isVarRule(unit)) {
 				completeMatch = engine
@@ -65,10 +66,10 @@ public class VarRuleApplicationImpl extends RuleApplicationImpl {
 				Set<VariabilityAwareMatch> matches = new VariabilityAwareEngine(
 						(Rule) unit, graph).findMatches();
 				if (!matches.isEmpty()) {
-					VariabilityAwareMatch firstVarMatch = ((VariabilityAwareMatch) matches
-							.toArray()[0]);
-					completeMatch = firstVarMatch.getMatch();
-					unit = firstVarMatch.getMatch().getRule();
+					completeMatchVar = (VariabilityAwareMatch) matches
+							.iterator().next();
+					completeMatch = completeMatchVar.getMatch();
+					unit = completeMatchVar.getMatch().getRule();
 
 				}
 
@@ -85,6 +86,10 @@ public class VarRuleApplicationImpl extends RuleApplicationImpl {
 			}
 			return false;
 		}
+		Rule rule = null;
+		if (completeMatchVar != null) {
+			completeMatchVar.prepareRule();
+		} 
 		resultMatch = new MatchImpl((Rule) unit, true);
 		change = engine.createChange((Rule) unit, graph, completeMatch,
 				resultMatch);
@@ -98,7 +103,9 @@ public class VarRuleApplicationImpl extends RuleApplicationImpl {
 		isExecuted = true;
 		if (monitor != null) {
 			monitor.notifyExecute(this, true);
-		}
+		}	if (completeMatchVar != null) {
+			completeMatchVar.undoPreparation();
+		} 
 		return true;
 	}
 

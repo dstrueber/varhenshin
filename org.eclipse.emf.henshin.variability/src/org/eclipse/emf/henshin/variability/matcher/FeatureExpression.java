@@ -19,7 +19,7 @@ import de.fosd.typechef.featureexpr.FeatureExprParser;
  * @author Daniel Strüber
  *
  */
-class ExprInfo {
+class FeatureExpression {
 	private static FeatureExprParser parser = FeatureExprLibUtil
 			.createPresenceConditionParser();
 
