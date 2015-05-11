@@ -92,7 +92,7 @@ public interface Unit extends NamedElement, TransformationUnit {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
 	EList<Unit> getSubUnits(boolean deep);
 

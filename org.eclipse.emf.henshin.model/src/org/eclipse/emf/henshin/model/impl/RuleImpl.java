@@ -65,6 +65,7 @@ import org.eclipse.emf.henshin.model.actions.NodeActionHelper;
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getMultiRules <em>Multi Rules</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getMultiMappings <em>Multi Mappings</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getFeatureModel <em>Feature Model</em>}</li>
+ *   <li>{@link org.eclipse.emf.henshin.model.impl.RuleImpl#getInjectiveMatchingPresenceCondition <em>Injective Matching Presence Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -191,6 +192,26 @@ public class RuleImpl extends UnitImpl implements Rule {
 	 * @ordered
 	 */
 	protected String featureModel = FEATURE_MODEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInjectiveMatchingPresenceCondition() <em>Injective Matching Presence Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInjectiveMatchingPresenceCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INJECTIVE_MATCHING_PRESENCE_CONDITION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInjectiveMatchingPresenceCondition() <em>Injective Matching Presence Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInjectiveMatchingPresenceCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected String injectiveMatchingPresenceCondition = INJECTIVE_MATCHING_PRESENCE_CONDITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -958,6 +979,27 @@ public class RuleImpl extends UnitImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInjectiveMatchingPresenceCondition() {
+		return injectiveMatchingPresenceCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInjectiveMatchingPresenceCondition(String newInjectiveMatchingPresenceCondition) {
+		String oldInjectiveMatchingPresenceCondition = injectiveMatchingPresenceCondition;
+		injectiveMatchingPresenceCondition = newInjectiveMatchingPresenceCondition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HenshinPackage.RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION, oldInjectiveMatchingPresenceCondition, injectiveMatchingPresenceCondition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID,
@@ -1020,6 +1062,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 				return getMultiMappings();
 			case HenshinPackage.RULE__FEATURE_MODEL:
 				return getFeatureModel();
+			case HenshinPackage.RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION:
+				return getInjectiveMatchingPresenceCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1064,6 +1108,9 @@ public class RuleImpl extends UnitImpl implements Rule {
 			case HenshinPackage.RULE__FEATURE_MODEL:
 				setFeatureModel((String)newValue);
 				return;
+			case HenshinPackage.RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION:
+				setInjectiveMatchingPresenceCondition((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1103,6 +1150,9 @@ public class RuleImpl extends UnitImpl implements Rule {
 			case HenshinPackage.RULE__FEATURE_MODEL:
 				setFeatureModel(FEATURE_MODEL_EDEFAULT);
 				return;
+			case HenshinPackage.RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION:
+				setInjectiveMatchingPresenceCondition(INJECTIVE_MATCHING_PRESENCE_CONDITION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1133,6 +1183,8 @@ public class RuleImpl extends UnitImpl implements Rule {
 				return multiMappings != null && !multiMappings.isEmpty();
 			case HenshinPackage.RULE__FEATURE_MODEL:
 				return FEATURE_MODEL_EDEFAULT == null ? featureModel != null : !FEATURE_MODEL_EDEFAULT.equals(featureModel);
+			case HenshinPackage.RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION:
+				return INJECTIVE_MATCHING_PRESENCE_CONDITION_EDEFAULT == null ? injectiveMatchingPresenceCondition != null : !INJECTIVE_MATCHING_PRESENCE_CONDITION_EDEFAULT.equals(injectiveMatchingPresenceCondition);
 		}
 		return super.eIsSet(featureID);
 	}

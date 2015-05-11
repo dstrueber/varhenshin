@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#getMultiRules <em>Multi Rules</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#getMultiMappings <em>Multi Mappings</em>}</li>
  *   <li>{@link org.eclipse.emf.henshin.model.Rule#getFeatureModel <em>Feature Model</em>}</li>
+ *   <li>{@link org.eclipse.emf.henshin.model.Rule#getInjectiveMatchingPresenceCondition <em>Injective Matching Presence Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -340,5 +341,31 @@ public interface Rule extends Unit {
 	 * @generated
 	 */
 	void setFeatureModel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Injective Matching Presence Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Injective Matching Presence Condition</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Injective Matching Presence Condition</em>' attribute.
+	 * @see #setInjectiveMatchingPresenceCondition(String)
+	 * @see org.eclipse.emf.henshin.model.HenshinPackage#getRule_InjectiveMatchingPresenceCondition()
+	 * @model
+	 * @generated
+	 */
+	String getInjectiveMatchingPresenceCondition();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.emf.henshin.model.Rule#getInjectiveMatchingPresenceCondition <em>Injective Matching Presence Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Injective Matching Presence Condition</em>' attribute.
+	 * @see #getInjectiveMatchingPresenceCondition()
+	 * @generated
+	 */
+	void setInjectiveMatchingPresenceCondition(String value);
 
 } // Rule

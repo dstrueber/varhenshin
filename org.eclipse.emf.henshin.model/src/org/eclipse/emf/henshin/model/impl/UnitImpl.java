@@ -183,7 +183,7 @@ public abstract class UnitImpl extends NamedElementImpl implements Unit {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected abstract EList<Unit> getSubUnits();
+	public abstract EList<Unit> getSubUnits();
 
 	/**
 	 * <!-- begin-user-doc -->

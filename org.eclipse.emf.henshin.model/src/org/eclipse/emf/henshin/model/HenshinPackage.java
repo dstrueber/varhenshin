@@ -491,13 +491,22 @@ public interface HenshinPackage extends EPackage {
 	int RULE__FEATURE_MODEL = UNIT_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Injective Matching Presence Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION = UNIT_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = UNIT_FEATURE_COUNT + 9;
+	int RULE_FEATURE_COUNT = UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1849,6 +1858,25 @@ public interface HenshinPackage extends EPackage {
 	int NOT_FEATURE_COUNT = UNARY_FORMULA_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.emf.henshin.model.impl.TrueImpl <em>True</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.henshin.model.impl.TrueImpl
+	 * @see org.eclipse.emf.henshin.model.impl.HenshinPackageImpl#getTrue()
+	 * @generated
+	 */
+	int TRUE = 29;
+
+	/**
+	 * The number of structural features of the '<em>True</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_FEATURE_COUNT = FORMULA_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Action</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1856,7 +1884,7 @@ public interface HenshinPackage extends EPackage {
 	 * @see org.eclipse.emf.henshin.model.impl.HenshinPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 29;
+	int ACTION = 30;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.emf.henshin.model.NamedElement <em>Named Element</em>}'.
@@ -1998,6 +2026,17 @@ public interface HenshinPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRule_FeatureModel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.emf.henshin.model.Rule#getInjectiveMatchingPresenceCondition <em>Injective Matching Presence Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Injective Matching Presence Condition</em>'.
+	 * @see org.eclipse.emf.henshin.model.Rule#getInjectiveMatchingPresenceCondition()
+	 * @see #getRule()
+	 * @generated
+	 */
+	EAttribute getRule_InjectiveMatchingPresenceCondition();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.emf.henshin.model.AttributeCondition <em>Attribute Condition</em>}'.
@@ -2789,6 +2828,16 @@ public interface HenshinPackage extends EPackage {
 	EClass getNot();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.emf.henshin.model.True <em>True</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>True</em>'.
+	 * @see org.eclipse.emf.henshin.model.True
+	 * @generated
+	 */
+	EClass getTrue();
+
+	/**
 	 * Returns the meta object for data type '{@link org.eclipse.emf.henshin.model.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2970,6 +3019,14 @@ public interface HenshinPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RULE__FEATURE_MODEL = eINSTANCE.getRule_FeatureModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Injective Matching Presence Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RULE__INJECTIVE_MATCHING_PRESENCE_CONDITION = eINSTANCE.getRule_InjectiveMatchingPresenceCondition();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.emf.henshin.model.impl.AttributeConditionImpl <em>Attribute Condition</em>}' class.
@@ -3612,6 +3669,16 @@ public interface HenshinPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NOT = eINSTANCE.getNot();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.emf.henshin.model.impl.TrueImpl <em>True</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.henshin.model.impl.TrueImpl
+		 * @see org.eclipse.emf.henshin.model.impl.HenshinPackageImpl#getTrue()
+		 * @generated
+		 */
+		EClass TRUE = eINSTANCE.getTrue();
 
 		/**
 		 * The meta object literal for the '<em>Action</em>' data type.

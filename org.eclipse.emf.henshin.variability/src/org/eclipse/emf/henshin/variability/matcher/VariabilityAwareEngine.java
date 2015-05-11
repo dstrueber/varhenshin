@@ -1,5 +1,6 @@
 package org.eclipse.emf.henshin.variability.matcher;
 
+import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collection;
 import java.util.HashMap;
@@ -86,24 +87,28 @@ public class VariabilityAwareEngine {
 	}
 
 	public Set<VariabilityAwareMatch> findMatches() {
-
 		// Remove everything except for the base rule
 		BitSet bs = rulePreparator.prepare(ruleInfo, ruleInfo.getPc2Elem()
 				.keySet(), rule.isInjectiveMatching());
+//		long time = System.currentTimeMillis();
 		Set<Match> baseMatches = new HashSet<Match>();
-		baseMatches.addAll(InterpreterUtil.findAllMatches(engine, rule, graph,
-				null));
-		rulePreparator.undo();
-
-		
-		Set<VariabilityAwareMatch> matches = new HashSet<VariabilityAwareMatch>();
-		if (!baseMatches.isEmpty()) {
-
-			if (baseMatches.size() > THRESHOLD_MAXIMUM_BASE_MATCHES) {
+		Iterator<Match> it = engine.findMatches(rule, graph, null).iterator();
+		while (it.hasNext()) {
+			if (baseMatches.size() < THRESHOLD_MAXIMUM_BASE_MATCHES) {
+				baseMatches.add(it.next());
+			} else {
 				baseMatches.clear();
-				baseMatches.add(null); // Start matching from scratch.
+				baseMatches.add(null);
+				break;
 			}
+		}
+		
+		rulePreparator.undo();
+//		System.err.println(System.currentTimeMillis()-time);
 
+		Set<VariabilityAwareMatch> matches = new HashSet<VariabilityAwareMatch>();
+		if (!baseMatches.isEmpty()) {			
+//			System.out.println(baseMatches);	
 			List<FeatureExpr> conditions = new LinkedList<FeatureExpr>();
 			conditions.addAll(expressions.values());
 			MatchingInfo mo = new MatchingInfo(conditions, ruleInfo);
@@ -157,7 +162,7 @@ public class VariabilityAwareEngine {
 				for (Match bm : baseMatches) {
 					Iterator<Match> classicMatches = engine.findMatches(rule,
 							graph, bm).iterator();
-					//
+					
 					RulePreparator prep = rulePreparator.getSnapShot();
 					while (classicMatches.hasNext()) {
 						Match classicMatch = classicMatches.next();
@@ -231,8 +236,11 @@ public class VariabilityAwareEngine {
 			this.rule = rule;
 			this.featureModel = FeatureExpression.getExpr(rule
 					.getFeatureModel());
-			this.injectiveMatching = FeatureExpression.getExpr(rule
-					.getInjectiveMatchingPresenceCondition());
+			String injective = rule
+					.getInjectiveMatchingPresenceCondition();
+			if (injective == null)
+				injective = rule.isInjectiveMatching()+"";
+			this.injectiveMatching = FeatureExpression.getExpr(injective); 
 			populateMaps();
 		}
 

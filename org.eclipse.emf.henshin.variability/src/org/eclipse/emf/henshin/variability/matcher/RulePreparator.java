@@ -1,5 +1,6 @@
 package org.eclipse.emf.henshin.variability.matcher;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.BitSet;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,16 +8,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.henshin.model.And;
 import org.eclipse.emf.henshin.model.Attribute;
 import org.eclipse.emf.henshin.model.Edge;
 import org.eclipse.emf.henshin.model.Formula;
 import org.eclipse.emf.henshin.model.Graph;
 import org.eclipse.emf.henshin.model.GraphElement;
+import org.eclipse.emf.henshin.model.HenshinFactory;
 import org.eclipse.emf.henshin.model.HenshinPackage;
 import org.eclipse.emf.henshin.model.Mapping;
 import org.eclipse.emf.henshin.model.MappingList;
@@ -88,10 +97,10 @@ public class RulePreparator {
 		removeMappingContainingRef = new HashMap<Mapping, EStructuralFeature>();
 		removeFormulaContainingRef = new HashMap<Formula, EStructuralFeature>();
 		removeFormulas = new HashSet<Formula>();
-		pulledUpFormulasToContainingRef = new HashMap<Formula, EStructuralFeature>();
-		pulledUpFormulasToContainer = new HashMap<Formula, EObject>();
-		pulledUpFormulasToOldContainingRef = new HashMap<Formula, EStructuralFeature>();
-		pulledUpFormulasToOldContainer = new HashMap<Formula, EObject>();
+//		pulledUpFormulasToContainingRef = new HashMap<Formula, EStructuralFeature>();
+//		pulledUpFormulasToContainer = new HashMap<Formula, EObject>();
+//		pulledUpFormulasToOldContainingRef = new HashMap<Formula, EStructuralFeature>();
+//		pulledUpFormulasToOldContainer = new HashMap<Formula, EObject>();
 
 		fillMaps(ruleInfo, rejected);
 
@@ -103,6 +112,7 @@ public class RulePreparator {
 	}
 
 	private void fillMaps(RuleInfo ruleInfo, Set<FeatureExpr> rejected) {
+		
 		for (FeatureExpr expr : rejected) {
 			for (GraphElement ge : ruleInfo.getPc2Elem().get(expr)) {
 				if (ge instanceof Node) {
@@ -120,15 +130,22 @@ public class RulePreparator {
 				if (ge.getGraph().isNestedCondition()) {
 					NestedCondition nc = ((NestedCondition) ge.getGraph()
 							.eContainer());
+					Formula removeFormula = null;
 					if (nc.isNAC())
-						removeFormulas.add((Formula) nc.eContainer());
+						removeFormula = (Formula) nc.eContainer();
 					else if (nc.isPAC())
-						removeFormulas.add(nc);
+						removeFormula = nc;
+
+					removeFormulas.add(removeFormula);
+					removeElementContainers.put(removeFormula, removeFormula.eContainer());
+					removeFormulaContainingRef.put(removeFormula, removeFormula.eContainingFeature());
 				}
 			}
 		}
-		if (!removeFormulas.isEmpty())
-			determineRemoveOrder(removeFormulas);
+//		if (rule.getName().contains("tr_E_10_argument"))
+//			System.out.println(rule);
+//		if (!removeFormulas.isEmpty())
+//			determineRemoveOrder(removeFormulas);
 	}
 
 	/**
@@ -176,14 +193,19 @@ public class RulePreparator {
 	 * Removes the formulas in the previously determined order.
 	 */
 	private void removeFormulas() {
-		for (Formula f:removeFormulaContainingRef.keySet()) {
-			EObject container = removeElementContainers.get(f);
-			container.eUnset(removeFormulaContainingRef.get(f));
+		for (Formula formula : removeFormulas) {
+			removeElementContainers.get(formula).eUnset(removeFormulaContainingRef.get(formula));
+			removeElementContainers.get(formula).eSet(removeFormulaContainingRef.get(formula), HenshinFactory.eINSTANCE.createTrue());
 		}
-		for (Formula f:pulledUpFormulasToContainingRef.keySet()) {
-			EObject container = pulledUpFormulasToContainer.get(f);
-			container.eSet(pulledUpFormulasToContainingRef.get(f), f);
-		}
+// fix
+//		for (Formula f:removeFormulaContainingRef.keySet()) {
+//			EObject container = removeElementContainers.get(f);
+//			container.eUnset(removeFormulaContainingRef.get(f));
+//		}
+//		for (Formula f:pulledUpFormulasToContainingRef.keySet()) {
+//			EObject container = pulledUpFormulasToContainer.get(f);
+//			container.eSet(pulledUpFormulasToContainingRef.get(f), f);
+//		}
 	}
 
 	/**
@@ -223,14 +245,18 @@ public class RulePreparator {
 	 * Restores the formulas in the previously determined order.
 	 */
 	private void restoreFormulas() {
-		for (Formula f:pulledUpFormulasToOldContainingRef.keySet()) {
-			EObject container = pulledUpFormulasToOldContainer.get(f);
-			container.eSet(pulledUpFormulasToOldContainingRef.get(f), f);
+		for (Formula formula : removeFormulas) {
+			removeElementContainers.get(formula).eSet(removeFormulaContainingRef.get(formula), formula);
 		}
-		for (Formula f:removeFormulaContainingRef.keySet()) {
-			EObject container = removeElementContainers.get(f);
-			container.eSet(removeFormulaContainingRef.get(f), f);
-		}
+//		fix
+//		for (Formula f:pulledUpFormulasToOldContainingRef.keySet()) {
+//			EObject container = pulledUpFormulasToOldContainer.get(f);
+//			container.eSet(pulledUpFormulasToOldContainingRef.get(f), f);
+//		}
+//		for (Formula f:removeFormulaContainingRef.keySet()) {
+//			EObject container = removeElementContainers.get(f);
+//			container.eSet(removeFormulaContainingRef.get(f), f);
+//		}
 	}
 	/**
 	 * Calling this method ensures that the elements to be removed can later be
@@ -260,6 +286,8 @@ public class RulePreparator {
 
 	private void determineRemoverOrder(And and, Set<Formula> formulas, EObject container,
 			EReference feature) {
+		if (rule.getName().contains("tr_E_10_argument"))
+		System.out.println();
 		if (formulas.contains(and.getLeft())
 				&& formulas.contains(and.getRight())) {
 			removeFormulaContainingRef.put(and, feature);
@@ -367,15 +395,15 @@ public class RulePreparator {
 		result.removeFormulas = new HashSet<Formula>(removeFormulas);
 		result.removeFormulaContainingRef = new HashMap<Formula, EStructuralFeature>(
 				removeFormulaContainingRef);
-		result.pulledUpFormulasToContainer = new HashMap<Formula, EObject>(
-				pulledUpFormulasToContainer);
-		result.pulledUpFormulasToContainingRef = new HashMap<Formula, EStructuralFeature>(
-				pulledUpFormulasToContainingRef);
+//		result.pulledUpFormulasToContainer = new HashMap<Formula, EObject>(
+//				pulledUpFormulasToContainer);
+//		result.pulledUpFormulasToContainingRef = new HashMap<Formula, EStructuralFeature>(
+//				pulledUpFormulasToContainingRef);
 		result.removeMappings = new HashSet<Mapping>(removeMappings);
 		result.removeMappingContainingRef = new HashMap<Mapping, EStructuralFeature>(
 				removeMappingContainingRef);
-		result.pulledUpFormulasToOldContainingRef = new HashMap<Formula, EStructuralFeature>();
-		result.pulledUpFormulasToOldContainer = new HashMap<Formula, EObject>();
+//		result.pulledUpFormulasToOldContainingRef = new HashMap<Formula, EStructuralFeature>();
+//		result.pulledUpFormulasToOldContainer = new HashMap<Formula, EObject>();
 
 		return result;
 
